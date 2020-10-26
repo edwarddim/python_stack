@@ -38,13 +38,23 @@ dictionaries = {} # JS: var obj = {}
 #     print("x is greater than 25")
 
 # FUNCTIONS
+
 # DEFINED THE FUNCTION
-def functionName(number):
+def numberPrinter(number = 5):
     for i in range(0, number + 1):
         print(f"The number is {i}.")
     print("DONE")
-print("outside the function")
+
 # CALLED(EXECUTED) THE FUNCTION
-functionName(8)
-functionName(3)
-functionName(7)
+# numberPrinter()
+# numberPrinter(10)
+
+# DEFAULT PARAMETERS, NAMED ARGUMENTS
+
+def nameRepeater(name = "John", number = 5):
+    for i in range(0, number):
+        print(f"Hello, my name is {name}")
+
+nameRepeater(number = 10, name =  "edward")
+
+# 1. DEFAULT-ARGUMENTS MUST COME AFTER NON-DEFAULT ARGUMENTS
