@@ -3,15 +3,34 @@
 // EX. "Live From Saturday Night Live" => "LFSNL"
 // NOTE. YOU CAN USE .SPLIT() METHOD
 function acronyms(string){
-
+    var stringArr = string.split(" ") // [ "Live", "From", "Saturday", "Night", "Live"]
+    var returnString = ""
+    for(var i = 0; i < stringArr.length; i++){
+        returnString += stringArr[i][0].toUpperCase()
+    }
+    console.log(returnString)
+    return returnString
 }
+acronyms("Live From Saturday Night Live")
+acronyms("Happy Birthday to you")
+
 
 // RETURN THE REVERSED STRING OF INPUT
 // EX. "HELLO" => "OLLEH"
 // NOTE. DO NOT USE ANY BUILT IN METHODS
 function stringReverse(string){
-
+    var returnString = ""
+    for(var i = string.length-1; i >= 0; i--){
+        returnString += string[i]
+        // returnString = returnString + string[i]
+    }
+    console.log(returnString)
+    return returnString
 }
+stringReverse("hello")
+stringReverse("goodbye")
+
+
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
 
