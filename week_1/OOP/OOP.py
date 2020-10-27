@@ -12,7 +12,7 @@ def countByNum(num):
 class Car:
     # ATTRIBUES
     def __init__(self, make, model, engine, doors):
-        print("A CAR IS BEING CREATED WITH {make},{model},{engine},{doors} ")
+        print(f"A CAR IS BEING CREATED WITH {make} {model} {engine} {doors}")
         self.make = make
         self.model = model
         self.engine = engine
@@ -31,7 +31,6 @@ class Car:
         print(self)
         print(f"You current speed is: {self.speed}")
         return self
-    
 
 car1 = Car("Toyota", "Camry", "V4", 4)
 car1.check_speed()
