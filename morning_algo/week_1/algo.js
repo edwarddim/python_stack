@@ -36,19 +36,41 @@ stringReverse("goodbye")
 
 // TUE
 function parensValid(string){
-
+    var counter = 0
+    for(var i = 0;i < string.length; i++){
+        if(string[i] == "("){
+            counter++
+        }
+        else{
+            counter--
+        }
+        if(counter < 0){
+            console.log("PARENS NOT VALID")
+            return false
+        }
+    }
+    if(counter == 0){
+        console.log("PARENS VALID")
+        return true
+    }
+    else{
+        console.log("PARENS NOT VALID")
+        return false
+    }
 }
+// ")))((("
 // RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
-// EX. "()(())" => TRUE
-// EX. "(()()" => FALSE
+// EX. "()( () )" => TRUE
+// EX. "( ()()" => FALSE
 // EX. "()()()" => TRUE
 // EX. "())(()" => FALSE
 
 function bracesValid(string){
-
+    
 }
 // (),[],{}
 // EX. "({})[]" => TRUE
+// EX. " (}()[]"
 // TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS
 // WILL REQUIRE A STACK IMPLEMENTATION
 // -----------------------------------------------------------------------------------------------//

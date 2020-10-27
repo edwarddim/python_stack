@@ -1,4 +1,4 @@
-// Group Members Jason Ford, Zach Cortez, michael ervin
+//
 //MON 
 // TURN THE INCOMING SENTENCE INTO AN ACRONYM
 // EX. "Live From Saturday Night Live" => "LFSNL"
@@ -21,6 +21,32 @@ function stringReverse(string){
 function parensValid(string){
 
 }
+// can you write this in JS?
+def parensValid(string):
+    opencount = 0
+    closecount = 0
+    for i in range(len(string)):
+        if string[i] == "(":
+            opencount += 1
+        elif string[i] ==")":
+            closecount += 1
+        if closecount > opencount:
+            return False
+    if opencount != closecount:
+        return False
+    else:
+        return True
+
+
+
+
+
+
+
+
+
+print(parensValid("()(())"))
+
 // RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
 // EX. "()(())" => TRUE
 // EX. "(()()" => FALSE
@@ -30,6 +56,104 @@ function parensValid(string){
 function bracesValid(string){
 
 }
+
+def parensValid(string):
+    openpar = 0
+    closepar = 0
+    openbra = 0
+    closebra = 0
+    opensqu = 0
+    closesqu = 0
+    for i in range(len(string)):
+        if string[i] == "(":
+            openpar += 1
+        elif string[i] ==")":
+            closepar += 1
+        // if closepar > openpar:
+            // return False
+    if openpar != closepar:
+        return False
+        if string[i] == "(":
+            openbra += 1
+        elif string[i] ==")":
+            closebra += 1
+        // if closebra > openbra:
+        //     return False
+    if openbra != closebra:
+        return False
+        if string[i] == "(":
+            opensqu += 1
+        elif string[i] ==")":
+            closesqu += 1
+        // if closesqu > opensqu:
+        //     return False
+    if opensqu != closesqu:
+        return False
+    else:
+        return True
+
+const str1 = "({})[]"
+
+    function bracesValid(str) {
+        var opens = ['(','{','[']
+        var closes =[')','}',']']
+        var op_count= 0
+        var ed_count = 0
+        for (var i=0; i<str.length; i++){
+        if (ed_count > op_count){
+            return false
+        }
+        if(opens.includes(str[i]) ){
+            op_count++
+        }
+        if(closes.includes(str[i]) ){
+            ed_count++
+        }
+        }
+        if (op_count==ed_count){
+            return true
+        }
+
+        return false
+    }
+
+console.log("string 1:", bracesValid(str1))
+
+print(parensValid("([]){}"))
+
+
+def parensValid(string):
+    openpar = 0
+    closepar = 0
+    openbra = 0
+    closebra = 0
+    opensqu = 0
+    closesqu = 0
+    for i in range(len(string)):
+        if string[i] == "(":
+            openpar += 1
+        elif string[i] ==")":
+            closepar += 1
+        if openpar != closepar:
+            return False
+        if string[i] == "(":
+            openbra += 1
+        elif string[i] ==")":
+            closebra += 1
+        if openbra != closebra:
+            return False
+        if string[i] == "(":
+            opensqu += 1
+        elif string[i] ==")":
+            closesqu += 1
+        if opensqu != closesqu:
+            return False
+        else:
+            return True
+
+
+
+
 // (),[],{}
 // EX. "({})[]" => TRUE
 // TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS

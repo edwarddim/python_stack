@@ -42,3 +42,69 @@ function stringReverse(string){
     return new_word
     
 }
+
+
+// TUE
+function parensValid(string){
+    // interate through the string
+    // if number of left and right parenths != return false
+    // if right parenths comes before a left parenths return false
+    // else return true
+    count = 0;
+    for(var i = 0; i < string.length; i++){
+        if(string[i] == "("){
+            count++;
+        } else if(string[i] == ")"){
+            count--;
+        }
+        if(count < 0){
+            return false
+        }
+    }
+    if(count != 0){
+        return false;
+    }
+    return true;
+}
+// RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
+// EX. "()( () )" => TRUE
+// EX. "( ()()" => FALSE
+// EX. "()()()" => TRUE
+// EX. "())(()" => FALSE
+
+function bracesValid(string){
+    parensCount = 0;
+    squareCount = 0;
+    curlyCount = 0;
+    for(var i = 0; i < string.length; i++){
+        if(string[i] == "("){
+            parensCount++;
+        } else if(string[i] == "["){
+            squareCount++;
+        } else if(string[i] == "{"){
+            curlyCount++;
+        } else if(string[i] == ")"){
+            parensCount--;
+        } else if(string[i] == "]"){
+            squareCount--;
+        } else if(string[i] == "}"){
+            curlyCount--;
+        }
+        if(parensCount < 0 || squareCount < 0 || curlyCount < 0){
+            return false;
+        }
+    }
+    if(parensCount != 0 || squareCount != 0 || curlyCount != 0){
+        return false;
+    }
+    return true;
+}
+
+console.log(bracesValid("(),[],}{}"));// returns false
+// (),[],{}
+// EX. "({})[]" => TRUE
+// EX. " (}()[]"
+// TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS
+// WILL REQUIRE A STACK IMPLEMENTATION
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//

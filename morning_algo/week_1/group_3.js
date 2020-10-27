@@ -24,10 +24,12 @@ stringReverse("Hello")
 
 // TUE
 function parensValid(string){
-
+var i = 0
+for(var i = 0; i < string.length; i++){    
 }
 // RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
 // EX. "()(())" => TRUE
+
 // EX. "(()()" => FALSE
 // EX. "()()()" => TRUE
 // EX. "())(()" => FALSE
