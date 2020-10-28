@@ -48,14 +48,36 @@ function bracesValid(string){
 function isPalindrome(string){
 
 }
+
+def palindrome(stringy):
+    return stringy == stringy[::-1]
+print(palindrome("kayak"))
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
 // "HELLO" => FALSE
 // "KAYAK" => TRUE
 // "TACOCAT" => TRUE
+//
 
 function isAnagram(string1, string2){
 
 }
+
+def isAnagram(str1, str2):
+    str1_list = list(str1)
+    str1_list.sort()
+    str2_list = list(str2)
+    str2_list.sort()
+
+    return (str1_list == str2_list)
+print(isAnagram('ate', 'ted'))
+
+
+// HINT: YOU WANT TO USE A DICTIONARY
+
+
+// HINT: YOU WANT TO USE A DICTIONARY
+2
+
 // HINT: YOU WANT TO USE A DICTIONARY
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
 // EX. "ATE", "TEA" => TRUE

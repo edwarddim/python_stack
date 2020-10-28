@@ -12,6 +12,7 @@ function acronyms(string){
 // EX. "HELLO" => "OLLEH"
 // NOTE. DO NOT USE ANY BUILT IN METHODS
 function stringReverse(string){
+
     
 }
 // -----------------------------------------------------------------------------------------------//
@@ -163,8 +164,28 @@ def parensValid(string):
 
 // WED
 function isPalindrome(string){
-
+    var reversedStr = string.split("").reverse().join("");
+    if(string === reversedStr){
+        return true
+    }
+    return false 
 }
+console.log(isPalindrome("string"))
+
+function isPalindrome(string){
+    var newString = "";
+    for (var i = string.length-1; i >= 0; i--){
+        newString += string[i];
+    }
+    if (newString == string){
+        return "True"
+    }
+    else{
+        return "False"
+    }
+}
+console.log(isPalindrome("HELLO"))
+
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
 // "HELLO" => FALSE
 // "KAYAK" => TRUE

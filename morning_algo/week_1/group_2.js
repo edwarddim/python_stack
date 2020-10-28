@@ -98,8 +98,13 @@ function bracesValid(string){
 // -----------------------------------------------------------------------------------------------//
 
 // WED
-function isPalindrome(string){
-
+function isPalindrome(string){ 
+    for(var i = 0; i < string.length/2; i++){
+        if(string[i] != string[string.length-1-i]){
+            return false;
+        }
+    }
+    return true;
 }
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
 // "HELLO" => FALSE
@@ -107,8 +112,16 @@ function isPalindrome(string){
 // "TACOCAT" => TRUE
 
 function isAnagram(string1, string2){
+    for (var i = 0; i < string.length; i++){
+        words= {
+        
+        }
 
-}
+    }
+}r
+
+
+
 // HINT: YOU WANT TO USE A DICTIONARY
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
 // EX. "ATE", "TEA" => TRUE

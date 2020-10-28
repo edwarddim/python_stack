@@ -78,17 +78,57 @@ function bracesValid(string){
 
 // WED
 function isPalindrome(string){
-
+    for(var i = 0; i < string.length/2; i++){
+        if(string[i] != string[string.length -1 -i]){
+            return false
+        }
+    }
+    return true
+    // var newstring = ""
+    // for(var i= string.length-1; i >=0; i--){
+    //     newstring += string[i]
+    // }
+    // if(string == newstring){
+    //     return true
+    // }
+    // else{
+    //     return false
+    // }
 }
+
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
 // "HELLO" => FALSE
 // "KAYAK" => TRUE
-// "TACOCAT" => TRUE
+// "RACECAR" => TRUE
+
 
 function isAnagram(string1, string2){
-
+    if(string1.length != string2.length){
+        return false
+    }
+    var wordcheck = {}
+    for(var i =0; i < string1.lenght;i++){
+        if(string1[i] in wordcheck){
+            wordcheck[string[i]] += 1
+        }
+        else{
+            wordcheck[string1[i]] = 1
+        }
+    }
+    for(var i = 0; i < string2.length; i++){
+        if(string2[i] in wordcheck){
+            wordcheck[string2[i]] -= 1
+            if(wordcheck[string2[i]] < 0){
+                return false
+            }
+        }
+        else{
+            return false
+        }
+    }
+    return true
 }
-// HINT: YOU WANT TO USE A DICTIONARY
+// HINT: YOU WANT TO USE A DICTIONARY(OBJECT)
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
 // EX. "ATE", "TEA" => TRUE
 // EX. "LISTEN", "SILENT" => TRUE

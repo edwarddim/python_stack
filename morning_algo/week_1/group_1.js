@@ -64,8 +64,17 @@ function bracesValid(string){
 
 // WED
 function isPalindrome(string){
-
+    for(var i = 0; i < string.length/2;  i++){
+        if(string[i] !== string[string.lengthNo worries!
+        ] ){
+            return false
+        }
+    }
+    return true
 }
+console.log(isPalindrome("kayak"))
+console.log(isPalindrome("hello"))
+
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
 // "HELLO" => FALSE
 // "KAYAK" => TRUE

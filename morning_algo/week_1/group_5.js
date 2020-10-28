@@ -96,3 +96,64 @@ function bracesValid(string){
 // EX. " (}()[]" => FALSE
 // TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS
 // WILL REQUIRE A STACK IMPLEMENTATION
+
+
+// WED
+function isPalindrome(string){
+    for(var i = 0; i < string.length / 2; i++) {
+        if(string[i] != string[string.length - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(isPalindrome("tacocat"));
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
+// "HELLO" => FALSE
+// "KAYAK" => TRUE
+// "RACECAR" => TRUE
+
+
+
+function isAnagram(string1, string2){
+    if(sting1.length != string2.length){
+        return false
+    }
+    var firstWord = {};
+    var secondWord = {};
+    for(var i = 0; i < string1.length; i++){
+        if(firstWord[string1[i]] == undefined) {
+            firstWord[string1[i]] = 1;
+        } else {
+            firstWord[string1[i]]++;
+        }
+    }
+    for(var i = 0; i < string2.length; i++){
+        if(secondWord[string2[i]] == undefined) {
+            secondWord[string2[i]] = 1;
+        } else {
+            secondWord[string2[i]]++;
+        }
+    }
+
+    console.log(JSON.stringify(firstWord) === JSON.stringify(secondWord))
+    for (const key in firstWord) {
+        if (secondWord.hasOwnProperty(key) ) {
+            if (secondWord[key] !== firstWord[key]) {
+                return false
+            }
+        } else {
+            return false
+        }
+    }
+    return true;
+}
+// HINT: YOU WANT TO USE A DICTIONARY(OBJECT)
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+// EX. "ATE", "TEA" => TRUE
+// EX. "LISTEN", "SILENT" => TRUE
+// EX. "LISTEN", "SILENZ" => FALSE
+// EX. "DEER", "REDD" => FALSE
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
