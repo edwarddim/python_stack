@@ -139,7 +139,25 @@ function isAnagram(string1, string2){
 
 // THUR
 function bookIndex(array){
-
+    var returnArr = []
+    for(let i = 0; i < arr.length; i++){
+        // IF CONSECUTIVE NUMBERS ARE FOUND
+        if( (arr[i+1] - arr[i]) == 1 ){
+            var dash = ''
+            dash += arr[i]
+            while((arr[i+1] - arr[i]) == 1){
+                i++
+            }
+            // END OF CONSECUTIVE NUMBERS
+            dash = dash + "-" + arr[i]
+            returnArr.push(dash)
+        }
+        // NON-CONSECUTIVE NUMBERS
+        else{
+            returnArr.push(arr[i].toString())
+        }
+    }
+    console.log(returnArr)
 }
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
 // EX. [1,3,13,14,15,16,17,36,37,38,70] => ["1","3" , "13-17", "36-38", "70"]
