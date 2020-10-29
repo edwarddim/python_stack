@@ -133,13 +133,40 @@ function isAnagram(string1, string2){
 
 // THUR
 function bookIndex(array){
-
+    var low = array[0];
+    var high = null;
+    var newArr = [];
+    for(var i = 0; i<array.length; i++){
+        if(array[i] + 1 == array[i + 1]){
+            high = array[i+1]
+        }
+        else{
+            if(high == null){
+                newArr.push(low.toString())
+            }
+            else{
+                var temp = low.toString()+"-"+high.toString()
+                newArr.push(temp)
+            }
+            low = array[i + 1];
+            high = null;
+        }
+    }
+    return newArr;
 }
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
-// EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
+// EX. [1,13,14,15,16,17,20,36,37,38,70] => ["1", "13-17", "20", "36-38", "70"]
 
 function join(arr, seperator){
-
+    var output = "";
+    if(arr.length == 1)
+        return arr[i].toString
+    if(arr.length == 0)
+        return output
+    for(var i = 0; i < arr.length; i++){
+        output += arr[i].toString() + seperator
+    }
+    return output
 }
 // Given an arr and a separator string, output a string of every item in the array separated by the separator.
 // EX. [1,2,3] , ", " => "1, 2, 3"

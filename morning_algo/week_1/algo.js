@@ -142,7 +142,7 @@ function bookIndex(array){
 
 }
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
-// EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
+// EX. [1,3,13,14,15,16,17,36,37,38,70] => ["1","3" , "13-17", "36-38", "70"]
 
 function join(arr, seperator){
 

@@ -99,6 +99,7 @@ function bookIndex(array){
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
 // EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
 
+
 function join(arr, seperator){
 
 }
@@ -142,3 +143,57 @@ function minCoinChange(num){
 //     'nickel':0,
 //     'penny':3
 // }
+
+let arr = [1, 2,3,13,14,15,16,17,36,37,38,68,69,70];
+function bookIndex(array){
+    var result = [];
+    var begin = -1;  // stores the beginning page of a series
+    for(var i = 0; i < array.length - 1; i++){
+        if(begin < 0){ // new series
+            if(array[i] + 1 == array[i + 1]){
+                begin = array[i];
+            } else { // begin is storing a page number
+                result.push(array[i]);
+            }
+        } else { // begin has a stored page
+            if(array[i] + 1 != array[i + 1]){
+                result.push("" + begin + "-" + array[i]);
+                begin = -1;
+            }
+        }
+    }
+    if(begin < 0){
+        result.push(array[array.length-1]);
+    } else { // begin is storing a page number
+        result.push("" + begin + "-" + (array[array.length - 1]));
+    }
+    return result;
+}
+
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,3,13,14,15,16,17,36,37,38,70] => ["1","3" , "13-17", "36-38", "70"]
+
+function join(arr, seperator){
+    let result = "";
+    if (arr.length === 0) {
+        return ""
+    }
+    if (arr.length === 1) {
+        return "" + arr[0]
+    }
+    for (let i = 0; i < arr.length - 1; i++) {
+        result += "" + arr[i] + seperator
+    }
+    result += "" + arr[arr.length-1]
+    return result
+}
+let sampleArr = [1,2,3]
+let sep = "-"
+
+console.log(join(sampleArr, sep))
+
+// Given an arr and a separator string, output a string of every item in the array separated by the separator.
+// EX. [1,2,3] , ", " => "1, 2, 3"
+// EX. [1,2,3] , "-" => "1-2-3"
+// EX. [1] , "-" => "1"
+// EX. [], "," => ""
