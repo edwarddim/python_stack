@@ -182,8 +182,14 @@ function join(arr, seperator){
 
 // FRI
 function invertObj(obj){
-
+    newObj = {}
+    for (var key in obj) {
+        newObj[obj[key]] = key
+    }
+    return newObj
 }
+
+console.log(invertObj({A: "ONE", B: "TWO", C: "THREE"}))
 // GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
 // EX.
 // {
@@ -209,12 +215,60 @@ function minCoinChange(num){
 //     'penny':3
 // }
 
+function minCoinChange(num){
+    var newDict = {
+        'quarter':0,
+        'dimes':0,
+        'nickel':0,
+        'penny':0
+    }
+    while(num > 0 ){
+        if (num >= 25) {
+            newDict.quarter += Math.floor(num / 25);
+            num = num %25)
+            console.log(num)
+        } else if (num >= 10) {
+            newDict.dimes += Math.floor(num / 10);
+            num = num % 10
+            console.log(num)
+        } else if (num >= 5) {
+            newDict.nickel += Math.floor(num / 5);
+            num = num % 5
+            console.log(num)
+        } else {
+            newDict.penny += num
+            num = 0
+        }
+    }
+    return newDict
+}
+
+console.log(minCoinChange(102))
 
 
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
+// EX.
+// {
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
 
+function dictSwap(zebra){
+    for (var key in zebra){
+        var temp = key
+        = key
+        key = temp
+    }
+    return zebra
+}
 
-
-
-
-
+dictSwap({'A':"ONE",
+         'B':"TWO",
+        'C':"THREE"})
+console.log(zebra)
 

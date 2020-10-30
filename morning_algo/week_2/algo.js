@@ -8,7 +8,7 @@
     Python: dict.has_key(key)
 */
 function frequencyTable(arr){
-
+  
 }
 // EX. ['A','A','B','C','C','C','D','D'] => {"A":2, "B":1, "C":3, "D":2}
 // EX. ['A','C','C','C','D','D','A','B',] => {"A":2, "B":1, "C":3, "D":2}

@@ -178,6 +178,17 @@ function join(arr, seperator){
 
 
 // FRI
+function minCoinChange(amount){
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNIES"
+// EX. 79 => "3 QUARTERS, 4 PENNIES"
+// {
+//     "quarters" : 12,
+//     "dimes" : 2,
+//     "pennies" : 1
+// }
 function invertObj(obj){
 
 }
@@ -192,16 +203,4 @@ function invertObj(obj){
 //     "ONE":'A',
 //     "TWO":'B',
 //     "THREE":'C'
-// }
-function minCoinChange(num){
-
-}
-// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
-// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
-// EX. 79 => "3 quarteres, 4 pennies"
-// {
-//     'quarter':3,
-//     'dimes':0,
-//     'nickel':0,
-//     'penny':3
 // }
