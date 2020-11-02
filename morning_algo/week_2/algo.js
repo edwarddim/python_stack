@@ -13,14 +13,17 @@ function frequencyTable(arr){
 // EX. ['A','A','B','C','C','C','D','D'] => {"A":2, "B":1, "C":3, "D":2}
 // EX. ['A','C','C','C','D','D','A','B',] => {"A":2, "B":1, "C":3, "D":2}
 /* 
-  Reverse Word Order
+  
+
+
+Reverse Word Order
   Create a function that, given a string of words (with spaces), returns new string with words in reverse sequence.
 */
 function reverseWordOrder(string){
 
 }
 // EX. "THIS IS A TEST" => "TEST A IS THIS"
-
+// EX. "GOOD MORNING VIETNAM" => "VIETNAM MORNING GOOD"
 
 
 //-----------------------------------------------------------------------------------------------------//
