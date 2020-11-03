@@ -34,10 +34,63 @@ function reverseWordOrder(string){
     for(var i = arr.length -1; i >= 1; i--) {
         result += arr[i] + " ";
     }
-    result += arr[0]
+   result += arr[0]
     return result;
 }
 
 console.log(reverseWordOrder("THIS IS A TEST"));
 // EX. "THIS IS A TEST" => "TEST A IS THIS"
 // EX. "GOOD MORNING VIETNAM" => "VIETNAM MORNING GOOD"
+
+//-----------------------------------------------------------------------------------------------------//
+// TUE
+/* 
+String: Dedupe
+Remove duplicate characters 
+    - (case-sensitive)
+Bonus: Keep only the last instance of each character.
+*/
+function dedupeString(string){
+    for (let i = 0; i < string.length; i++) {
+        if (string.substring(0, i).includes(string[i])) {
+            string = string.substr(i, 1)
+        } 
+    }
+    return string
+}
+    
+    // var temp = []
+    // for (let i = 0; i < string.length; i++) {
+    //     if(temp.indexOf(string[i]) < 0){
+    //         temp.push(string[i])
+    //     }
+    //     
+    // }
+    // return temp.join('')
+// }
+
+// EX. "aabacecbedd" => "abced"
+// EX. "bbbbaaaaffff" => "baf"
+/* 
+Given a string containing space separated words
+Reverse each word in the string.
+If you need to, use .split to start, then try to do it without.
+*/
+function reverseWord(string){
+    var arr = string.split(" ")
+    for (var i = 0; i < arr.length; i++){
+        var temp = "";
+        for (var j = arr[i].length-1; j >= 0; j--){
+            temp += arr[i][j]; 
+        }
+        arr[i] = temp;
+    }
+    return arr.join(" ");
+}
+
+// EX. "HELLO" => "OLLEH"
+// EX. "hello world" => "olleh dlrow"
+// EX. "abc def ghi" => "cba fed ihg"
+// EX. "THIS IS A TEST" => "SIHT SI A TSET"
+
+if(substr)

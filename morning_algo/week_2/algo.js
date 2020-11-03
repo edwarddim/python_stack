@@ -37,7 +37,7 @@ function reverseWordOrder(string){
 function dedupeString(string){
 
 }
-// EX. "aabacecbedd" => "abced" 
+// EX. "aabacecbedd" => "abced"
 // EX. "bbbbaaaaffff" => "baf"
 /* 
   Given a string containing space separated words
