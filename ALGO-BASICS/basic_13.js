@@ -12,14 +12,17 @@ function num1(){
 // You may use a modulus operator for this exercise.
 function num2(){
     var sum = 0
-    for(var i =0; i < 1000; i+=2){
+    for(var i = 0; i < 1000; i+=2){
         sum += i
     }
+    return sum
 }
 
 // 3.
 // Sum odd 5000 - Write a function that returns the sum of all the odd numbers from 1 to 5000. 
 // (e.g. 1+3+5+...+4997+4999).
+
+
 
 // 4.
 // Iterate an array - Write a function that returns the sum of all the values within an array.

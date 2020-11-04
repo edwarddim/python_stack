@@ -39,18 +39,66 @@
 // return the odd intigers added between 1 and 5000 
 // console.log(the sum)
 
-fuction oddSum(arr){
-    var num = 0 
-
-    for(var i = 1); i < 5000
-}
-
-
-
+// function sumAllto5000(){
+//     var num = 0 
+//     for(var i = 0; i < 5000; i+=2){
+//         num += i; 
+//     }
+//     return num 
+// }
+// console.log(sumAllto5000())
 
 // 4.
 // Iterate an array - Write a function that returns the sum of all the values within an array.
 // (e.g. [1,2,5] returns 8. [-5,2,5,12] returns 14).
+
+
+ //A function- Iterate through an array
+// variable and a empty string to put the array in
+// add or sum the array
+// return the array
+// call the array
+
+// or whoever is zox30
+function sumArray(array){
+    var sum = 0
+    for(var i = 0; i < array.length; i++){
+       sum = sum + array[i]
+    
+    }
+    return sum
+}
+console.log(sumArray([1,2,5]))
+
+
+function sumArray(arr) {
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+      sum = sum + arr[i];
+    }
+    return sum
+  }
+  console.log(sumArray([1,2,5]))
+
+
+// function sumArray(arr) {
+//     var sum = 0;
+//     for (var i = 0; i < arr.length; i++) {
+//       sum = sum + arr[i];
+//     }
+//     return sum
+//   }
+//   console.log[1,2,5]
+
+//   function sumArray(array){
+//     var sum = 0
+//     for(var i = 0; i < array.length; i++){
+//         // logic is going to be same as the previous problem
+//        sum = sum + array[] //we're adding the numbers
+//         console.log(array)
+//     }
+// }
+
 
 // 5.
 // Find max - Given an array with multiple values, write a function that returns the maximum number in the array.

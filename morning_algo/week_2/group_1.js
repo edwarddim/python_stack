@@ -93,4 +93,72 @@ function reverseWord(string){
 // EX. "abc def ghi" => "cba fed ihg"
 // EX. "THIS IS A TEST" => "SIHT SI A TSET"
 
-if(substr)
+
+//-----------------------------------------------------------------------------------------------------//
+// WED
+/* 
+String Encode
+You are given a string that may contain sequences of consecutive characters.
+Create a function to shorten a string by including the character,
+then the number of times it appears. 
+
+
+If final result is not shorter (such as "bb" => "b2" ),
+return the original string.
+*/
+function encode(string){
+    var newString = {}
+    var finalResult = ""
+        for (var i = 0; i <string.length; i++){
+          if (newString.hasOwnProperty(string[i])){
+             newString[string[i]]++
+          } 
+          else {newString[string[i]] = 1}
+        }
+        for (key in newString){
+            finalResult += key + newString[key]
+        }
+        if (finalResult.length >= string.length){
+            return string
+        } else {
+            return finalResult
+        }
+    }
+    console.log(encode("aaaabbcddd"))
+// EX. "aaaabbcddd" => "a4b2c1d3"
+// EX. "" => ""
+// EX. "bbcc" => "bbcc"
+
+function decode(string){
+    var result = ""
+    // if (isNaN(parseInt(string))) == true;{
+    for (var i = 0; i < string.length; i++){
+        if ( i % 2 == 0){
+          result += string[i-1] * parseInt(string[i])
+        }
+    }
+    return result 
+}
+
+function decode2(string) {
+    var result = ''
+    if (string.length > 2 && isNaN(parseInt(string[1]))) {
+        return string
+    }
+    for (var i = 0; i < string.length; i++) {
+      if (!isNaN(parseInt(string[i+1]))) {
+        for (var j = 0; j < parseInt(string[i+1]); j++) {
+          result += string[i]
+        }
+      }
+    }
+    return result
+  }
+
+
+// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
+// EX. "a3b2c1d3" => "aaabbcddd"
+
+// if (isNaN(parseInt(string))) {
+
+// }

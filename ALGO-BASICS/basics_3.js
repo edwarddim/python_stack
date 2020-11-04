@@ -13,34 +13,83 @@ console.log(allNum())
 // Get even 1000 - Write a function that would get the sum of all the even numbers from 1 to 1000.
 // You may use a modulus operator for this exercise.
 function sumof1000(){
-    var sum = []
+    var sum = 0;
     for(var i = 1; i < 1001; i++){
-        if (i % 2 == 0)
-            sum=sum+1
+        if (i % 2 === 0)
+            sum += i;
         
     }
+    return sum 
 }
 console.log(sumof1000())
 
 // 3.
 // Sum odd 5000 - Write a function that returns the sum of all the odd numbers from 1 to 5000.
 // (e.g. 1+3+5+...+4997+4999).
+function oddsum5000(){
+    var sum = 0
+    for(var i = 1; i < 5001; i++ ){
+        if (i % 2 === 1)
+            sum +=i
+    }
+    return sum
+
+}
+console.log(oddsum5000())
 
 // 4.
 // Iterate an array - Write a function that returns the sum of all the values within an array.
 // (e.g. [1,2,5] returns 8. [-5,2,5,12] returns 14).
+function sumarray(arr){
+    sum = 0
+    for(var i = 0; i < arr.length; i++){
+        sum = sum + arr[i];
+    }
+    return sum
+        
+}
+// [1, 2, 3 ,4 ,5 ,6 ,7 ,8]
+console.log(sumarray([1, 2, 3 ,4 ,5 ,6 ,7 ,8]))
 
 // 5.
 // Find max - Given an array with multiple values, write a function that returns the maximum number in the array.
 // (e.g. for [-3,3,5,7] max is 7)
+function findMax(arr){
+    max = 0;
+    for(var i = 0; i < arr.length; i++){
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    
+    return max 
+}
+console.log(findMax([34, 25, 96, 100 ,223, 20]))
+
 
 // 6.
 // Find average - Given an array with multiple values, write a function that returns the average of the values in the array.
 // (e.g. for [1,3,5,7,20] average is 7.2)
+function findAvg(arr){
+    sum = 0
+    for(i = 0; i < arr.length; i++){
+        sum = sum + arr[i];
+        var average = sum / arr.length; 
+    }
+    return average
+}
+console.log(findAvg[26, 49, 34, 67, 23, 2131313]))
+
 
 // 7.
 // Array odd - Write a function that would return an array of all the odd numbers between 1 to 50. (ex. [1,3,5, .... , 47,49]).
 // Hint: Use 'push' method.
+function odd(arr){
+    
+}
+
+
+
 
 // 8.
 // Greater than Y - Given value of Y, write a function that takes an array and returns the number of values that are greater than Y.

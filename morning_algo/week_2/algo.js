@@ -66,8 +66,11 @@ function reverseWord(string){
   return the original string.
 */
 function encode(string){
-
+  
 }
+
+
+
 // EX. "aaaabbcddd" => "a4b2c1d3"
 // EX. "" => ""
 // EX. "bbcc" => "bbcc"
