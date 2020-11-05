@@ -72,33 +72,54 @@ console.log(findMax([34, 25, 96, 100 ,223, 20]))
 // (e.g. for [1,3,5,7,20] average is 7.2)
 function findAvg(arr){
     sum = 0
-    for(i = 0; i < arr.length; i++){
+    for( var i = 0; i < arr.length; i++){
         sum = sum + arr[i];
         var average = sum / arr.length; 
     }
     return average
 }
-console.log(findAvg[26, 49, 34, 67, 23, 2131313]))
+console.log(findAvg[26, 49, 34, 67, 23, 2131313])
 
 
 // 7.
 // Array odd - Write a function that would return an array of all the odd numbers between 1 to 50. (ex. [1,3,5, .... , 47,49]).
 // Hint: Use 'push' method.
-function odd(arr){
-    
+function odd(){
+    newArray = []
+    for(var i = 1; i < 51; i+=2){
+        newArray.push(i);
+    }
+    return newArray;
 }
 
-
+console.log(odd())
 
 
 // 8.
 // Greater than Y - Given value of Y, write a function that takes an array and returns the number of values that are greater than Y.
 // For example if arr = [1, 3, 5, 7] and Y = 3, your function will return 2.
 // (There are two values in the array greater than 3, which are 5, 7).
+function greaterThanY(arr, y){
+    var num = 0
+    for(var i = 0; i < arr.length; i++){
+        if (arr[i] > y){
+            num += 1 
+        }
+        return num;
+    }
+}
+
+console.log(greaterThanY([56, 23, 1, 4, 3, 2, 45]))
+
 
 // 9.
 // Squares - Given an array with multiple values, write a function that replaces each value in the array with the value squared by itself.
 // (e.g. [1,5,10,-2] will become [1,25,100,4])
+function squareValues(arr){
+for(var i = 0; i < arr.length; i++){
+    if 
+}
+}
 
 // 10.
 // Negatives - Given an array with multiple values, write a function that replaces any negative numbers within the array with the value of 0.

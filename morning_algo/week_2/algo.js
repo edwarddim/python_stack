@@ -94,6 +94,38 @@ function rotateString(string, n){
 }
 // EX. "HELLO WORLD", 1 => "DHELLO WORL"
 // EX. "HELLO WORLD", 2 => "LDHELLO WOR"
+// EX. "HELLO WORLD", 11 => "HELLO WORLD"
+
+/*
+  Given a Roman Numeral return the integer value of the Roman Numeral
+  EX. "III" => 3
+  EX. "IV" => 4
+  EX. "MMIV" => 2004
+  HINT: YOU NEED AN OBJECT THAT TRANSLATES ROMAN NUMERALS TO NUMBERS
+*/
+function romanToInt(string){
+  var romanDict = {
+    'I':1,
+    'V':5,
+    'X':10,
+    'L':50,
+    'C':100,
+    'D':500,
+    'M':1000
+  }
+  var total = 0
+  for(let i = 0; i < string.length; i++){
+      var current = romanDict[string.charAt(i)]
+      var next = romanDict[string.charAt(i+1)]
+      if(current < next && i < string.length-1){
+          total -= current
+      }
+      else{
+          total += current
+      }
+  }
+  console.log("THE ROMAN NUMERAL ", string, " = ", total)
+}
 
 //-----------------------------------------------------------------------------------------------------//
 // FRI
@@ -133,5 +165,5 @@ const currInv = [
     // EX. "moonmen" => "e"
 */
 function firstNonRepeatingChar(string){
-
+  
 }

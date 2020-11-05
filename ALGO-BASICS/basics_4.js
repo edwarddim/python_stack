@@ -60,25 +60,25 @@
 // call the array
 
 // or whoever is zox30
-function sumArray(array){
-    var sum = 0
-    for(var i = 0; i < array.length; i++){
-       sum = sum + array[i]
+// function sumArray(array){
+//     var sum = 0
+//     for(var i = 0; i < array.length; i++){
+//        sum = sum + array[i]
     
-    }
-    return sum
-}
-console.log(sumArray([1,2,5]))
+//     }
+//     return sum
+// }
+// console.log(sumArray([1,2,5]))
 
 
-function sumArray(arr) {
-    var sum = 0;
-    for (var i = 0; i < arr.length; i++) {
-      sum = sum + arr[i];
-    }
-    return sum
-  }
-  console.log(sumArray([1,2,5]))
+// function sumArray(arr) {
+//     var sum = 0;
+//     for (var i = 0; i < arr.length; i++) {
+//       sum = sum + arr[i];
+//     }
+//     return sum
+//   }
+//   console.log(sumArray([1,2,5]))
 
 
 // function sumArray(arr) {
@@ -103,11 +103,26 @@ function sumArray(arr) {
 // 5.
 // Find max - Given an array with multiple values, write a function that returns the maximum number in the array.
 // (e.g. for [-3,3,5,7] max is 7)
+// write a funciton and iterate through and array.
+// retuns the largest value 
+
+
+// function findMax(arr){
+//   max = arr[0]
+//   for(var i = 0; i < arr.length; i++){
+//     if (arr[i]>max){
+//       max = arr[i]
+//     }
+//   }
+//   return max
+// }
+// console.log(findMax([-3,-3,-5,-7]))
+
 
 // 6.
 // Find average - Given an array with multiple values, write a function that returns the average of the values in the array.
 // (e.g. for [1,3,5,7,20] average is 7.2)
-
+write a function 
 // 7.
 // Array odd - Write a function that would return an array of all the odd numbers between 1 to 50. (ex. [1,3,5, .... , 47,49]).
 // Hint: Use 'push' method.

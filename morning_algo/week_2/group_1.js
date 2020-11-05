@@ -162,3 +162,83 @@ function decode2(string) {
 // if (isNaN(parseInt(string))) {
 
 // }
+
+//-----------------------------------------------------------------------------------------------------//
+// THUR
+/* 
+String: Rotate String
+Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the 
+right by that given integer amount.
+*/
+
+function rotateString(string, n){
+    strArr = string.split('')
+    for(var i = 1; i <= n; i++){
+        strArr.unshift(strArr.pop());  
+    }
+    return strArr.join('')
+}
+
+// EX. "HELLO WORLD", 1 => "DHELLO WORL"
+// EX. "HELLO WORLD", 2 => "LDHELLO WOR"
+// EX. "HELLO WORLD", 11 => "HELLO WORLD"
+
+/*
+Given a Roman Numeral return the integer value of the Roman Numeral
+EX. "III" => 3
+EX. "IV" => 4
+EX. "MMIV" => 2004
+HINT: YOU NEED AN OBJECT THAT TRANSLATES ROMAN NUMERALS TO NUMBERS
+*/
+function romanToInt(string){
+    var romanDict = {
+        'I':1,
+        'V':5,
+        'X':10,
+        'L':50,
+        'C':100,
+        'D':500,
+        'M':1000
+    }
+    var sum = romanDict[string[string.length-1]];
+    for(var i = string.length-1; i > 0; i--){
+        if(romanDict[string[i]] > romanDict[string[i-1]]){
+            sum -= romanDict[string[i-1]];
+        }
+        else{
+            sum += romanDict[string[i-1]];
+        }
+    }
+    return sum;
+}
+
+function romanToInt(string){
+    var romanDict = {
+        'I':1,
+        'V':5,
+        'X':10,
+        'L':50,
+        'C':100,
+        'D':500,
+        'M':1000
+    }
+var outcome = 0 
+var input = string.split('')
+
+for (var i = 0; i < string.length; i ++){
+    var current = romanDict[input[i]];
+    var next =  romanDict[input[i+1]];
+    if (current === undefined){
+        return null
+    }
+    else {
+        if(current < next){
+            outcome = outcome + (current + next)
+        }
+        else {
+            outcome += current
+        }
+    }
+}
+return outcome
+}
