@@ -151,7 +151,31 @@ valNum([4, 8, 9, 5])
 // 12.
 // Swap Values - Write a function that will swap the first and last values of any given array.
 // The default minimum length of the array is 2. (e.g. [1,5,10,-2] will become [-2,5,10,1]).
-
+//1. create function
+//2. set variable for last item in list (save field here)
+//3. set variable for first item in list (save field here)
+//4. replace field 0 with what is in lastNum variable
+//5. replace last field with firstNum variable
+// pseudo code is close but right now you're only swapping the first and last element
+function swapNum(arr){
+    // WELL THAT CHANGED THINGS! is the pseudocode correct? ED?
+    var temp = arr[0]
+    arr[0] = arr[arr.length - 1]
+    arr[arr.length - 1] = temp
+    return arr
+}
+console.log (swapNum([4, 8, 6, 2]))
 // 13.
 // Number to String - Write a function that takes an array of numbers and replaces any negative values within the array with the string 'Dojo'.
 // For example if array = [-1,-3,2], your function will return ['Dojo','Dojo',2].
+function repNum(arr){
+    var zero = 0
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] < zero){
+            arr[i] = 'Dojo';
+            
+        }
+    }
+    return arr
+}
+console.log(repNum([-1,-3,2]))

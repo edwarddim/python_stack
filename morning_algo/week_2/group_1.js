@@ -242,3 +242,52 @@ for (var i = 0; i < string.length; i ++){
 }
 return outcome
 }
+
+
+// FRI
+
+/*
+    Given a string, return the first non-repeating character
+    within string
+    // EX. "stress" => "t"
+    // EX. "moonmen" => "e"
+*/
+
+function firstNonRepeatingChar(string){
+    for (var i = 0; i < string.length; i++) {
+        if (!string.slice(0, i).includes(string[i]) && !string.slice(i+1).includes(string[i])) {
+            return string[i]
+        }
+    }
+}
+
+/* 
+  String: ionIs Rotat (Is Rotation)
+  Create the function isRotation(str1,str2) that
+  returns whether the second string is a rotation of the first.
+  HINT: YOU CAN USE .INCLUDES()
+  "ABC", "CAB" => true
+  "ABCD", "BACD" => false
+  "ABCD", "ABCD" => false
+*/
+function isRotation(string1, string2){
+    // make a function that shifts string1 to the right by one 
+        if (string1 == string2){
+            return false
+        }
+        for (var i = 0; i < string1.length-1; i++){
+            var last = string1[string1.length-1];
+            var short =string1.slice(0, string1.length-1);
+            string1 = last.concat(short)
+            console.log(string1)
+            if ( string1 == string2){
+                return true
+            }
+            
+            
+        }
+            return false
+    }
+
+
+

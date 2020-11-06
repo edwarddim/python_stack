@@ -1,6 +1,6 @@
 // 1.
-// Get 1 to 255 - Write a function that returns an array with all the numbers from 1 to 255.
 
+// Get 1 to 255 - Write a function that returns an array with all tok[asrgj]
 
 // 2.
 // Get even 1000 - Write a function that would get the sum of all the even numbers from 1 to 1000.
@@ -118,21 +118,36 @@ SumPositive([2, 4, 11, -6, 0, -6, 88])
 // Example: count_positives([1,6,-4,-2,-7,-2]) changes the list to [1,6,-4,-2,-7,2] and returns it
 
 // Sum Total - Create a function that takes a list and returns the sum of all the values in the list.
-function SumTotal(arr){
+function SumTotal(x){
     var sum = 0
-    for(var i=0; i < arr.length; i++){
+    for(var i=0; i < x.length; i++){
+        sum += x[i];
         
-
     }
+return sum
 
 }
-
+SumTotal([2, 3, 4, 9, -4])
+// add the numbers in the list 
+//          arr[2,3,5,9,-4] value
+//index or i    0,1,2,3,4
 
 
 // Example: sum_total([1,2,3,4]) should return 10
 // Example: sum_total([6,3,-2]) should return 7
 
 // Average - Create a function that takes a list and returns the average of all the values.x
+function Average(arr){
+    var sum = 0
+    for( var i = 0; i < arr.length; i++ ){
+        sum  += arr[i];
+
+    }
+return sum/arr.length
+}
+Average([1, 2, 3, 4])
+
+
 // Example: average([1,2,3,4]) should return 2.5
 
 // Length - Create a function that takes a list and returns the length of the list.
