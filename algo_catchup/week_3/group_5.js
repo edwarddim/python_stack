@@ -44,8 +44,52 @@ stringReverse("goodbye")
   // -----------------------------------------------------------------------------------------------//
   // TUE
 function parensValid(string){
-
+      var op_count= 0
+      var ed_count = 0
+      for(var i = 0; i < string.length; i++){
+        
+        if(string[i] == '(' ){
+          op_count++
+        }
+        if(string[i] == ')' ){
+          ed_count++
+        }
+        // THIS ENDS THE FUNCTION EARLY, EVALUATE AFTER LOOP IS DONE
+        if (op_count==ed_count){
+          return true
+        }
+        }
+      }
 }
+parensValid("()( () )")
+  // EX. "()( () )" => TRUE
+  // EX. "( ()()" => FALSE
+  // EX. "()()()" => TRUE
+  // EX. "())(()" => FALSE
+str= "( ()()"
+
+
+function parensValid(str) {
+    var op_count= 0
+    var ed_count = 0
+    for (var i=0; i<str.length; i++){
+    if (ed_count > op_count){
+        return false
+    }
+    if(str[i] == '(' ){
+        op_count++
+    }
+    if(str[i] == ')' ){
+        ed_count++
+    }
+    }
+    if (op_count==ed_count){
+    return true
+    }
+    return false
+}
+console.log(parensValid(str))
+
   // ")))((("
   // RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
   // EX. "()( () )" => TRUE

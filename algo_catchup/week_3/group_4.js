@@ -26,25 +26,61 @@
 // return a the strin
 
 
-  function stringReverse(string){
-      var = "reg"
-      for (var i = str.length - 1; i >= 0; i--){
+  // function stringReverse(string){
+  //     var = "reg"
+  //     for (var i = str.length - 1; i >= 0; i--){
 
 
           
   
-  }
-  stringReverse("hello")
-  stringReverse("goodbye")
+  // }
+  // stringReverse("hello")
+  // stringReverse("goodbye")
   
   
   // -----------------------------------------------------------------------------------------------//
   // -----------------------------------------------------------------------------------------------//
   
+//iterate
+// for loop
+//do something
+// look for (, {, [ ]})"("
+// we're only dealing with parens for this one, ()
+//return/call
+//print
+
+
   // TUE
   function parensValid(string){
+    // set up tracker for parentheses counting
+    var tracker = 0
+    // you are iterating through string
+    for(var i = i < string.length; i++){
+        // WE ARE GOING TO CHECK TO SEE IF IT EACH CHARACTER IS A 
+        // OPENING OR CLOSING PARENS
+        if (string[i] === '(') {
+            tracker += 1
+        }
+        if (string[i] == ')'){
+          tracker -= 1
+
+        
+        if tracker < 0 
+        return false
+        }
+    }
+    // DEPENDING ON HOW MANY OPENING AND CLOSING PARENS THERE ARE WE RETURN TRUE OR FALSE
+
+}
+
+
+
+
+
+
   
   }
+
   // ")))((("
   // RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
   // EX. "()( () )" => TRUE

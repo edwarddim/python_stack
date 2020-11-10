@@ -24,3 +24,34 @@ stringReverse("goodbye")
 
   // -----------------------------------------------------------------------------------------------//
   // -----------------------------------------------------------------------------------------------//
+
+  // TUE
+function parensValid(string){
+  var opening_p = 0
+  for(var i = 0; i < string.length; i++){
+    if(opening_p < 0){
+      return false
+    }
+
+    if(string[i] = "(" ){
+      opening_p += 1
+    }
+    if(string[i] = ")"){
+      opening_p -=1
+    }
+}
+
+}
+ // WE ARE GOING TO ITERATE THROUGH THE STRING
+  // WE ARE GOING TO CHECK TO SEE IF IT EACH CHARACTER IS A 
+  // OPENING OR CLOSING PARENS
+  // WE HAVE TO KEEP TRACK OF HOW MANY OPENING AND CLOSING PARENS APPEAR IN STRING
+  // HINT: YOU CAN JUST USE ONE VARIABLE INCREMENT/DECREMENT
+  // DEPENDING ON HOW MANY OPENING AND CLOSING PARENS THERE ARE WE RETURN TRUE OR FALSE
+  
+// RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
+// EX. "()( () )" => TRUE
+// EX. "( ()()" => FALSE
+// EX. "()()()" => TRUE
+// EX. "())(()" => FALSE
+// EX. ")(" => FALSE
