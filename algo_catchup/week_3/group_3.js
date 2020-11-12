@@ -69,11 +69,38 @@ function parensValid(string){
   // EX. FALSE
   // EX. FALSE
 
-function isPalindrome(string){
+// function isPalindrome(string){
+    
+//     function isPalindrome(string){
+    
+//         for(var i = 0; i <string.length/2; i++){
+//             if (string[i]!= string[string.length-1-i]){
+//                 return false
+//             }
+//         }
+//         return true
+//     }
+//     console.log(isPalindrome("Hello"))
+//     console.log(isPalindrome("Kayak"))
+//     console.log(isPalindrome("Racecar"))
+//     console.log(isPalindrome("Bye"))
 
+function isPalindrome(string){
+    
+    for(var i = 0; i <= string.length/2; i++){
+        if (string[i] != string[string.length-1-i]){
+            return false;
+        }
+    }
+    return true;
 }
+console.log(isPalindrome("hello"))
+console.log(isPalindrome("kayak"))
+console.log(isPalindrome("racecar"))
+console.log(isPalindrome("bye"))
 
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
 // "HELLO" => FALSE
 // "KAYAK" => TRUE
 // "RACECAR" => TRUE
+

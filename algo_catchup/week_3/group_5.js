@@ -134,47 +134,41 @@ console.log(parensValid(str))
       Python: dict.has_key(key)
   */
   function frequencyTable(arr){
-    
-  }
-  // EX. ['A','A','B','C','C','C','D','D'] => {"A":2, "B":1, "C":3, "D":2}
-  // EX. ['A','C','C','C','D','D','A','B',] => {"A":2, "B":1, "C":3, "D":2}
-  /* 
-    
-  
-  
-  Reverse Word Order
-    Create a function that, given a string of words (with spaces), returns new string with words in reverse sequence.
-  */
-  function reverseWordOrder(string){
-  
-  }
-  // EX. "THIS IS A TEST" => "TEST A IS THIS"
-  // EX. "GOOD MORNING VIETNAM" => "VIETNAM MORNING GOOD"
-  
-  // -----------------------------------------------------------------------------------------------//
-  // -----------------------------------------------------------------------------------------------//
-  
-  // FRI
-  // GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
-  // EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNIES"
-  // EX. 79 => "3 QUARTERS, 4 PENNIES"
-  // {
-  //     "quarters" : 12,
-  //     "dimes" : 2,
-  //     "pennies" : 1
-  // }
-function minCoinChange(amount){
+      // CREATE AN EMPTY OBJECT
+      var table = {}
+      for(var i = 0; i < arr.length; i++){
+        // OBJECTS HAVE KEY VALUE PAIRS
+        // table.hasOwnProperty() will return true depending
+        // the character exists as a key in the table
+        if(table.hasOwnProperty(arr[i])){
+          
+        }
+        else{
 
-}
-
-/* 
-    String: Dedupe
-    Remove duplicate characters 
-    - (case-sensitive)
-    Bonus: Keep only the last instance of each character.
-  */
-function dedupeString(string){
+        }
 
     }
-  // EX. "aabacecbedd" => "abced"
-  // EX. "bbbbaaaaffff" => "baf"
+    frequencyTable(['A','A','B','C','C','C','D','D'])
+  // ITERATING THROUGH THE ARRAY
+  // WE ARE GOING TO CHECK TO SEE IF THE CHARACTER EXISTS AS A KEY IN AN OBJECT
+  // IF THE KEY ALREADY EXISTS THEN INCREMENT THE COUNT
+  // IF THE KEY DOESN'T EXIST THEN CREATE A KEY VALUE PAIR
+//   str = "madam" 
+// // Create empty object 
+// let letterCount = {} 
+// // Loop through every letter in the string
+// for(let i = 0; i < str.length; i++){
+//   // If the letter is a key inside the object
+//   if (letterCount[str[i]]){
+//     // Add 1 to the counter
+//     letterCount[str[i]] += 1
+//   } else {
+//     // Otherwise, create a new counter for that new letter
+//     letterCount[str[i]] = 1
+//   }
+// }
+
+// // Print in the console
+// console.log(letterCount)
+  // EX. ['A','A','B','C','C','C','D','D'] => {"A":2, "B":1, "C":3, "D":2}
+  // EX. ['A','C','C','C','D','D','A','B',] => {"A":2, "B":1, "C":3, "D":2}

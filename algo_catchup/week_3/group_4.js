@@ -51,27 +51,27 @@
 
 
   // TUE
-  function parensValid(string){
-    // set up tracker for parentheses counting
-    var tracker = 0
-    // you are iterating through string
-    for(var i = i < string.length; i++){
-        // WE ARE GOING TO CHECK TO SEE IF IT EACH CHARACTER IS A 
-        // OPENING OR CLOSING PARENS
-        if (string[i] === '(') {
-            tracker += 1
-        }
-        if (string[i] == ')'){
-          tracker -= 1
+//   function parensValid(string){
+//     // set up tracker for parentheses counting
+//     var tracker = 0
+//     // you are iterating through string
+//     for(var i = i < string.length; i++){
+//         // WE ARE GOING TO CHECK TO SEE IF IT EACH CHARACTER IS A 
+//         // OPENING OR CLOSING PARENS
+//         if (string[i] === '(') {
+//             tracker += 1
+//         }
+//         if (string[i] == ')'){
+//           tracker -= 1
 
         
-        if tracker < 0 
-        return false
-        }
-    }
-    // DEPENDING ON HOW MANY OPENING AND CLOSING PARENS THERE ARE WE RETURN TRUE OR FALSE
+//         if tracker < 0 
+//         return false
+//         }
+//     }
+//     // DEPENDING ON HOW MANY OPENING AND CLOSING PARENS THERE ARE WE RETURN TRUE OR FALSE
 
-}
+// }
 
 
 
@@ -94,14 +94,49 @@
   
   // WED
   function isPalindrome(string){
-  
+    for(var i =0; i <string.len/2; i++ ){
+      if (str[i] !== str[len - 1 - i]) {       
+        return false;
+    }
   }
+  console.log("")
+
+
+  function isPalindrome(string){ 
+    for(var i = 0; i < string.length/2; i++){
+        if(string[i] != string[string.length-1-i]){
+            return false;
+        }
+    }
+    return true;
+    
+  //   function isPalindrome(string){
+  //     for(var i = 0; i < string.length/2; i++){
+  //         if(string[i] != string[string.length -1 -i]){
+  //             return false
+  //         }
+  //     }
+  //     return true
+  // }
   
+  // [ and ] are the start and end of a character set.
+  // \W means "non-word", as opposed to \w which will match a word.
+  // _ is the "_" character.
+  // / mark the beginning and end of a regular expression.
+  // g means it's a global search.
+  // So in the string $1.00, it would come out as 100 
+
   // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
   // "HELLO" => FALSE
   // "KAYAK" => TRUE
   // "RACECAR" => TRUE
-  
+//   Given an array of strings
+//   return a sum to represent how many times each array item is found (a frequency table)
+//   Useful methods:
+//     Object.hasOwnProperty("keyName")
+//       - returns true or false if the object has the key or not
+//     Python: dict.has_key(key)
+// 
   
   function isAnagram(string1, string2){
       

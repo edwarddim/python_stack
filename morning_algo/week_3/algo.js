@@ -59,16 +59,22 @@ function binarySearch(arr,target){
   Because array elements are already in order, all duplicate values will be grouped together.
   Ok to use a new array
   Bonus: do it in O(n) time (no nested loops, new array ok)
+  arr.splice(index, num)
 */
 function dedupeArr(arr){
-
+    for(var i = arr.length -1; i > 0; i--) {
+      if(arr[i] == arr[i-1]){
+        arr.splice(i, 1);
+      }
+    }
+    return arr;
 }
+// console.log(dedupeArr([1,1,1,2,2,2,3,3,4,4,4,4]))
 // EX. [1,1,1,2,2,2,3,3,4,4,4] => [1,2,3,4]
 // DO ALGO WITH ONE FOR LOOP AND NO OBJECT TO KEEP TRACK OF FREQUENCY
 
 /* 
   Array: Mode
-  
   Create a function that, given an array of ints,
   returns the int that occurs most frequently in the array.
   What if there are multiple items that occur the same number of time?
@@ -76,9 +82,37 @@ function dedupeArr(arr){
     - what if all items occur the same number of times?
       - return empty array
 */
+// EX. [1,1,2,2,2,3,3,3] => [2,3]
+// EX. [1,1,1,2,2,2,3,3,3] => []
 function mode(arr){
-
+  result = [];
+  freqObj = {};
+  var maxFreq = 0;
+  for(var i = 0; i < arr.length; i++) {
+    if(freqObj.hasOwnProperty(arr[i])) {
+      freqObj[arr[i]] += 1;
+    } else {
+      freqObj[arr[i]] = 1;
+    }
+    if(freqObj[arr[i]] > maxFreq){
+      maxFreq = freqObj[arr[i]];
+    }
+  }
+  var allSameFreq = true
+  for(var key in freqObj){
+    if(freqObj[key] == maxFreq) {
+      result.push(parseInt(key));
+    } else {
+      allSameFreq = false
+    }
+  }
+  if(allSameFreq == true){
+    return [];
+  }
+  return result;
 }
+console.log(mode([1,2,2,3,3]))
+console.log(mode([1,1,1,3,3,3,2,2,2]))
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
 
@@ -89,6 +123,7 @@ function mode(arr){
   integers from 0 to N . One integer value is missing.
   Quickly determine and return the missing value.
   NO SORT ALLOWED
+  EXTRA CHALLENGE: SOLVE ALGO WITHOUT USING A OBJECTS TO KEEP TRACK OF NUMBERS
 */
 function missingValue(arr){
 

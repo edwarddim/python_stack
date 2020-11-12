@@ -94,3 +94,65 @@ function binarySearch(arr,target){
 }
 
 console.log(binarySearch([1,2,3,4,7,8,10], 4));
+
+// THUR
+/* 
+  Missing Value
+  You are given an array of length N that contains, in no particular order,
+  integers from 0 to N . One integer value is missing.
+  Quickly determine and return the missing value.
+  NO SORT ALLOWED
+  EXTRA CHALLENGE: SOLVE ALGO WITHOUT USING A OBJECTS TO KEEP TRACK OF NUMBERS
+*/
+function missingValue(arr){
+  var sumOfArr = 0;
+  var expectedSum = 0;
+  for(var i = 0; i < arr.length; i++) {
+    sumOfArr += arr[i];
+    expectedSum += i;
+  }
+  return sumOfArr != expectedSum;
+}
+
+console.log(missingValue([3,0,1,2]))
+// [3,0,1,2] => False
+// [4,0,2,1] => True
+
+// Find next largest number using the same digits within said number
+// example
+// 1234 => 1243
+// 4321 => false
+
+function superHardAlgo(int){
+  var arr = int.toString().split('')
+  for(var i = arr.length -1; i > 0; i--) {
+    if(arr[i] > arr[i - 1]) {
+      var temp = arr[i];
+      arr[i] = arr[i-1]
+      arr[i-1] = temp;
+      return parseInt(arr.join(''))
+    }
+  }
+  return "its the biggest one";
+
+}
+
+console.log(superHardAlgo(1234));
+
+//218765 =>  251678  ; 281765
+//2128765 => 2152678
+
+function superHardAlgo2(int){
+  var arr = int.toString().split('')
+  for(var i = arr.length -1; i > 0; i--) {
+    if(arr[i] > arr[i - 1]) {
+      arrToSort = arr.slice(i-1);
+      sorted = arrToSort.sort()
+      return arr.slice(0,i).concat(sorted)
+    }
+  }
+  return "its the biggest one";
+
+}
+
+console.log(superHardAlgo(1234));
