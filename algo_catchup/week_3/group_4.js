@@ -17,9 +17,9 @@
 //   acronyms("Happy Birthday to you")
   
   
-  // RETURN THE REVERSED STRING OF INPUT
-  // EX. "HELLO" => "OLLEH"
-  // NOTE. DO NOT USE ANY BUILT IN METHODS
+// RETURN THE REVERSED STRING OF INPUT
+// EX. "HELLO" => "OLLEH"
+// NOTE. DO NOT USE ANY BUILT IN METHODS
 // make a function 
 // create a var and iterate through an array
 // loop through the array
@@ -138,14 +138,39 @@
 //     Python: dict.has_key(key)
 // 
   
-  function isAnagram(string1, string2){
-      
+function isAnagram(string1, string2){
+  if(string1.length != string2.length){
+      return false
   }
+  var check = {}
+  for(var i =0; i < string1.length;i++){
+      if(string1[i] in check){
+          check[string1[i]] += 1
+      }
+      else{
+          check[string1[i]] = 1
+      }
+  }
+  for(var i = 0; i < string2.length; i++){
+      if(string2[i] in check){
+          check[string2[i]] -= 1
+          if(check[string2[i]] < 0){
+              return false
+          }
+      }
+      else{
+          return false
+      }
+  }
+  return true
+}
+console.log (isAnagram ("ATE", "TEA"))
+  
   // HINT: YOU WANT TO USE A DICTIONARY(OBJECT)
   // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
   // EX. "ATE", "TEA" => TRUE
   // EX. "LISTEN", "SILENT" => TRUE
-  // EX. "LISTEN", "SILENZ" => FALSE
+  // EX. "LISTEN", "SILENZ" => FALSe  
   // EX. "DEER", "REDD" => FALSE
   // -----------------------------------------------------------------------------------------------//
   // -----------------------------------------------------------------------------------------------//
@@ -172,7 +197,7 @@
     Create a function that, given a string of words (with spaces), returns new string with words in reverse sequence.
   */
   function reverseWordOrder(string){
-  
+    
   }
   // EX. "THIS IS A TEST" => "TEST A IS THIS"
   // EX. "GOOD MORNING VIETNAM" => "VIETNAM MORNING GOOD"

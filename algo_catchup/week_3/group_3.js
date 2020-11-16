@@ -104,3 +104,40 @@ console.log(isPalindrome("bye"))
 // "KAYAK" => TRUE
 // "RACECAR" => TRUE
 
+function isAnagram(string1, string2){
+        // RETURN THE REVERSED STRING OF INPUT
+    var returnString = ""
+        for (var i = string.length-1; i >= 0; i--){
+          // why are we comparing the length of a string(number) to 
+          // characters in a string(letters) ?
+            if(returnstring[0] = returnstring.length[1]){
+            console.log("True")
+            }
+            if (string.length[0] = string.length[1]){
+            console.log("True")
+            }
+            else{
+            console.log("False")
+            }
+        }
+    }
+    isAnagram("Peek", "Keep")
+// HINT: YOU WANT TO USE A DICTIONARY(OBJECT)
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+// EX. "ATE", "TEA" => TRUE
+// EX. "LISTEN", "SILENT" => TRUE
+// EX. "LISTEN", "SILENZ" => FALSE
+// EX. "DEER", "REDD" => FALSE
+
+/*
+Reverse Word Order
+  Create a function that, given a string of words (with spaces), returns new string with words in reverse sequence.
+*/
+function reverseWordOrder(string){
+
+}
+// EX. "THIS IS A TEST" => "TEST A IS THIS"
+// EX. "GOOD MORNING VIETNAM" => "VIETNAM MORNING GOOD"
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//

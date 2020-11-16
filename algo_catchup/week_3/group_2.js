@@ -55,3 +55,36 @@ function parensValid(string){
 // EX. "()()()" => TRUE
 // EX. "())(()" => FALSE
 // EX. ")(" => FALSE
+
+// FRI
+function isAnagram(string1, string2){
+    
+}
+// HINT: YOU WANT TO USE A DICTIONARY(OBJECT)
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+// EX. "ATE", "TEA" => TRUE
+// EX. "LISTEN", "SILENT" => TRUE
+// EX. "LISTEN", "SILENZ" => FALSE
+// EX. "DEER", "REDD" => FALSE
+
+
+//each thing in the string needs to be broken up into arrays using .split
+// nest a for loop inside of the first for loop to compare.
+// for each char in string1, we check to see if it exists in string2
+
+function isAnagram(str1, str2){
+  if(str1.length != str2.length){
+    return false
+  }
+  for(var i = 0; i < str1.length; i++){
+    if(str2.includes(str1[i])){
+      continue
+    }
+    else{
+      return false
+    }
+  }
+  // WE CHECKED EVERY CHAR IN STR1 AGAINST EVERY CHAR IN STR2
+  return true
+}
+isAnagram("tea", "ate")

@@ -1,8 +1,25 @@
 // MON
+// ITERATIVELY VS RECURSIVELY
+function iteraatePrint(number){
+  //    START         END       INCREMENT/DECREMENT
+  for(var i = number; i > 0        ; i--){
+    console.log(i)
+  }
+}
 
-// 1, BASE CASE
-// 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
-// 3. RECURSIVE CALL
+function recursivePrint(number){
+  // 1, BASE CASE (END OF THE RECURSION)
+  console.log(number)
+  if(number == 0){
+    return
+  }
+  // 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
+  number -=1
+  // 3. RECURSIVE CALL
+  recursivePrint(number)
+  console.log("BOTTOM OF FUNCTION")
+}
+recursivePrint(5)
 
 /* 
   Recursive Sigma
@@ -10,10 +27,22 @@
   Output: sum of integers from 1 to Input integer
 */
 function recursiveSigma(n) {
-
+  // 1, BASE CASE
+  if(n == 1){
+    return 1
+  }
+  // 2. FORWARD PROGRESS (DECREMENT)
+  // 3. RECURSIVE CALL
+  return n + recursiveSigma(n-1)
 }
+console.log(recursiveSigma(3))
 // 5 => 5 + 4 + 3 + 2 + 1 => 15
 
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+// TUE
 /* 
   Recursively sum an arr of ints
 */
@@ -23,10 +52,6 @@ function sumArr(arr, i = 0) {
 }
 // [1,2,3] => 6
 
-// -----------------------------------------------------------------------------------------------//
-// -----------------------------------------------------------------------------------------------//
-
-// TUE
 /* 
     Given an array nested with unknown amount of arrays,
     return the integers all under ONE array

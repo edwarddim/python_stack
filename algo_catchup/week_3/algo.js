@@ -79,7 +79,7 @@ function frequencyTable(arr){
   // IF THE KEY ALREADY EXISTS THEN INCREMENT THE COUNT
   // IF THE KEY DOESN'T EXIST THEN CREATE A KEY VALUE PAIR
   var table = {}
-  for(var i =0; i < arr.legnth; i++){
+  for(var i =0; i < arr.length; i++){
     if(table.hasOwnProperty(arr[i])){
       table[arr[i]] += 1
     }
@@ -89,6 +89,7 @@ function frequencyTable(arr){
   }
   return table
 }
+frequencyTable(['A','A','B','C','C','C','D','D'])
 // EX. ['A','A','B','C','C','C','D','D'] => {"A":2, "B":1, "C":3, "D":2}
 // EX. ['A','C','C','C','D','D','A','B',] => {"A":2, "B":1, "C":3, "D":2}
 
@@ -96,10 +97,40 @@ function frequencyTable(arr){
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
 
-// THUR
+// FRI
+// "DEER" => ['D', 'E', 'E', 'R']
 function isAnagram(string1, string2){
-    
+    // EARLY BREAK
+    if(string1.length != string2.length){
+      return false
+    }
+    // WE USED AN OBJECT TO STORE THE CHARS WE SAW
+    // AND THE AMOUNT OF TIMES IT OCCURS
+    var str1Obj = {}
+    for(var i =0; i < string1.length; i++){
+      if(str1Obj.hasOwnProperty(string1[i])){
+        str1Obj[string1[i]] += 1
+      }
+      else{
+        str1Obj[string[i]] = 1
+      }
+    }
+    // WE LOOP THROUGH THE SECOND CHARACTER
+    // AND CHECK CHARS IN STRING2 AGAINST str1Obj
+    for(var i = 0; i < string2.length; i++){
+      if(string2[i] in str1Obj){
+          str1Obj[string2[i]] -= 1
+          if(str1Obj[string2[i]] < 0){
+            return false
+          }
+      }
+      else{
+          return false
+      }
+    }
+    return true
 }
+isAnagram("ATE", "TEA")
 // HINT: YOU WANT TO USE A DICTIONARY(OBJECT)
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
 // EX. "ATE", "TEA" => TRUE
@@ -119,28 +150,3 @@ function reverseWordOrder(string){
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
-
-// FRI
-// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
-// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNIES"
-// EX. 79 => "3 QUARTERS, 4 PENNIES"
-// {
-//     "quarters" : 12,
-//     "dimes" : 2,
-//     "pennies" : 1
-// }
-function minCoinChange(amount){
-
-}
-
-/* 
-  String: Dedupe
-  Remove duplicate characters 
-    - (case-sensitive)
-  Bonus: Keep only the last instance of each character.
-*/
-function dedupeString(string){
-
-}
-// EX. "aabacecbedd" => "abced"
-// EX. "bbbbaaaaffff" => "baf"
