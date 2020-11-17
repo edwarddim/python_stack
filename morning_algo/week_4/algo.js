@@ -19,7 +19,7 @@ function recursivePrint(number){
   recursivePrint(number)
   console.log("BOTTOM OF FUNCTION")
 }
-recursivePrint(5)
+// recursivePrint(5)
 
 /* 
   Recursive Sigma
@@ -35,8 +35,29 @@ function recursiveSigma(n) {
   // 3. RECURSIVE CALL
   return n + recursiveSigma(n-1)
 }
-console.log(recursiveSigma(3))
+// console.log(recursiveSigma(3))
 // 5 => 5 + 4 + 3 + 2 + 1 => 15
+
+
+// 3 => 3 * 2 * 1 => 6
+// 4 => 4 * 3 * 2 * 1 => 24
+function iterativeFactorial(num){
+  var temp = 1
+  for(var i = num; i > 0; i--){
+    temp = temp * i
+  }
+  return temp
+}
+
+function recFactorial(num){
+  // BASE CASE
+  if(num == 1){
+    return 1
+  }
+  // FORWARD PROGRESS (DECREMENT) AND RECURSIVE CALL
+  return num * recFactorial(num-1)
+}
+// recFactorial(3)
 
 
 // -----------------------------------------------------------------------------------------------//
@@ -47,9 +68,23 @@ console.log(recursiveSigma(3))
   Recursively sum an arr of ints
 */
 
-function sumArr(arr, i = 0) {
-
+function iterateSumArr(array){
+  sum = 0
+  for(var i = 0; i < array.length; i++){
+    sum += arr[i]
+  }
+  return sum
 }
+
+function recSumArr(arr, i = 0) {
+  // BASE CASE
+  if(arr.length-1 == i){
+    return arr[i]
+  }
+  // FORWARD PROGRESS (INCREMENT) AND RECURSIVE CALL
+  return arr[i] + recSumArr(arr, i + 1)
+}
+console.log(recSumArr([1,2,3,4]))
 // [1,2,3] => 6
 
 /* 
