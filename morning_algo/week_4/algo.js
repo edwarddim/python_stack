@@ -84,8 +84,41 @@ function recSumArr(arr, i = 0) {
   // FORWARD PROGRESS (INCREMENT) AND RECURSIVE CALL
   return arr[i] + recSumArr(arr, i + 1)
 }
-console.log(recSumArr([1,2,3,4]))
+// console.log(recSumArr([1,2,3,4]))
 // [1,2,3] => 6
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+/*
+    String Subset
+    Given a string, return an array filled
+    with IN-ORDER substrings
+    .slice(start(inclusive), end(exclusive))
+    var name = "edward"
+    var part = name.slice(2,7)
+*/
+// HINT: YOU'RE GOING TO NEED A FOR LOOP
+function stringSubset(string, arr = []){
+  // BASE CASE
+  if(string.length == 0){
+    arr.push("")
+    return arr
+  }
+  for(var i = string.length; i > 0; i--){
+    arr.push(string.slice(0,i))
+  }
+  // FORWARD PROGRESS (INCCREMENT / DECREMENT)
+  // RECURSIVE CALL
+  console.log("ARR BEFORE RECURSION: " , arr)
+  return stringSubset( string.slice(1, string.length) , arr)
+}
+console.log(stringSubset("abcd"))
+console.log("HELLO WORLD")
+
+// EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
 
 /* 
     Given an array nested with unknown amount of arrays,
@@ -94,13 +127,34 @@ console.log(recSumArr([1,2,3,4]))
     Array.isArray([1,2,3]) returns true
     Array.isArray({'a':1}) returns false
     Array.isArray(1) returns false
+
+    Array.concat() will also come in handy
+    var array1 = [1,2,3]
+    var array2 = [4,5,6]
+    var array3 = array1.concat(array2)
+    console.log(array3) => [1,2,3,4,5,6]
 */
-
 function recFlatten(arr){
-  
+    // BASE CALL
+    if(!Array.isArray(arr)){
+      console.log("THIS IS A NUMBER:", arr)
+      return arr
+    }
+    var array = []
+    // FORWARD PROGRESS
+    // RECURSIVE CALL
+    for(var i = 0; i < arr.length; i++){
+        array = array.concat(recFlatten(arr[i]))
+    }
+    return array
 }
+console.log(recFlatten([ 1, [2,3,[4]] , 5 ]))
+//            0     1        2
+// LEVEL 1. [ 1, [2,3,[4]] , 5 ] => [1,2,3,4,5]
 
-// EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
+//           0   1   2
+// LEVEL 2. [ 2 ,3, [4] ]
+
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
@@ -172,10 +226,3 @@ function LCM(a,b, aMult=a, bMult=b){
     Given a string, return an array filled
     with IN-ORDER substrings
 */
-
-
-function stringSubset(string, arr){
-
-}
-
-// EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
