@@ -159,8 +159,79 @@ function iteraatePrint(number){
     var array3 = array1.concat(array2)
     console.log(array3) => [1,2,3,4,5,6]
 */
-function recFlatten(arr){
-  
+function recFlatten2(arr, index = 0){
+  result = []
+  //base case: pointer at last index of array
+  if(index == arr.length - 1){
+    if(Array.isArray(arr)) {
+      return recFlatten(arr[index]);
+    } else {
+      return arr;
+    }
+  } else if(Array.isArray(arr[index])) {
+    result = result.concat(recFlatten(arr[index]))
+  }
+  result.push(arr[index]);
+  return result.concat(recFlatten(arr, index + 1));
 }
 
+console.log(recFlatten([1,[2,3,[4]],5]));
+
 // EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
+// [1,2,3,1,[2,3,[4]],1]
+ 
+function recFlatten(arr) {
+  newArray = []
+  if(arr.length == 1){
+    if(!Array.isArray(arr[0])){
+      return arr;
+    } else {
+      return recFlatten(arr[0]);
+    }
+  }
+  if(Array.isArray(arr[0])){
+    newArray = newArray.concat(arr[0]);
+  } else {
+    newArray.push(arr[0]);
+  }
+  return newArray.concat(recFlatten(arr.slice(1)));
+}
+
+/*
+  Recursive Binary Search
+  Input: SORTED array of ints, int value
+  Output: bool representing if value is found
+  Recursively search to find if the value exists, do not loop over every element.
+  Approach:
+  Take the middle item and compare it to the given value.
+  Based on that comparison, narrow your search to a particular section of the array
+*/
+// LEVEL 1 [1,2,3,4,5,6,7,8,9] ,  8
+// LEVEL 2 [6,7,8,9] , 8
+// LEVEL 3 [8,9] , 8
+
+function recursiveBinary(arr, target){
+  // FIND THE MIDDLE NUMBER OF THE ARRAY
+  // CHECK TO SEE IF TARGET IS THE MIDDLE NUMBER
+  // IF TARGET IS LESS THAN, CUT LEFT HALF OF ARRAY AND RECURSIVE CALL
+  // IF TARGET IS GREATER THAN, CUT RIGHT HALF OF ARRAY AND RECRUSIVE CALL
+  // Base
+  if (arr.length === 1){
+    return arr[0] === target
+  }
+  // Forward Progress
+  if (target >= arr[Math.trunc(arr.length / 2)]) {
+    // keep the right half
+    arr = arr.slice(Math.trunc(arr.length / 2))
+  }
+  else {
+    // else keep the left
+    arr = arr.slice(0, Math.trunc(arr.length / 2))
+  }
+ 
+  // recursive call
+  return recursiveBinary(arr, target)
+}
+
+
+console.log(recursiveBinary([1,2,3,4,5,6,7,8,9], 4))

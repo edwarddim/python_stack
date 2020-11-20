@@ -102,3 +102,40 @@ function recFlatten(arr){
 }
 
 // EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
+
+
+function recursiveBinary(arr, target) {
+  middle_num=[]
+  if (arr.length = arr.length/2) 
+  // we need a math.floor on line 109 so that when the array is cut in have and is odd 
+  array= Math.floor(arr.length/2)
+    
+  // FIND THE MIDDLE NUMBER OF THE ARRAY
+  // CHECK TO SEE IF TARGET IS THE MIDDLE NUMBER
+  // IF TARGET IS LESS THAN, CUT LEFT HALF OF ARRAY AND RECURSIVE CALL
+  // IF TARGET IS GREATER THAN, CUT RIGHT HALF OF ARRAY AND RECRUSIVE CALL
+}
+
+function recursiveBinary2(arr, target) {
+  middle = arr[Math.trunc(arr.length / 2)];
+  if(middle == target){
+    return true;
+  }
+  if(arr.length == 1) {
+    if(arr[0] == target) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  if(middle == target) {
+    return true;
+  } else if(target < middle){
+    newMiddle = Math.trunc(arr.slice(0, middle)/2); 
+    return recursiveBinary2(arr.slice(0, middle), newMiddle);
+  } else {
+    newMiddle = Math.trunc(arr.slice(middle)/2));
+    return recursiveBinary2(arr.slice(middle), newMiddle);
+  }
+}
+console.log(recursiveBinary2([1,2,3,4,5,6,7,8,9,10], 5));

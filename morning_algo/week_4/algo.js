@@ -112,8 +112,8 @@ function stringSubset(string, arr = []){
   console.log("ARR BEFORE RECURSION: " , arr)
   return stringSubset( string.slice(1, string.length) , arr)
 }
-console.log(stringSubset("abcd"))
-console.log("HELLO WORLD")
+// console.log(stringSubset("abcd"))
+// console.log("HELLO WORLD")
 
 // EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
 
@@ -148,7 +148,7 @@ function recFlatten(arr){
     }
     return array
 }
-console.log(recFlatten([ 1, [2,3,[4]] , 5 ]))
+// console.log(recFlatten([ 1, [2,3,[4]] , 5 ]))
 //            0     1        2
 // LEVEL 1. [ 1, [2,3,[4]] , 5 ] => [1,2,3,4,5]
 
@@ -171,10 +171,43 @@ console.log(recFlatten([ 1, [2,3,[4]] , 5 ]))
   Take the middle item and compare it to the given value.
   Based on that comparison, narrow your search to a particular section of the array
 */
+// LEVEL 1 [1,2,3,4,5,6,7,8,9] ,  8
+// LEVEL 2 [6,7,8,9] , 8
+// LEVEL 3 [8,9] , 8
 
 function recursiveBinary(arr, target){
-
+  // BASE CASE
+  if(arr.length == 1){
+    if(arr[0] == target){
+      return true
+    }
+    else{
+      return false
+    }
+  }
+  // FIND THE MIDDLE NUMBER OF THE ARRAY
+  var midIndex = Math.floor(arr.length/2)
+  var midValue = arr[midIndex]
+  // CHECK TO SEE IF TARGET IS THE MIDDLE NUMBER
+  if(target == midValue){
+    return true
+  }
+  // IF TARGET IS LESS THAN, CUT LEFT HALF OF ARRAY AND RECURSIVE CALL
+  if(target < midValue){
+    return recursiveBinary( arr.slice(0, midIndex), target )
+  }
+  // IF TARGET IS GREATER THAN, CUT RIGHT HALF OF ARRAY AND RECRUSIVE CALL
+  else{
+    return recursiveBinary( arr.slice( midIndex + 1, arr.length), target )
+  }
 }
+console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  8))
+console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  11))
+
+
+
+
+
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
@@ -186,7 +219,7 @@ function recursiveBinary(arr, target){
     Given a number return an array filled with the
     squares of integers up to given number
 */
-function risingSqaures(num, arr){
+function risingSqaures(num, arr = []){
 
 }
 // EX. 3 => [1,4,9]

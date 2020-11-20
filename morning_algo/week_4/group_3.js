@@ -87,3 +87,40 @@ console.log(recFlatten([1,[2,3,[4]],5]))
 
 // Array.isArr(arr[0])
 // EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
+//
+//
+function recursiveBinary(arr, target) {
+    // FIND THE MIDDLE NUMBER OF THE ARRAY
+    // CHECK TO SEE IF TARGET IS THE MIDDLE NUMBER
+    // IF TARGET IS LESS THAN, CUT LEFT HALF OF ARRAY AND RECURSIVE CALL
+    // IF TARGET IS GREATER THAN, CUT RIGHT HALF OF ARRAY AND RECRUSIVE CALL
+}
+
+// Test Case 1 [1,2,3,4,5,6,7,8,9] ,  8
+// Test Case 2 [6,7,8,9] , 8
+// Test Case 3 [8,9] , 8
+
+function recursiveBinary(arr, target){
+    // let start = 0;
+    // let end = arr.length - 1; 
+           
+        let mid = Math.floor((start + end)/2); 
+   
+        if (arr[mid] === target) return true; 
+  
+        else if (arr[mid] < target){
+            // start = mid + 1; // return recusive
+            return recursiveBinary(arr.slice(mid, arr.length), target)
+        }
+        else {
+            end = mid - 1; // return recursive
+        }
+    return false; 
+}
+
+// arr.slice(0, mid) == first half of array
+// arr.slice(mid, arr.length) == second half of array
+
+console.log(recursiveBinary([1,2,3,4,5,6,7,8,9],8))
+console.log(recursiveBinary([6,7,8,9],8))
+console.log(recursiveBinary([8,9],8))

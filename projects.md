@@ -20,3 +20,16 @@ Financial Tech
  - You build out the core functionality of your application
  - You don't bite off more than you can chew
 3. Group up
+
+
+# PRESENTATIONS
+# NOT TO DO
+ - Show code
+ - Login and Registration
+# TO DO
+ - Prepopulate your project with data
+ - Practice your presentation (Make sure no errors are present on functionality)
+ - Talk about your struggles
+ - Talk about your future functionality you want to implement
+ - Keep presentaton between 5 - 10 mins
+ - KEEP YOUR QUESTIONS UNTIL THE END
