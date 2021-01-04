@@ -1,17 +1,44 @@
 // MON
 // TURN THE INCOMING SENTENCE INTO AN ACRONYM
 // EX. "Live From Saturday Night Live" => "LFSNL"
+// EX. "Happy New Years" => "HNY"
 // NOTE. YOU CAN USE .SPLIT() METHOD
+var strName = "Edward Im"
+var stringArr = strName.split(" ")
+// ["Edward", "Im"]
+var stringList = []
 function acronyms(string){
+    var stringArr = string.split(" ")
+    var newString = ""
+    for(var i = 0; i < stringArr.length; i++){
+        newString += stringArr[i][0]
+    }
+    return newString
+}
+// console.log(acronyms("Live From Saturday Night Live"))
 
+for(var i =0; i < 5;i+=2){
+    console.log(i)
+}
+
+var i = 0
+while(i < 10){
+    console.log(i)
+    i++
 }
 
 // RETURN THE REVERSED STRING OF INPUT
 // EX. "HELLO" => "OLLEH"
 // NOTE. DO NOT USE ANY BUILT IN METHODS
+// NOTE. RETURN A NEW STRING
 function stringReverse(string){
-
+    var newString = ""
+    for(var i = string.length-1; i >= 0; i--){
+        newString += string[i]
+    }
+    return newString
 }
+console.log(stringReverse("HELLO"))
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
 
