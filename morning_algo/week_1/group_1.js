@@ -47,13 +47,45 @@ console.log(stringReverse("Robots"))
 
 // TUE
 function parensValid(string){
+    for (var i = 0; i < string.length; i++){
+        var count = 0
+        if (string[i] = ")"){
+            count -= 1;
+        }
+        if (string[i] = "("){
+            count += 1;
+        }
+        if (count < 0){
+            return("False")
+        }
 
+        else if (count > 0){
+            return("False")
+        }
+        
+        else{
+            return("True")
+        }
+    }
 }
+console.log(parensValid("(()()" ))
+//count
+//( = +1
+//) = -1
+//if count = 0 is true
+//if count <0 is false
+}
+print(parensValid(()(())))
 // RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
 // EX. "()(())" => TRUE
 // EX. "(()()" => FALSE
 // EX. "()()()" => TRUE
 // EX. "())(()" => FALSE
+
+
+
+
+
 
 function bracesValid(string){
 

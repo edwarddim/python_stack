@@ -43,17 +43,59 @@ console.log(stringReverse("HELLO"))
 // -----------------------------------------------------------------------------------------------//
 
 // TUE
+// HINT. WE NEED A WAY TO KEEP TRACK OF OPENING AND CLOSING PARENS
 function parensValid(string){
-
+    // EARLY EXIT
+    if(string.length % 2 != 0){
+        return false
+    }
+    var counter = 0
+    // ITERATE THROUGH STRING
+    for(var char of string){
+        if(char == "("){
+            counter++
+        }
+        else if(char == ")"){
+            counter--
+        }
+        if(counter < 0){
+            return false
+        }
+    }
+    if(counter == 0){
+        return true
+    }
+    else{
+        return false
+    }
 }
 // RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
 // EX. "()(())" => TRUE
 // EX. "(()()" => FALSE
 // EX. "()()()" => TRUE
 // EX. "())(()" => FALSE
+// EX. ")))(((" => 
 
 function bracesValid(string){
-
+    var braceStack = []
+    var checker = {
+        "(" : ")",
+        "{" : "}",
+        "[" : "]"
+    }
+    for(var char of string){
+        if(char == "(" || char == "{" || char == "["){
+            braceStack.push(char)
+        }
+        else{
+            if(checker[braceStack[braceStack.length - 1]] == char ){
+                braceStack.pop()
+            }
+            else{
+                return false
+            }
+        }
+    }
 }
 // (),[],{}
 // EX. "({})[]" => TRUE

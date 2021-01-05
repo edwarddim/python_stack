@@ -26,3 +26,131 @@ acronyms("Live From Saturday Night Live");
     
 
 //}
+
+// TUE
+// HINT. WE NEED A WAY TO KEEP TRACK OF OPENING AND CLOSING PARENS
+function parensValid(string){
+    var counterOpen = 0
+    var counterClose = 0 
+    for(var i = 0; i < string.length; i++){
+        
+
+    }
+
+
+//group eight
+}
+
+function parensValid(string){
+    var parensOpen = 0;
+    var parensClosed = 0;
+    for( var i = 0;  i < string.length; i++){
+        if(parensClosed > parensOpen){
+            return false
+        }
+        if( string[i] == '('){
+            parensOpen++
+        }
+        else if( string[i] == ')'){
+            parensClosed++
+    }
+    }
+    if (parensOpen != parensClosed){
+        return false;
+    }
+    return true;
+}
+
+
+console.log(parensValid("()(())"))
+console.log(parensValid("(()()"))
+console.log(parensValid("()()()"))
+console.log(parensValid("())(()"))
+
+// RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
+// EX. "" => TRUE
+// EX. "(()()" => FALSE
+// EX. "()()()" => TRUE
+// EX. "())(()" => FALSE
+
+function bracesValid(string){
+
+}
+// (),[],{}
+// EX. "({})[]" => TRUE
+// TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS
+// WILL REQUIRE A STACK IMPLEMENTATION
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+// WED
+function isPalindrome(string){
+
+}
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
+// "HELLO" => FALSE
+// "KAYAK" => TRUE
+// "TACOCAT" => TRUE
+
+function isAnagram(string1, string2){
+
+}
+// HINT: YOU WANT TO USE A DICTIONARY
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+// EX. "ATE", "TEA" => TRUE
+// EX. "LISTEN", "SILENT" => TRUE
+// EX. "LISTEN", "SILENZ" => FALSE
+// EX. "DEER", "REDD" => FALSE
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+// THUR
+function bookIndex(array){
+
+}
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
+
+function join(arr, seperator){
+
+}
+// Given an arr and a separator string, output a string of every item in the array separated by the separator.
+// EX. [1,2,3] , ", " => "1, 2, 3"
+// EX. [1,2,3] , "-" => "1-2-3"
+// EX. [1] , "-" => "1"
+// EX. [], "," => ""
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+
+
+
+// FRI
+function invertObj(obj){
+
+}
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
+// EX.
+// {
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+function minCoinChange(num){
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':3
+// }
