@@ -39,7 +39,44 @@ def functionName(num):
             print(i)
             print("greater than twenty")
 # CALLING(EXECUTING) THE FUNCTION
-functionName(30)
-functionName(0)
-functionName(14)
-functionName(-1)
+# functionName(30)
+# functionName(0)
+# functionName(14)
+# functionName(-1)
+
+fave_food1 = "taco"
+fave_food2 = "pizza"
+
+# print(f"I love to eat {fave_food1} and {fave_food2}")
+
+# RETURN VS PRINT
+# print("hello world")
+
+def foo():
+    print("foo function is being called")
+    return "this is foo"
+
+# x = foo()
+# print(x)
+
+b = 500
+print(b)
+
+newList = [1,2,3,4,5]
+print(newList)
+
+def plusOne(a):
+    for i in range(0, len(a)):
+        a[i] += 1
+
+plusOne(newList)
+print(newList)
+
+num = 1
+print(num)
+
+def plusTwo(a):
+    return a += 2
+
+num = plusTwo(num)
+print(num)
