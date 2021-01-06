@@ -3,15 +3,15 @@
 // EX. "Live From Saturday Night Live" => "LFSNL"
 // EX. "Happy New Years" => "HNY"
 // NOTE. YOU CAN USE .SPLIT() METHOD
-    var strName = "Edward Im"
-    var stringArr = strName.split(" ")
-    // ["Edward", "Im"]
-    function acronyms(string){
+var strName = "Edward Im"
+var stringArr = strName.split(" ")
+// ["Edward", "Im"]
+function acronyms(string) {
     //get an array containing each word
-        var arr = string.split(" ");
+    var arr = string.split(" ");
     var newString = " ";
 
-    for(var i = 0; i < arr.length; i++){
+    for (var i = 0; i < arr.length; i++) {
         newString += arr[i][0];
     }
 
@@ -23,19 +23,19 @@ var str = "Rocio John Haldan Fred Alber Sosa Anderson Acevedo";
 // EX. "HELLO" => "OLLEH"
 // NOTE. DO NOT USE ANY BUILT IN METHODS
 // NOTE. RETURN A NEW STRING
-function stringReverse(string){
-var arr = "hello"
-    for(var i = 0; i > arr.length; i--){//start at the end of the string and work back
+function stringReverse(string) {
+    var arr = "hello"
+    for (var i = 0; i > arr.length; i--) {//start at the end of the string and work back
 
     }
 }
 stringReverse(string)
 
-function stringReverse2(string){
+function stringReverse2(string) {
     var temp;
     var newString = "";
-    for(var i = 0; i < (string.length); i++){
-        newString += string[string.length - 1-i];
+    for (var i = 0; i < (string.length); i++) {
+        newString += string[string.length - 1 - i];
     }
     console.log(newString);
 }
@@ -44,7 +44,7 @@ stringReverse2("HELLO Does this even work?");
 // -----------------------------------------------------------------------------------------------//
 
 // TUE
-function parensValid(string){
+function parensValid(string) {
 
 }
 // RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
@@ -53,7 +53,7 @@ function parensValid(string){
 // EX. "()()()" => TRUE
 // EX. "())(()" => FALSE
 
-function bracesValid(string){
+function bracesValid(string) {
 
 }
 
@@ -61,22 +61,61 @@ function bracesValid(string){
 function parValid(arr) {
     var countOpen = 0;
     var countClosed = 0;
-    for (var i = 0; i < arr.length; i++){
-    if (arr[i] == "("){
-        countOpen ++;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == "(") {
+            countOpen++;
         }
-    if (arr[i] == ")"){
-        countClosed ++;
+        if (arr[i] == ")") {
+            countClosed++;
         }
-    if (countOpen == countClosed){
-        return True;}
-    else{
-        return False;
+        if (countOpen == countClosed) {
+            return True;
+        }
+        else {
+            return False;
         }
     }
 }
 console.log(parValid("(())()"));
 
+// WED
+function isPalindrome(string) {
+    for (var i )
+
+}
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
+// "HELLO" => FALSE
+// "KAYAK" => TRUE
+// "TACOCAT" => TRUE
+
+function isAnagram(string1, string2) {
+
+}
+// HINT: YOU WANT TO USE A OBJECT(DICTIONARY) TO KEEP TRACK OF CHARACTERS AND THEIR FREQUENCY
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+// EX. "ATE", "TEA" => TRUE
+// EX. "LISTEN", "SILENT" => TRUE
+// EX. "LISTEN", "SILENZ" => FALSE
+// EX. "DEER", "REDD" => FALSE
+// WED
+function isPalindrome(string) {
+    for (var i )
+
+}
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
+// "HELLO" => FALSE
+// "KAYAK" => TRUE
+// "TACOCAT" => TRUE
+
+function isAnagram(string1, string2) {
+
+}
+// HINT: YOU WANT TO USE A OBJECT(DICTIONARY) TO KEEP TRACK OF CHARACTERS AND THEIR FREQUENCY
+// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+// EX. "ATE", "TEA" => TRUE
+// EX. "LISTEN", "SILENT" => TRUE
+// EX. "LISTEN", "SILENZ" => FALSE
+// EX. "DEER", "REDD" => FALSE
 
 
 
@@ -329,7 +368,7 @@ console.log(parValid("(())()"));
 // -----------------------------------------------------------------------------------------------//
 
 // WED
-function isPalindrome(string){
+function isPalindrome(string) {
 
 }
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
@@ -337,7 +376,7 @@ function isPalindrome(string){
 // "KAYAK" => TRUE
 // "TACOCAT" => TRUE
 
-function isAnagram(string1, string2){
+function isAnagram(string1, string2) {
 
 }
 // HINT: YOU WANT TO USE A DICTIONARY
@@ -350,13 +389,13 @@ function isAnagram(string1, string2){
 // -----------------------------------------------------------------------------------------------//
 
 // THUR
-function bookIndex(array){
+function bookIndex(array) {
 
 }
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
 // EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
 
-function join(arr, seperator){
+function join(arr, seperator) {
 
 }
 // Given an arr and a separator string, output a string of every item in the array separated by the separator.
@@ -372,7 +411,7 @@ function join(arr, seperator){
 
 
 // FRI
-function invertObj(obj){
+function invertObj(obj) {
 
 }
 // GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
@@ -387,7 +426,121 @@ function invertObj(obj){
 //     "TWO":'B',
 //     "THREE":'C'
 // }
-function minCoinChange(num){
+function minCoinChange(num) {
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':3
+// }  'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+function minCoinChange(num) {
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':3
+// }  'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+function minCoinChange(num) {
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':3
+// }  'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+function minCoinChange(num) {
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':3
+// }  'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+function minCoinChange(num) {
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':3
+// }  'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+function minCoinChange(num) {
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':3
+// }  'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
+function minCoinChange(num) {
 
 }
 // GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT

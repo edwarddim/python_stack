@@ -6,21 +6,21 @@
 var strName = "Edward Im"
 var stringArr = strName.split(" ")
 // ["Edward", "Im"]
-function acronyms(string){
+function acronyms(string) {
     var words = string.split(" ")
-    
+
     var nym = ""
 
-    for (var i=0; i<words.length; i++){
+    for (var i = 0; i < words.length; i++) {
         nym += words[i][0]
     }
 
-    
-// Loop through.
-// catch what you want
-// put it in a string.
-// return it
-// call it.
+
+    // Loop through.
+    // catch what you want
+    // put it in a string.
+    // return it
+    // call it.
 
     return nym;
 }
@@ -32,11 +32,11 @@ console.log(acronyms("Hello Magnificent World"))
 // EX. "HELLO" => "OLLEH"
 // NOTE. DO NOT USE ANY BUILT IN METHODS
 // NOTE. RETURN A NEW STRING
-function stringReverse(string){
+function stringReverse(string) {
 
     var backs = ""
 
-    for (var i=string.length-1; i>= 0; i--){
+    for (var i = string.length - 1; i >= 0; i--) {
         backs += string[i]
     }
     return backs;
@@ -46,29 +46,29 @@ console.log(stringReverse("Robots"))
 // -----------------------------------------------------------------------------------------------//
 
 // TUE
-function parensValid(string){
-    for (var i = 0; i < string.length; i++){
+function parensValid(string) {
+    for (var i = 0; i < string.length; i++) {
         var count = 0
-        if (string[i] = ")"){
+        if (string[i] = ")") {
             count -= 1;
         }
-        if (string[i] = "("){
+        if (string[i] = "(") {
             count += 1;
         }
-        if (count < 0){
-            return("False")
+        if (count < 0) {
+            return ("False")
         }
 
-        else if (count > 0){
-            return("False")
+        else if (count > 0) {
+            return ("False")
         }
-        
-        else{
-            return("True")
+
+        else {
+            return ("True")
         }
     }
 }
-console.log(parensValid("(()()" ))
+console.log(parensValid("(()()"))
 //count
 //( = +1
 //) = -1
@@ -87,7 +87,7 @@ print(parensValid(()(())))
 
 
 
-function bracesValid(string){
+function bracesValid(string) {
 
 }
 // (),[],{}
@@ -98,15 +98,39 @@ function bracesValid(string){
 // -----------------------------------------------------------------------------------------------//
 
 // WED
-function isPalindrome(string){
+function isPalindrome(string) {
+    for (var i = 0; i < string.length / 2; i++) {
+        if (string[i] == string[string.length - i - 1]) {
+            continue
+        }
+        else { return false }
+    } function isPalindrome(string) {
+        for (var i = 0; i < string.length / 2; i++) {
+            if (string[i] == string[string.length - i - 1]) {
+                continue
+            }
+            else { return false }
+        }
+        return true
+    }
 
 }
+// looks good
+console.log(isPalindrome("HELLO"))
+console.log(isPalindrome('racecar'))
+
+
+
+
+
+
+
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
 // "HELLO" => FALSE
 // "KAYAK" => TRUE
 // "TACOCAT" => TRUE
 
-function isAnagram(string1, string2){
+function isAnagram(string1, string2) {
 
 }
 // HINT: YOU WANT TO USE A DICTIONARY
@@ -119,13 +143,13 @@ function isAnagram(string1, string2){
 // -----------------------------------------------------------------------------------------------//
 
 // THUR
-function bookIndex(array){
+function bookIndex(array) {
 
 }
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
 // EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
 
-function join(arr, seperator){
+function join(arr, seperator) {
 
 }
 // Given an arr and a separator string, output a string of every item in the array separated by the separator.
@@ -141,7 +165,7 @@ function join(arr, seperator){
 
 
 // FRI
-function invertObj(obj){
+function invertObj(obj) {
 
 }
 // GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
@@ -156,7 +180,7 @@ function invertObj(obj){
 //     "TWO":'B',
 //     "THREE":'C'
 // }
-function minCoinChange(num){
+function minCoinChange(num) {
 
 }
 // GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT

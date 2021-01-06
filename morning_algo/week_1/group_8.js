@@ -2,60 +2,60 @@
 // TURN THE INCOMING SENTENCE INTO AN ACRONYM
 // EX. "Live From Saturday Night Live" => "LFSNL"
 // NOTE. YOU CAN USE .SPLIT() METHOD
-function acronyms(string){
+function acronyms(string) {
     var strName = "Robert La Salle"
     var stringArr = strName.split("RLA")
-    
-    function acronyms(string){
+
+    function acronyms(string) {
         var strName = "Robert La Salle";
         var stringArr = strName.split("RLA");
 
     }
-for (var i = 0; i < string.length; i++) {
-    console.log(i);
-}
-return stringArr;
+    for (var i = 0; i < string.length; i++) {
+        console.log(i);
+    }
+    return stringArr;
 }
 acronyms("Live From Saturday Night Live");
 // RETURN THE REVERSED STRING OF INPUT
 // EX. "HELLO" => "OLLEH"
 // NOTE. DO NOT USE ANY BUILT IN METHODS
 //function stringReverse(string){
-    var strName="HELLO";
-    var stringArr= "OLLEH";
-    
+var strName = "HELLO";
+var stringArr = "OLLEH";
+
 
 //}
 
 // TUE
 // HINT. WE NEED A WAY TO KEEP TRACK OF OPENING AND CLOSING PARENS
-function parensValid(string){
+function parensValid(string) {
     var counterOpen = 0
-    var counterClose = 0 
-    for(var i = 0; i < string.length; i++){
-        
+    var counterClose = 0
+    for (var i = 0; i < string.length; i++) {
+
 
     }
 
 
-//group eight
+    //group eight
 }
 
-function parensValid(string){
+function parensValid(string) {
     var parensOpen = 0;
     var parensClosed = 0;
-    for( var i = 0;  i < string.length; i++){
-        if(parensClosed > parensOpen){
+    for (var i = 0; i < string.length; i++) {
+        if (parensClosed > parensOpen) {
             return false
         }
-        if( string[i] == '('){
+        if (string[i] == '(') {
             parensOpen++
         }
-        else if( string[i] == ')'){
+        else if (string[i] == ')') {
             parensClosed++
+        }
     }
-    }
-    if (parensOpen != parensClosed){
+    if (parensOpen != parensClosed) {
         return false;
     }
     return true;
@@ -73,7 +73,7 @@ console.log(parensValid("())(()"))
 // EX. "()()()" => TRUE
 // EX. "())(()" => FALSE
 
-function bracesValid(string){
+function bracesValid(string) {
 
 }
 // (),[],{}
@@ -84,15 +84,20 @@ function bracesValid(string){
 // -----------------------------------------------------------------------------------------------//
 
 // WED
-function isPalindrome(string){
-
+function isPalindrome(string) {
+    var word = (string)
+    for (i = 0; i < string.length; i++) {
+        console.log(i)
+    }
 }
+console.log(isPalindrome("hello")) //moved it outside the function
+// also "hello", put quotes around hello or it thinks it's a variable
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
 // "HELLO" => FALSE
 // "KAYAK" => TRUE
 // "TACOCAT" => TRUE
 
-function isAnagram(string1, string2){
+function isAnagram(string1, string2) {
 
 }
 // HINT: YOU WANT TO USE A DICTIONARY
@@ -105,13 +110,13 @@ function isAnagram(string1, string2){
 // -----------------------------------------------------------------------------------------------//
 
 // THUR
-function bookIndex(array){
+function bookIndex(array) {
 
 }
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
 // EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
 
-function join(arr, seperator){
+function join(arr, seperator) {
 
 }
 // Given an arr and a separator string, output a string of every item in the array separated by the separator.
@@ -127,7 +132,7 @@ function join(arr, seperator){
 
 
 // FRI
-function invertObj(obj){
+function invertObj(obj) {
 
 }
 // GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
@@ -142,12 +147,41 @@ function invertObj(obj){
 //     "TWO":'B',
 //     "THREE":'C'
 // }
-function minCoinChange(num){
+function minCoinChange(num) {
 
 }
 // GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
 // EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
-// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
+// {
+//     'quarter':3,
 // {
 //     'quarter':3,
 //     'dimes':0,
