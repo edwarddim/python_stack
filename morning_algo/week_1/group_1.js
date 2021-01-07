@@ -146,6 +146,10 @@ function isAnagram(string1, string2) {
 function bookIndex(array) {
 
 }
+
+console.log(bookIndex([1, 13, 14, 15, 16, 17, 36, 37, 38, 70]))
+
+console.log(bookIndex([1, 13, 14, 15, 16, 17, 36, 37, 38, 70]))
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
 // EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
 

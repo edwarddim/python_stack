@@ -98,7 +98,7 @@ function isAnagram(string1, string2) {
     for (var k in s2_c) {
         var v = s2_c[k]
 
-        if (s1_c[k] == undefined || s1_c[k] != v) {
+        if (s1_c[k] == undefined | s1_c[k] != v) {
             return false
         }
     }
@@ -119,3 +119,16 @@ isAnagram("silent", "listen")
 // EX. "DEER", "REDD" => FALSE
 // -----------------------------------------------------------------------------------------------//
 // 
+
+function bookIndex(array) {
+    // ITERATE THROUGH THE ARRAY
+    // CHECK TO SEE IF THE NEIGHBOURING INDEXES ARE CONSECUTIVE OR NOT
+    // HINT. USE A FOR LOOP WITH A WHILE LOOP INSIDE
+
+}
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+

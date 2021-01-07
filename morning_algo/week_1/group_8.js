@@ -110,7 +110,19 @@ function isAnagram(string1, string2) {
 // -----------------------------------------------------------------------------------------------//
 
 // THUR
-function bookIndex(array) {
+function bookIndex(arr) {
+    var temp1 = {}
+    var temp2 = {}
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] != arr[i + 1] - 1) {
+            temp1.push(arr[i])
+        }
+        else (arr[i] == arr[i + 1] - 1); {
+
+        }
+
+        // print(f" {temp[0]}, {temp2[1][0]} - {temp2[1][4]},)
+    }
 
 }
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES

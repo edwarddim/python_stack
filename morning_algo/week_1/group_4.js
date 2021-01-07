@@ -85,9 +85,45 @@ function isAnagram(string1, string2) {
     console.log(isAnagram("LISTEN", "SILENZ"))
     console.log(isAnagram("DEER", "REDD"))
 
-// HINT: YOU WANT TO USE A OBJECT(DICTIONARY) TO KEEP TRACK OF CHARACTERS AND THEIR FREQUENCY
-// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
-// EX. "ATE", "TEA" => TRUE
-// EX. "LISTEN", "SILENT" => TRUE
-// EX. "LISTEN", "SILENZ" => FALSE
-// EX. "DEER", "REDD" => FALSE
+    // HINT: YOU WANT TO USE A OBJECT(DICTIONARY) TO KEEP TRACK OF CHARACTERS AND THEIR FREQUENCY
+    // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+    // EX. "ATE", "TEA" => TRUE
+    // EX. "LISTEN", "SILENT" => TRUE
+    // EX. "LISTEN", "SILENZ" => FALSE
+    // EX. "DEER", "REDD" => FALSE
+
+    // THUR
+    function bookIndex(array) {
+
+        var pages = []
+        var working_string = ""
+        for (var i = 0; i < array.length; i++) {
+            if ((i != array.length - 1) && (array[i] + 1 == array[i + 1])) {
+                if (working_string == "") {
+                    working_string += array[i]
+                }
+
+            } else {
+                if (working_string == "") {
+                    working_string += array[i]
+                    pages.push(working_string)
+                    working_string = ""
+                } else {
+                    working_string += "-" + array[i]
+                    pages.push(working_string)
+                    working_string = ""
+                }
+            }
+        }
+        return pages
+    }
+
+
+    var pages = [1, 13, 14, 15, 16, 17, 36, 37, 38, 70]
+    console.log(bookIndex(pages))
+
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
+
+
+

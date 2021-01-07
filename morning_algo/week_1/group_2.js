@@ -134,3 +134,36 @@ function isAnagram(string1, string2) {
 // EX. "LISTEN", "SILENT" => TRUE
 // EX. "LISTEN", "SILENZ" => FALSE
 // EX. "DEER", "REDD" => FALSE
+
+
+
+
+
+
+
+
+// THUR
+
+function bookIndex(array) {
+    var indexList = []
+    var x = 0
+    for (var i = 0; i < array.length; i++) {
+        while (array[i] != array[i + 1] - 1) {
+            indexList.push(array[i])
+        }
+        if (array[i] == array[i + 1] - 1) {
+
+        }
+        // while (array[i] == array[i + 1]) {}
+    }
+    return indexList
+}
+console.log(bookIndex([1, 13, 14, 15, 16, 17, 36, 37, 38, 70]))
+
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
+
+
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//

@@ -143,13 +143,14 @@ function isAnagram(string1, string2) {
             dict[string2[i]] -= 1
             if (dict[string2[i]] < 0) {
                 return false
+
+            }
+            else {
+                return false
             }
         }
-        else {
-            return false
-        }
+        return true
     }
-    return true
 }
 // HINT: YOU WANT TO USE A OBJECT(DICTIONARY) TO KEEP TRACK OF CHARACTERS AND THEIR FREQUENCY
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
@@ -161,25 +162,33 @@ function isAnagram(string1, string2) {
 // -----------------------------------------------------------------------------------------------//
 
 // THUR
-function bookIndex(array) {
-
+function bookIndex(arr) {
+    var returnArr = []
+    // ITERATE THROUGH THE ARRAY
+    for (var i = 0; i < arr.length; i++) {
+        // CHECK TO SEE IF THE NEIGHBOURING INDEXES ARE CONSECUTIVE OR NOT
+        if ((arr[i + 1] - arr[i]) == 1) {
+            var dash = ""
+            dash += arr[i]
+            while ((arr[i + 1] - arr[i]) == 1) {
+                i++
+            }
+            dash += "-"
+            dash += arr[i]
+            returnArr.push(dash)
+        }
+        else {
+            returnArr.push(arr[i].toString())
+        }
+    }
+    // HINT. USE A FOR LOOP WITH A WHILE LOOP INSIDE
+    return returnArr
 }
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
 // EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
 
-function join(arr, seperator) {
-
-}
-// Given an arr and a separator string, output a string of every item in the array separated by the separator.
-// EX. [1,2,3] , ", " => "1, 2, 3"
-// EX. [1,2,3] , "-" => "1-2-3"
-// EX. [1] , "-" => "1"
-// EX. [], "," => ""
-
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
-
-
 
 
 // FRI

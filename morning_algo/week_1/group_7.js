@@ -196,3 +196,30 @@ function stringReverse(string) {
     // EX. "LISTEN", "SILENT" => TRUE
     // EX. "LISTEN", "SILENZ" => FALSE
     // EX. "DEER", "REDD" => FALSE
+    arr = [1, 13, 14, 15, 16, 17, 36, 37, 38, 70]
+    function bookIndex(array) {
+        var temp = []
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] + 1 == arr[i + 1]) {
+                var start = arr[i];
+                while (arr[i] + 1 == arr[i + 1]) {
+                    i++;
+                }
+                var end = arr[i];
+                temp.push(start + "-" + end);
+            } else {
+                temp.push(arr[i]);
+            }
+        }
+        var newstring = temp.join(',');
+        return newstring
+    }
+    console.log(bookIndex(arr));
+
+        // ITERATE THROUGH THE ARRAY
+        // CHECK TO SEE IF THE NEIGHBOURING INDEXES ARE CONSECUTIVE OR NOT
+        // HINT. USE A FOR LOOP WITH A WHILE LOOP INSIDE
+
+
+    // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
+    // EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]

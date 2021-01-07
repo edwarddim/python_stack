@@ -157,11 +157,37 @@ function acronyms(string) {
             }
         }
     }
-// HINT: YOU WANT TO USE A OBJECT(DICTIONARY) TO KEEP TRACK OF CHARACTERS AND THEIR FREQUENCY
-// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
-// EX. "ATE", "TEA" => TRUE
-// EX. "LISTEN", "SILENT" => TRUE
-// EX. "LISTEN", "SILENZ" => FALSE
-// EX. "DEER", "REDD" => FALSE
-// -----------------------------------------------------------------------------------------------//
-// -----------------------------------------------------------------------------------------------//
+    // HINT: YOU WANT TO USE A OBJECT(DICTIONARY) TO KEEP TRACK OF CHARACTERS AND THEIR FREQUENCY
+    // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
+    // EX. "ATE", "TEA" => TRUE
+    // EX. "LISTEN", "SILENT" => TRUE
+    // EX. "LISTEN", "SILENZ" => FALSE
+    // EX. "DEER", "REDD" => FALSE
+    // -----------------------------------------------------------------------------------------------//
+    // -----------------------------------------------------------------------------------------------//
+    function bookIndex(array) {
+        // ITERATE THROUGH THE ARRAY
+        // CHECK TO SEE IF THE NEIGHBOURING INDEXES ARE CONSECUTIVE OR NOT
+        // HINT. USE A FOR LOOP WITH A WHILE LOOP INSIDE
+        var newArr = [];
+        //this loop iterates through the array:
+        for (var i = 0; i < array.length - 1; i++) {
+            //check to see if neighbor indexes are consecutive
+            var lowest = parseInt(array[i])
+            var next = parseInt(array[i + 1])
+            if (lowest != next - 1) {
+                newArr.push(lowest)
+            }
+            else {
+                while (lowest != next - 1) {
+                    console.log(lowest + " doesn't equal " + next - 1)
+                    lowest = next
+                    i++
+                    next = array[i + 1]
+                }
+            }
+        }
+        return newArr
+    }
+    var arr = [1, 13, 14, 15, 16, 17, 36, 37, 38, 70]
+    console.log(bookIndex(arr))

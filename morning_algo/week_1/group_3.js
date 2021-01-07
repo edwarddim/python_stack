@@ -121,434 +121,72 @@ function isAnagram(string1, string2) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// (),[],{}
-// EX. "({})[]" => TRUE
-// TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS
-// WILL REQUIRE A STACK IMPLEMENTATION
-// -----------------------------------------------------------------------------------------------//
-// -----------------------------------------------------------------------------------------------//
-
-// WED
-function isPalindrome(string) {
-
-}
-// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
-// "HELLO" => FALSE
-// "KAYAK" => TRUE
-// "TACOCAT" => TRUE
-
-function isAnagram(string1, string2) {
-
-}
-// HINT: YOU WANT TO USE A DICTIONARY
-// RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
-// EX. "ATE", "TEA" => TRUE
-// EX. "LISTEN", "SILENT" => TRUE
-// EX. "LISTEN", "SILENZ" => FALSE
-// EX. "DEER", "REDD" => FALSE
-// -----------------------------------------------------------------------------------------------//
-// -----------------------------------------------------------------------------------------------//
-
 // THUR
 function bookIndex(array) {
+    var counter = 0
+    // i < array.length. since we're using just less than
+    for (var i = 0; i < array.length; i++) {
+        while i[0] == 1
+    }
 
 }
+
+
+
+
+var arr = [1, 13, 14, 15, 16, 17, 36, 37, 38, 70]
+
+function bookIndex(arr) {
+    var temp = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] + 1 == arr[i + 1]) {
+            var start = arr[i];
+            while (arr[i] + 1 == arr[i + 1]) {
+                i++;
+            }
+            var end = arr[i];
+            temp.push(start + "-" + end);
+        } else {
+            temp.push(arr[i]);
+        }
+    }
+    var newstring = temp.join(',');
+    return newstring
+}
+
+console.log(bookIndex(arr));
+
+function bIndex(array) {
+    var newArray = [];
+    var first = "" + array[i] + "-";
+    var last = "";
+    var checking = true;
+    for (var i = 0; i < array.length; i++) {
+        if (checking == false) {
+            if (array[i] + 1 == array[i + 1]) {
+                first = "" + array[i] + "-";
+                checking = true;
+            }
+            else {
+                newArray.push("" + array[i] + "")
+            }
+        }
+        first = "" + array[i] + "-";
+        while (checking == true) {
+            if (array[i] + 1 == array[i + 1]) {
+                i++
+            }
+            if (array[i] + 1 != array[i + 1]) {
+                last = "" + array[i] + "";
+                newArray.push("" + first + last + "")
+                checking = false;
+            }
+            console.log(newArray)
+        }
+    }
+    return newArray
+}
+console.log(bIndex([1, 2, 3, 5, 9, 10]))
+
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
 // EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
-
-function join(arr, seperator) {
-
-}
-// Given an arr and a separator string, output a string of every item in the array separated by the separator.
-// EX. [1,2,3] , ", " => "1, 2, 3"
-// EX. [1,2,3] , "-" => "1-2-3"
-// EX. [1] , "-" => "1"
-// EX. [], "," => ""
-
-// -----------------------------------------------------------------------------------------------//
-// -----------------------------------------------------------------------------------------------//
-
-
-
-
-// FRI
-function invertObj(obj) {
-
-}
-// GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
-// EX.
-// {
-//     'A':"ONE",
-//     'B':"TWO",
-//     'C':"THREE"
-// }
-// {
-//     "ONE":'A',
-//     "TWO":'B',
-//     "THREE":'C'
-// }
-function minCoinChange(num) {
-
-}
-// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
-// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
-// EX. 79 => "3 quarteres, 4 pennies"
-// {
-//     'quarter':3,
-//     'dimes':0,
-//     'nickel':0,
-//     'penny':3
-// }  'B':"TWO",
-//     'C':"THREE"
-// }
-// {
-//     "ONE":'A',
-//     "TWO":'B',
-//     "THREE":'C'
-// }
-function minCoinChange(num) {
-
-}
-// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
-// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
-// EX. 79 => "3 quarteres, 4 pennies"
-// {
-//     'quarter':3,
-//     'dimes':0,
-//     'nickel':0,
-//     'penny':3
-// }  'B':"TWO",
-//     'C':"THREE"
-// }
-// {
-//     "ONE":'A',
-//     "TWO":'B',
-//     "THREE":'C'
-// }
-function minCoinChange(num) {
-
-}
-// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
-// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
-// EX. 79 => "3 quarteres, 4 pennies"
-// {
-//     'quarter':3,
-//     'dimes':0,
-//     'nickel':0,
-//     'penny':3
-// }  'B':"TWO",
-//     'C':"THREE"
-// }
-// {
-//     "ONE":'A',
-//     "TWO":'B',
-//     "THREE":'C'
-// }
-function minCoinChange(num) {
-
-}
-// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
-// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
-// EX. 79 => "3 quarteres, 4 pennies"
-// {
-//     'quarter':3,
-//     'dimes':0,
-//     'nickel':0,
-//     'penny':3
-// }  'B':"TWO",
-//     'C':"THREE"
-// }
-// {
-//     "ONE":'A',
-//     "TWO":'B',
-//     "THREE":'C'
-// }
-function minCoinChange(num) {
-
-}
-// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
-// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
-// EX. 79 => "3 quarteres, 4 pennies"
-// {
-//     'quarter':3,
-//     'dimes':0,
-//     'nickel':0,
-//     'penny':3
-// }  'B':"TWO",
-//     'C':"THREE"
-// }
-// {
-//     "ONE":'A',
-//     "TWO":'B',
-//     "THREE":'C'
-// }
-function minCoinChange(num) {
-
-}
-// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
-// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
-// EX. 79 => "3 quarteres, 4 pennies"
-// {
-//     'quarter':3,
-//     'dimes':0,
-//     'nickel':0,
-//     'penny':3
-// }  'B':"TWO",
-//     'C':"THREE"
-// }
-// {
-//     "ONE":'A',
-//     "TWO":'B',
-//     "THREE":'C'
-// }
-function minCoinChange(num) {
-
-}
-// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
-// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
-// EX. 79 => "3 quarteres, 4 pennies"
-// {
-//     'quarter':3,
-//     'dimes':0,
-//     'nickel':0,
-//     'penny':3
-// }
