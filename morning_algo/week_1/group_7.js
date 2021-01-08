@@ -223,3 +223,101 @@ function stringReverse(string) {
 
     // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
     // EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
+
+    // FRI
+function minCoinChange(num) {
+    var coins = {
+        quarter : 0,
+        dimes : 0,
+        nickels : 0,
+        pennies : 0
+    }
+    while (num > 0){
+        if (num >= 25) {
+            coins['quarters'] ++
+            num -= 25
+        } else if (num >= 10){
+            coins['dimes'] ++
+            num -= 10
+        } else if (num >= 5){
+            coins['nickels'] ++
+            num -= 5
+        } else if (num >= 1){
+            coins['pennies'] ++
+            num -= 1
+        }
+    }
+    return coins
+}
+console.log(minCoinChange(187))
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':4
+// }
+
+function minCoinChange(num){
+    quarters = Math.trunc(num / 25);
+    num -= quarters * 25;
+    dimes = Math.trunc(num / 10);
+    num -= dimes * 10;
+    nickles = Math.trunc(num / 5);
+    num -= nickles * 5;
+    pennies = num;
+    result = "";
+    if(quarters > 0) {
+        result += quarters + " QUARTERS";
+    }
+    if(dimes > 0) {
+        if(result !== ""){
+            result += ", "
+        }
+        result += dimes + " DIMES";
+    }
+    if(nickles > 0) {
+        if(result !== ""){
+            result += ", "
+        }
+        result += nickles + " NICKLES";
+    }
+    if(pennies > 0) {
+        if(result !== ""){
+            result += ", "
+        }
+        result +=  pennies+ " PENNIES";
+    }
+    return result;
+
+    function dictSwap(zebra){
+        for (var key in zebra){
+            var temp = key
+            = key
+            key = temp
+        }
+        return zebra
+    }
+    
+    dictSwap({'A':"ONE",
+            'B':"TWO",
+            'C':"THREE"})
+    console.log(zebra)
+
+}
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
+// EX.
+// {
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// 
+
+}

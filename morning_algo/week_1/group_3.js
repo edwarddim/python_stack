@@ -190,3 +190,113 @@ console.log(bIndex([1, 2, 3, 5, 9, 10]))
 
 // GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN INDEXED VERSION STRING OF BOOK PAGES
 // EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
+
+// FRI
+function minCoinChange(num) {
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':4
+// }
+
+minCoinChange(321)
+
+function invertObj(obj) {
+    var denominations = [1, 5, 10, 25] 
+}
+
+
+def give_change(num):
+    num2=num
+    coin_list = []
+    change_given = {}
+
+    if num2 > 25:
+        while num2 >= 25:
+            coin_list.append('quarter')
+            num2 -= 25
+    if num2 < 25:
+        while num2 >= 10:
+            coin_list.append('dime')
+            num2 -= 10
+    if num2 < 10:
+        while num2 >= 5:
+            coin_list.append('nickle')
+            num2 -= 5
+    if num2 < 5:
+        while num2 >= 1:
+            coin_list.append('penny')
+            num2 -= 1
+    for char in coin_list:
+        if char not in change_given:
+            change_given[char] = 1
+        else:
+            change_given[char] += 1
+    return change_given
+
+print(give_change(96))
+
+
+
+function minCoinChange(amount) {
+    amount = 321; 
+    var cost = [1,5,10,25]; // denominations of coins
+    var result = [];
+    while (amount > 0) {
+        var coin = cost.pop(); // 
+        var count = Math.floor(amount/coin); 
+        amount -= count * coin; 
+        if (count) result.push([coin/100, count]); 
+    }
+    return result;
+}
+minCoinChange(321)
+
+// 
+function minCoinChange(amount) {
+    amount = 321; 
+    var cost = [1,5,10,25]; // denominations of coins
+    var result = [];
+    while (amount > 0) {
+        var coin = cost.pop(); // 
+        var count = Math.floor(amount/coin); 
+        amount -= count * coin; 
+        if (count) result.push([coin/100, count]); 
+    }
+    return result;
+}
+minCoinChange(321)
+
+// 
+function minCoinChange(amount) {
+    amount = 321; 
+    var cost = [1,5,10,25]; // denominations of coins
+    var result = [];
+    while (amount > 0) {
+        var coin = cost.pop(); // 
+        var count = Math.floor(amount/coin); 
+        amount -= count * coin; 
+        if (count) result.push([coin/100, count]); 
+    }
+    return result;
+}
+minCoinChange(321)
+
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
+// EX.
+// {
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }

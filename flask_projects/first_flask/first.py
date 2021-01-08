@@ -25,7 +25,7 @@ def page(stack_id,module_id,page_id):
     print(module_id)
     print(page_id)
     # USE THE IDS TO RETRIEVE INFORMATION FROM DB
-    return f"{stack_id} {module_id} {page_id}"
+    return f"{stack_id} {module_id} {page_id}"  
 
 @app.route("/m/1/1/1")
 

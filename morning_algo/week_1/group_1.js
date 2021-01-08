@@ -167,26 +167,80 @@ function join(arr, seperator) {
 
 
 
-
 // FRI
+//dict = {0:{1:'a'}, 1:{2:'b'}, 2:{3:'c'}}
+//for (var key in dict){
+//  console.log( key, dict[key] );
+//}
 function invertObj(obj) {
-
+    var temp = ''
+    console.log(obj.length)
+    // for i in range(0,len(obj)):
+    //     temp = obj[i];
+    //     obj[i] = obi[i][0];
+    //     obj[i][0] = temp;
+    for (var i = 0; i < obj.length; i++){
+        temp = obj['A'];
+        obj['A'] = obi['A'][0];
+        obi['A'][0] = temp;
+    }
+    console.log(obj)
 }
+
+
 // GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
 // EX.
-// {
-//     'A':"ONE",
-//     'B':"TWO",
-//     'C':"THREE"
-// }
-// {
-//     "ONE":'A',
-//     "TWO":'B',
-//     "THREE":'C'
-// }
-function minCoinChange(num) {
+var dict1 = {
+    'A':"ONE",
+    'B':"TWO",
+    'C':"THREE"
+    }
 
+var dict2 = {
+    "ONE":'A',
+    "TWO":'B',
+    "THREE":'C'
+    }
+
+invertObj(dict1);
+
+
+
+
+
+function minCoinChange(num){
+    var pocket = {
+        'quarters' : 0,
+        'dimes' : 0,
+        'nickels' : 0,
+        'pennies' : 0
+    }
+    // for (var j=0; j<=num; j++){
+        if (num>=25){
+            for (i=num; i>=25; i-=25){
+                pocket['quarters']++;
+                num-=25;
+            }}
+        if (num>=10){
+            for (k=num; k>=10; k-=10){
+                pocket['dimes']++;
+                num-=10;
+            }}
+        if (num>=5){
+            for (l=num; l>=5; l-=5){
+                pocket['nickels']++;
+                num-=5;
+            }}
+        if (num>=1){
+            for (m=num; m>=1; m-=1){
+                pocket['pennies']++;
+                num-=1;
+            }}
+    console.log(pocket);
 }
+
+minCoinChange(207);
+
 // GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
 // EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
 // EX. 79 => "3 quarteres, 4 pennies"

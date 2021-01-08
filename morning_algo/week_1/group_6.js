@@ -191,3 +191,39 @@ function acronyms(string) {
     }
     var arr = [1, 13, 14, 15, 16, 17, 36, 37, 38, 70]
     console.log(bookIndex(arr))
+
+
+// FRI
+function minCoinChange(num) {
+
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+    // first give value to all coins
+    // probably a dictionary 
+    
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':4
+// }
+
+minCoinChange(321)
+
+function invertObj(obj) {
+
+}
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
+// EX.
+// {
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }

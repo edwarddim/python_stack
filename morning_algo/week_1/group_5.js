@@ -131,4 +131,64 @@ function bookIndex(array) {
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
+function minCoinChange(num) {
 
+}
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+function minCoinChange(num){
+    var dict = {'quarters':'0', 'dimes' : '0', 'nickels' : '0', 'penny': '0'}
+    
+    if(num > 25){
+        dict['quarters'] = Math.floor(num/25)
+        num -= dict['quarters']*25
+    }
+    if(num > 10){
+        dict['dimes'] = Math.floor(num/10)
+        num -= dict['dimes']*10
+    }
+    if(num > 5){
+        dict['nickels'] = Math.floor(num/5)
+        num -= dict['nickels']*5
+    }
+    dict['penny'] = num
+    return dict
+}
+
+console.log(minCoinChange(79))
+console.log(minCoinChange(321))
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':4
+// }
+
+minCoinChange(321)
+
+function invertObj(obj) {
+
+}
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
+// EX.
+// {
+const data = {
+    apple:10,
+    orange:15,
+    pear:20,
+}
+const newData = Object.keys(data).reduce(function(obj, key) {
+    obj[data[key]] = key;
+    return obj;
+}, {});
+console.log(newData);
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }

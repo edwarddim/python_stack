@@ -192,9 +192,43 @@ function bookIndex(arr) {
 
 
 // FRI
-function invertObj(obj) {
-
+function minCoinChange(num) {
+    var obj = {}
+    obj['quarters'] = Math.floor(num / 25) // calculates how many quarters goes into num
+    num = num % 25
+    obj['dimes'] = Math.floor(num / 10)
+    num = num % 10
+    obj['nickels'] = Math.floor(num / 5)
+    num = num % 5
+    obj['pennies'] = num
+    return obj
 }
+console.log(minCoinChange(321))
+console.log(minCoinChange(79))
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':4
+// }
+
+
+
+function invertObj(obj) {
+    var invertObj ={}
+    for(var [key, value] of Object.entries(obj)){
+        invertObj[value] = key
+    }
+    return invertObj
+}
+console.log(invertObj({
+    'A':"ONE",
+    'B':"TWO",
+    'C':"THREE"
+}))
 // GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
 // EX.
 // {
@@ -206,16 +240,4 @@ function invertObj(obj) {
 //     "ONE":'A',
 //     "TWO":'B',
 //     "THREE":'C'
-// }
-function minCoinChange(num) {
-
-}
-// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
-// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
-// EX. 79 => "3 quarteres, 4 pennies"
-// {
-//     'quarter':3,
-//     'dimes':0,
-//     'nickel':0,
-//     'penny':3
 // }

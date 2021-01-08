@@ -126,4 +126,56 @@ function isAnagram(string1, string2) {
 // EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
 
 
+// FRI
+// function minCoinChange(num) {
 
+
+[] 
+// var coinList =
+// [] 
+// var coinList =
+// [] 
+// var coinList =
+
+// [] 
+// var coinList =
+// []
+
+function give_change(num);
+    var num2=num
+    var coin_list = []
+    var change_given = {}
+
+    if (num2 > 25){
+        while (num2 >= 25)
+            coin_list.push('quarter')
+            num2 -= 25
+    }
+    if (num2 < 25){
+        while (num2 >= 10)
+            coin_list.push('dime')
+            num2 -= 10
+    }
+    if (num2 < 10){
+        while (num2 >= 5)
+            coin_list.push('nickle')
+            num2 -= 5
+    }
+    if (num2 < 5){
+        while (num2 >= 1)
+            coin_list.push('penny')
+            num2 -= 1
+    }
+    for (char in coin_list){
+        if(char =! change_given){
+            change_given[char] = 1
+        }
+        else{
+            change_given[char] += 1
+        }
+    return change_given
+    }
+
+
+
+console.log(give_change(96))

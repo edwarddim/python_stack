@@ -167,3 +167,82 @@ console.log(bookIndex([1, 13, 14, 15, 16, 17, 36, 37, 38, 70]))
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+
+// FRI
+
+// GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
+// EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
+// EX. 79 => "3 quarteres, 4 pennies"
+// {
+//     'quarter':3,
+//     'dimes':0,
+//     'nickel':0,
+//     'penny':4
+// }
+
+function minCoinChange(num) {
+
+    var change = {
+        quarters: 0,
+        dimes: 0,
+        nickels: 0,
+        pennies: 0,
+    }
+
+    while (num > 0) {
+        if (num >= 25) {
+            change['quarters'] ++
+            num -=25
+        } else if (num >= 10) {
+            change['dimes'] ++
+            num -= 10
+        } else if (num >=5) {
+            change['nickels'] ++
+            num -= 5
+        } else if (num >= 1) {
+            change['pennies'] ++
+            num -=1
+        }
+    }
+    return change
+
+}
+console.log(minCoinChange(321))
+
+
+
+function invertObj(obj) {
+
+    var flip_dic = {}
+
+    for (var [k,v] of Object.entries(obj)){
+        flip_dic[v] = k
+    }
+
+    return flip_dic
+}
+
+var obj = {
+    key: "value",
+    key1: "value1",
+    key2: "value2",
+}
+
+console.log(invertObj(obj))
+
+// GIVEN AN OBJECT WITH KEY VALUE PAIRS, RETURN A DICTIONARY WITH THE KEYS AND VALUE SWAPPED
+// EX.
+// {
+//     'A':"ONE",
+//     'B':"TWO",
+//     'C':"THREE"
+// }
+// {
+//     "ONE":'A',
+//     "TWO":'B',
+//     "THREE":'C'
+// }
