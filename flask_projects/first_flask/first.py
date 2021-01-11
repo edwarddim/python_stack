@@ -21,11 +21,13 @@ def hello():
 
 @app.route("/m/<stack_id>/<module_id>/<page_id>")
 def page(stack_id,module_id,page_id):
-    print(stack_id)
-    print(module_id)
-    print(page_id)
-    # USE THE IDS TO RETRIEVE INFORMATION FROM DB
-    return f"{stack_id} {module_id} {page_id}"  
+    users = [
+        {'first_name' : 'Michael', 'last_name' : 'Choi'},
+        {'first_name' : 'John', 'last_name' : 'Supsupin'},
+        {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+        {'first_name' : 'KB', 'last_name' : 'Tonel'}
+    ]
+    return render("index.html" users = users)
 
 @app.route("/m/1/1/1")
 

@@ -1,23 +1,53 @@
 // MON
 /* 
   Given an array of strings
-  return a sum to represent how many times each array item is found (a frequency table)
+  return a object to represent how many times each array item is found (a frequency table)
   Useful methods:
     Object.hasOwnProperty("keyName")
       - returns true or false if the object has the key or not
-    Python: dict.has_key(key)
 */
 function frequencyTable(arr){
-
+  var obj = {}
+  // ITERATE THROUGHT THE ARR
+  for(var i = 0; i < arr.length; i++ ){
+    // DOES THE CHARACTER EXIST WITHIN OBJ
+    // IF IT EXISTS INCREMENT THE FREQ
+    if(obj.hasOwnProperty(arr[i])){
+      obj[arr[i]]++
+    }
+    // ELSE CREATE AN ENTRY WITH THE CHARACTER AND SET FREQ TO 1
+    else{
+      obj[arr[i]] = 1
+    }
+  }
+  return obj
 }
 // EX. ['A','A','B','C','C','C','D','D'] => {"A":2, "B":1, "C":3, "D":2}
 // EX. ['A','C','C','C','D','D','A','B',] => {"A":2, "B":1, "C":3, "D":2}
 /* 
   Reverse Word Order
   Create a function that, given a string of words (with spaces), returns new string with words in reverse sequence.
+  .split()
 */
 function reverseWordOrder(string){
+  // SEPERATE THE WORDS WITHIN THE SENTENCE
+  var arr = string.split(" ")
+  console.log(arr) // ['THIS', 'IS', 'A', 'TEST']
+  // REVERSE THE ORDER OF THE WORDS
+  for(var i = 0; i < arr.length/2; i++){
+    var temp = arr[i]
+    arr[i] = arr[arr.length - 1 - i]
+    arr[arr.length - 1 - i] = temp
+  }
+  return arr.join(" ")
 
+
+  // var returnString = ""
+  // for(var i = arr.length-1; i >=0;i--){
+  //   returnString += arr[i]
+  //   returnString += " "
+  // }
+  // return returnString
 }
 // EX. "THIS IS A TEST" => "TEST A IS THIS"
 
