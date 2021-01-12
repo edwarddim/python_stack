@@ -28,3 +28,63 @@ function frequencyTable(arr){
   
   }
   // EX. "THIS IS A TEST" => "TEST A IS THIS"
+
+
+  // TUE
+/* 
+  String: Dedupe
+  Remove duplicate characters 
+    - (case-sensitive)
+  Bonus: Keep only the last instance of each character.
+  1. USE A DICTIONARY TO KEEP TRACK OF SEEN CHARS
+  2. CHALLENGE: USE A BUILT IN FUNCITON TO RETURN THE SAME STRING
+*/
+function dedupeString(str){
+
+  var chars = {}
+
+  for (var i=0; i<str.length; i++){
+    if (!chars.hasOwnProperty(str[i])){
+      chars[str[i]] = true
+    }
+  }
+
+  var deduped = ""
+  for (var [k,v] of Object.entries(chars)){
+    deduped+=k
+  }
+  return deduped
+}
+console.log(dedupeString("bbbbaaaaffff"))
+
+// EX. "aabacecbedd" => "abced" 
+// EX. "bbbbaaaaffff" => "baf"
+/* 
+  Given a string containing space separated words
+  Reverse each word in the string.
+  If you need to, use .split to start, then try to do it without.
+*/
+function reverseWord(string){
+  var words = string.split(' ')
+
+  var backed = ""
+
+  for (var i=0; i<words.length; i++){
+
+    for (var i2=words[i].length-1; i2>=0; i2--){
+      backed += words[i][i2]
+    }
+
+    if (i != words.length-1){
+      backed += " "
+    }
+  }
+
+  return backed
+}
+console.log(reverseWord("The quick brown fox jumped over the lazy dog."))
+
+// EX. "HELLO" => "OLLEH"
+// EX. "hello world" => "olleh dlrow"
+// EX. "abc def ghi" => "cba fed ihg"
+// EX. "THIS IS A TEST" => "SIHT SI A TSET"

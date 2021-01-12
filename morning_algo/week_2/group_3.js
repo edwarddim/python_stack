@@ -71,6 +71,15 @@ console.log(string);
 function dedupeString(string){
 
 }
+
+function dedupe(a) {
+  return a.filter((element, index) => a.indexOf(element) === index);
+}
+
+const c = ["a", "b", "c", "c", "c", "b"];
+
+dedupe(c)
+
 // EX. "aabacecbedd" => "abced" 
 // EX. "bbbbaaaaffff" => "baf"
 /* 

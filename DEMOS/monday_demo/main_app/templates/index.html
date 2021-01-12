@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}	
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{request.session.number}}</h1>
+    <h1>It is {{time}}</h1>
+
+    {% for something in list %}
+        <p>{{something}}</p>
+    {% endfor %}
+
+    <form action="/reset" method="POST">
+        {% csrf_token %}
+        <button type="submit">Clear My Session</button>
+    </form>
+
+    <a href="/reset">Clear My session</a>
+</body>
+</html>

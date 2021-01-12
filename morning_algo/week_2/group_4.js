@@ -51,3 +51,188 @@ console.log(reverseWordOrder("This is a test"))
 
 }
   // EX. "THIS IS A TEST" => "TEST A IS THIS"
+
+
+  // TUE
+/* 
+  String: Dedupe
+  Remove duplicate characters 
+    - (case-sensitive)
+  Bonus: Keep only the last instance of each character.
+  1. USE A DICTIONARY TO KEEP TRACK OF SEEN CHARS
+  2. CHALLENGE: USE A BUILT IN FUNCITON TO RETURN THE SAME STRING
+*/
+function dedupeString(string){
+    result = {}
+    var returnstr = ""
+    for (i=0; i < string.length; i++) {
+        if (result.hasOwnProperty(string[i]) == true) {
+            continue;
+        }
+        else {
+            result[string[i]] = 1
+            returnstr += string[i]
+        }
+    }
+    return returnstr
+
+}
+console.log(dedupeString("bbbbaaaffe"))
+
+// Challenge
+function dedupeString(string){
+    return string
+        .split('')
+        .filter(function(item, pos, self) {
+            return self.indexOf(item) == pos;
+        })
+        .join('');
+}
+console.log(dedupeString('faaabaccadbeffed'));
+
+// EX. "aabacecbedd" => "abced" 
+// EX. "bbbbaaaaffff" => "baf"
+/* 
+  Given a string containing space separated words
+  Reverse each word in the string.
+  If you need to, use .split to start, then try to do it without.
+*/
+function reverseWord(string){
+    var arr = (string.split(" "))
+    console.log(arr)
+    var newstring = ""
+    for ( var i=0; i < arr.length; i++) {
+        for (var x = arr[i].length-1; x>=0; x--){
+            newstring += arr[i][x]
+        }
+        newstring += " "
+    }
+    return newstring
+}
+console.log(reverseWord("hello world"))
+// EX. "HELLO" => "OLLEH"
+// EX. "hello world" => "olleh dlrow"
+// EX. "abc def ghi" => "cba fed ihg"
+// EX. "THIS IS A TEST" => "SIHT SI A TSET"
+
+
+  // TUE
+/* 
+  String: Dedupe
+  Remove duplicate characters 
+    - (case-sensitive)
+  Bonus: Keep only the last instance of each character.
+  1. USE A DICTIONARY TO KEEP TRACK OF SEEN CHARS
+  2. CHALLENGE: USE A BUILT IN FUNCITON TO RETURN THE SAME STRING
+*/
+function dedupeString(string){
+    result = {}
+    var returnstr = ""
+    for (i=0; i < string.length; i++) {
+        if (result.hasOwnProperty(string[i]) == true) {
+            continue;
+        }
+        else {
+            result[string[i]] = 1
+            returnstr += string[i]
+        }
+    }
+    return returnstr
+
+}
+console.log(dedupeString("bbbbaaaffe"))
+
+// Challenge
+function dedupeString(string){
+    return string
+        .split('')
+        .filter(function(item, pos, self) {
+            return self.indexOf(item) == pos;
+        })
+        .join('');
+}
+console.log(dedupeString('faaabaccadbeffed'));
+
+// EX. "aabacecbedd" => "abced" 
+// EX. "bbbbaaaaffff" => "baf"
+/* 
+  Given a string containing space separated words
+  Reverse each word in the string.
+  If you need to, use .split to start, then try to do it without.
+*/
+function reverseWord(string){
+    var arr = (string.split(" "))
+    var newstring = ""
+    for ( var i=0; i < arr.length; i++) {
+        for (var x = arr[i].length-1; x>=0; x--){
+            newstring += arr[i][x]
+        }
+    newstring+= 
+    }
+    return newstring
+}
+console.log(reverseWord("hello world"))
+// EX. "HELLO" => "OLLEH"
+// EX. "hello world" => "olleh dlrow"
+// EX. "abc def ghi" => "cba fed ihg"
+// EX. "THIS IS A TEST" => "SIHT SI A TSET"
+  // TUE
+/* 
+  String: Dedupe
+  Remove duplicate characters 
+    - (case-sensitive)
+  Bonus: Keep only the last instance of each character.
+  1. USE A DICTIONARY TO KEEP TRACK OF SEEN CHARS
+  2. CHALLENGE: USE A BUILT IN FUNCITON TO RETURN THE SAME STRING
+*/
+function dedupeString(string){
+    result = {}
+    var returnstr = ""
+    for (i=0; i < string.length; i++) {
+        if (result.hasOwnProperty(string[i]) == true) {
+            continue;
+        }
+        else {
+            result[string[i]] = 1
+            returnstr += string[i]
+        }
+    }
+    return returnstr
+
+}
+console.log(dedupeString("bbbbaaaffe"))
+
+// Challenge
+function dedupeString(string){
+    return string
+        .split('')
+        .filter(function(item, pos, self) {
+            return self.indexOf(item) == pos;
+        })
+        .join('');
+}
+console.log(dedupeString('faaabaccadbeffed'));
+
+// EX. "aabacecbedd" => "abced" 
+// EX. "bbbbaaaaffff" => "baf"
+/* 
+  Given a string containing space separated words
+  Reverse each word in the string.
+  If you need to, use .split to start, then try to do it without.
+*/
+function reverseWord(string){
+    var arr = (string.split(" "))
+    var newstring = ""
+    for ( var i=0; i < arr.length; i++) {
+        for (var x = arr[i].length-1; x>=0; x--){
+            newstring += arr[i][x]
+        }
+    newstring+= 
+    }
+    return newstring
+}
+console.log(reverseWord("hello world"))
+// EX. "HELLO" => "OLLEH"
+// EX. "hello world" => "olleh dlrow"
+// EX. "abc def ghi" => "cba fed ihg"
+// EX. "THIS IS A TEST" => "SIHT SI A TSET"

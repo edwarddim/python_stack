@@ -60,20 +60,44 @@ function reverseWordOrder(string){
   Remove duplicate characters 
     - (case-sensitive)
   Bonus: Keep only the last instance of each character.
+  1. USE A DICTIONARY TO KEEP TRACK OF SEEN CHARS
+  2. CHALLENGE: USE A BUILT IN FUNCITON TO RETURN THE SAME STRING
 */
 function dedupeString(string){
-
+  var obj = {}
+  for(var i =0 ; i < string.length; i++){
+    if(!obj.hasOwnProperty(string[i])){
+      obj[string[i]] = 0
+    }
+  }
+  var returnString = ""
+  for(var [key, value] of Object.entries(obj)){
+    returnString += key
+  }
+  return returnString
 }
+console.log(dedupeString("aabacecbedd"))
+
+function dedupe(a) {
+  return a.filter((element, index) => a.indexOf(element) === index);
+}
+
 // EX. "aabacecbedd" => "abced" 
 // EX. "bbbbaaaaffff" => "baf"
-/* 
+F/* 
   Given a string containing space separated words
   Reverse each word in the string.
   If you need to, use .split to start, then try to do it without.
 */
 function reverseWord(string){
-
+  var arr = string.split(" ")
+  var returnString = ""
+  for(var word of arr){
+    returnString += word.split("").reverse().join("")
+  }
+  return returnString
 }
+console.log(reverseWord("THIS IS A TEST"))
 // EX. "HELLO" => "OLLEH"
 // EX. "hello world" => "olleh dlrow"
 // EX. "abc def ghi" => "cba fed ihg"

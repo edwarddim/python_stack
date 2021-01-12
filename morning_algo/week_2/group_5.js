@@ -25,3 +25,42 @@ function frequencyTable(arr){
   
   }
   // EX. "THIS IS A TEST" => "TEST A IS THIS"
+
+
+  // TUE
+/* 
+  String: Dedupe
+  Remove duplicate characters 
+    - (case-sensitive)
+  Bonus: Keep only the last instance of each character.
+  1. USE A DICTIONARY TO KEEP TRACK OF SEEN CHARS
+  2. CHALLENGE: USE A BUILT IN FUNCITON TO RETURN THE SAME STRING
+*/
+
+
+function dedupeString(string){
+  string= Array.from(new Set(string.split(''))).toString();
+   return string
+}
+
+console.log(dedupeString("aabacecbedd")) // => "abced" 
+// EX. "bbbbaaaaffff" => "baf"
+
+// EX. "aabacecbedd" => "abced" 
+// EX. "bbbbaaaaffff" => "baf"
+/* 
+  Given a string containing space separated words
+  Reverse each word in the string.
+  If you need to, use .split to start, then try to do it without.
+*/
+function reverseWord(string){
+  var newSting=""
+  for(var i = string.length -1; i >=0){
+    newSting += string[i]
+  }
+  return newString
+}
+// EX. "HELLO" => "OLLEH"
+// EX. "hello world" => "olleh dlrow"
+// EX. "abc def ghi" => "cba fed ihg"
+// EX. "THIS IS A TEST" => "SIHT SI A TSET"
