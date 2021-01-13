@@ -1,0 +1,30 @@
+CREATE
+User.objects.create( name = "Edward Im", email="ed@gmail.com", password="fjeiwao3245t34hqui", age = 30 )
+User.objects.create( name = "Jane Doe", email="jane@gmail.com", password="ffewafewafaeawui", age = 31 )
+User.objects.create( name = "John Doe", email="john@gmail.com", password="ffewafewafaeawui", age = 31 )
+User.objects.create( name = "Steve Martin", email="steve@gmail.com", password="qwerty", age = 50 )
+
+READ
+GET ALL OF THE USERS
+User.objects.all() add .values() to see all the information
+GET ONE OF THE USERS
+User.objects.get(id = 3)
+User.objects.filter( name = "Jane Doe" )
+
+UPDATE
+UPDATE USER WITH ID #2, CHANGE THEIR INFO
+1. Retreive user from DB and store inside VARIABLE
+edit_user = User.objects.get(id = 2)
+2. Change the information using the VARIABLE
+edit_user.name = "Jayne Doe"
+edit_user.email = "jayne@gmail.com"
+edit_user.password = "yaddiyadda"
+edit_user.age = 32
+3. Update the DB with the newest information
+edit_user.save()
+
+DELETE
+1. Retreieve user from DB and store inside VARIABLE
+delete_user = User.objects.get(id = 1)
+2. Delete the entry in the DB
+delete_user.delete()

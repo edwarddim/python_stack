@@ -117,15 +117,47 @@ console.log(reverseWord("THIS IS A TEST"))
   return the original string.
 */
 function encode(string){
-
+  var encoded = ""
+  var currentChar = string[0]
+  var charCount = 0
+  for(var i = 0; i < string.length; i++){
+    if(string[i] == currentChar){
+      charCount++
+    }
+    if(string[i] != currentChar || i == string.length - 1){
+      encoded += currentChar + charCount
+      currentChar = string[i]
+      charCount = 1
+    }
+  }
+  if(encoded.length < string.length){
+    return encoded
+  }
+  else{
+    return string
+  }
 }
 // EX. "aaaabbcddd" => "a4b2c1d3"
 // EX. "" => ""
 // EX. "bbcc" => "bbcc"
 
 function decode(string){
+  var decoded = ""
 
+  for(var i =0; i < string.length; i++){
+    if(isNaN(string[i])){
+      var char = string[i]
+      i++
+      for(var j = 0; j < parseInt(string[i]); j++){
+        decoded += char
+      }
+    }
+  }
+  return decoded
 }
+
+parseInt("3") // 3
+parseInt("a") // NaN
 // HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
 // EX. "a3b2c1d3" => "aaabbcddd"
 

@@ -46,3 +46,7 @@ def reset(request):
         print("POST /RESET")
         request.session.clear()
     return redirect("/")
+
+# VERB       URL
+# GET       /reset
+# POST      /reset

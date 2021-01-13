@@ -8,32 +8,6 @@
     Python: dict.has_key(key)
 */
 function frequencyTable(arr){
-    var newArr = arr.split()
-    for (i=0; i<newArr.length; i++) {
-
-    }    
-}
-// Given an array of strings
-// return a sum to represent how many times each array item is found (a frequency table)
-// Useful methods:
-//     Object.hasOwnProperty("keyName")
-//     - returns true or false if the object has the key or not
-//     Python: dict.has_key(key)
-// */
-function frequencyTable(arr){
-    var output = {};
-    for(var i = 0; i < arr.length; i++){
-        if(output.hasOwnProperty(arr[i])) {
-            output[arr[i]]++
-        } else {
-            output[arr[i]] = 1
-        }
-    }
-    return output
-}
-
-console.log(frequencyTable(['A', 'A', 'B', 'C']))
-
 
 }
 // EX. ['A','A','B','C','C','C','D','D'] => {"A":2, "B":1, "C":3, "D":2}
@@ -43,20 +17,9 @@ console.log(frequencyTable(['A', 'A', 'B', 'C']))
   Create a function that, given a string of words (with spaces), returns new string with words in reverse sequence.
 */
 function reverseWordOrder(string){
-    var result = "";
-    var arr = string.split(" ")
-    for(var i = arr.length -1; i >= 1; i--) {
-      result += arr[i] + " "
-    }
+
 }
 // EX. "THIS IS A TEST" => "TEST A IS THIS"
-
-var string = "THIS IS A TEST";
-var words = string.split(" "); 
-    words = words.reverse(); 
-    string = words.join(" "); 
-
-console.log(string);
 
 
 
@@ -71,15 +34,6 @@ console.log(string);
 function dedupeString(string){
 
 }
-
-function dedupe(a) {
-  return a.filter((element, index) => a.indexOf(element) === index);
-}
-
-const c = ["a", "b", "c", "c", "c", "b"];
-
-dedupe(c)
-
 // EX. "aabacecbedd" => "abced" 
 // EX. "bbbbaaaaffff" => "baf"
 /* 
@@ -94,17 +48,6 @@ function reverseWord(string){
 // EX. "hello world" => "olleh dlrow"
 // EX. "abc def ghi" => "cba fed ihg"
 // EX. "THIS IS A TEST" => "SIHT SI A TSET"
-
-
-
-
-
-
-
-
-
-
-
 
 
 //-----------------------------------------------------------------------------------------------------//
@@ -122,10 +65,6 @@ function reverseWord(string){
 function encode(string){
 
 }
-console.log(encode("aaaabbcddd"))
-
-
-
 // EX. "aaaabbcddd" => "a4b2c1d3"
 // EX. "" => ""
 // EX. "bbcc" => "bbcc"
@@ -133,26 +72,8 @@ console.log(encode("aaaabbcddd"))
 function decode(string){
 
 }
-console.log(decode("a3b2c1d3"))
-
 // HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
 // EX. "a3b2c1d3" => "aaabbcddd"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //-----------------------------------------------------------------------------------------------------//
 // THUR
@@ -207,4 +128,4 @@ const currInv = [
 */
 function firstNonRepeatingChar(string){
 
-}
+} 

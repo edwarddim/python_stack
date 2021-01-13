@@ -88,3 +88,49 @@ console.log(reverseWord("The quick brown fox jumped over the lazy dog."))
 // EX. "hello world" => "olleh dlrow"
 // EX. "abc def ghi" => "cba fed ihg"
 // EX. "THIS IS A TEST" => "SIHT SI A TSET"
+
+
+
+// WED
+/* 
+  String Encode
+  You are given a string that may contain sequences of consecutive characters.
+  Create a function to shorten a string by including the character,
+  then the number of times it appears. 
+  
+  
+  If final result is not shorter (such as "bb" => "b2" ),
+  return the original string.
+*/
+
+
+function encode(string){
+  var obj = {}
+  for (var i = 0; i < string.length; i++) {
+    if (!obj.hasOwnProperty(string[i])) {
+      obj[string[i]] = 1
+    } else {
+        obj[string[i]]++
+      }
+    
+  }
+  var returnString = ""
+  for (var [key, value] of Object.entries(obj)) {
+    returnString += key
+    returnString += value
+  }
+  return returnString
+}
+console.log(encode("aaaabbcddd"))
+console.log(encode(""))
+console.log(encode("bbcc"))
+
+function decode(string){
+
+}
+// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
+// EX. "a3b2c1d3" => "aaabbcddd"
+
+
+
+

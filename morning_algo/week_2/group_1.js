@@ -117,3 +117,122 @@ function reverseWord(string){
 // EX. "hello world" => "olleh dlrow"
 // EX. "abc def ghi" => "cba fed ihg"
 // EX. "THIS IS A TEST" => "SIHT SI A TSET"
+
+//given a string that may contain sequences of consecuive characters, create a function to shorten the string by including the character, then the number of times it appears
+
+function encode(string){
+  splitstring = string.split("")
+  var returnString = ''
+  var obj = {}//contain all the letters and their frequency
+  var lastChar = ''
+  for(var i = 0; i < string.length; i++){
+    if(obj.hasOwnProperty(string[i]) && lastChar == string[i]){
+      //increment it, 
+      console.log("in the if statement")
+      obj[string[i]] += 1
+    }else{
+      //create it with value of one
+      console.log("in the else statement")
+      obj[string[i]] = 1
+    }
+    lastChar = string[i]
+  }
+  for(var [key, value] in Object.entries(obj)){
+    returnString += value + key
+  }
+  //check to see if the new string is even shorter,
+  if(string.length <= returnString){
+    return string}
+  //else return the original
+  else{
+    return returnString
+  }
+
+}
+
+var str1 = "aaaabbcdddaaa"
+console.log(encode(str1))
+var str2 = "bbcc" //b2c2 return original string, encoded string is the same length (or longer) as original
+
+
+function encode(string){
+  splitstring = string.split("")
+  var returnString = ''
+  var lastChar = string[0]
+  var counter = 1
+  for(var i = 1; i < string.length; i++){
+    if(string[i] == lastChar){
+      counter++
+      console.log("incrementing counter")
+    }
+    returnString += string[i] + "" + counter
+    lastChar = string[i]
+    counter = 1
+  }
+  //check to see if the new string is even shorter,
+  if(string.length <= returnString.length){
+    return string}
+  //else return the original
+  else{
+    return returnString
+  }
+
+}
+var str1 = "aaaabbcddd"
+console.log(encode(str1))
+
+/// #2
+
+function encode(list){
+  var count = 1;
+  var length = "";
+  if (list.length > 1){
+      for (var i = 1; i <list.length ; i ++){
+          if (list[i-1] == list[i]){
+              count += 1;
+          }
+      }
+      length += list[i] + "" + count;
+  }
+      else {
+      i = 0;
+      length += list[i] + "" + count;
+  }
+  return length
+  
+}
+
+var string1 = "aaabbcccd"
+console.log(encode(string1))
+
+
+// function dedupeString(string){
+//   var obj = {}
+//   for (var i=0; i < string.length; i++){
+//     if(!obj.hasOwnProperty(string[i])){
+//       obj[string[i]] = 0
+//     }
+//   }
+//   var returnString = ""
+//   for(var [key, value] in Object.entries(obj)){
+//     returnString += key
+//   }
+//   return returnString
+// }
+
+// console.log(dedupeString("aabacecbedd"))
+
+
+
+//given a coded string, decode it back to the original
+function decode(strting){
+  var returnString = ''
+
+
+  return returnString
+}
+
+var str1 = ""
+
+//given a string that may contain sequences of consecuive characters, create a function to shorten the string by including the character, then the number of times it appears
+

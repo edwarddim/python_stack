@@ -44,3 +44,58 @@ function reverseWordOrder(string){
 console.log(reverseWordOrder("THIS IS A TEST"))
 
   // EX. "THIS IS A TEST" => "TEST A IS THIS"
+
+  //-----------------------------------------------------------------------------------------------------//
+// WED
+/* 
+String Encode
+You are given a string that may contain sequences of consecutive characters.
+Create a function to shorten a string by including the character,
+then the number of times it appears. 
+
+
+If final result is not shorter (such as "bb" => "b2" ),
+return the original string.
+*/
+function encode(string){
+    code = {}
+    check = {}
+    newStr = ""
+    for(var i = 0; i<string.length; i++){
+        if(code.hasOwnProperty(string[i]) == false){
+            code[string[i]] = 1;
+        } else {
+            code[string[i]]++
+        }
+    }
+    for(var x = 0; x<string.length; x++){
+        if(check.hasOwnProperty(string[x]) == false){
+            check[string[x]] = 1;
+            newStr += string[x]
+            newStr += code[string[x]]
+        }
+    }
+
+    console.log(code)
+    console.log(newStr)
+}
+encode("aaaaabbbbccc")
+
+// encode = str => {
+//     return str.split('').reduce((total, letter) => {
+//         total[letter] ? total[letter]++ : total[letter] = 1;
+//         return total;
+//     }, {});
+// };
+
+// console.log(encode("aaaabbcddd"));
+
+// EX. "aaaabbcddd" => "a4b2c1d3"
+// EX. "" => ""
+// EX. "bbcc" => "bbcc"
+
+function decode(string){
+
+}
+// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
+// EX. "a3b2c1d3" => "aaabbcddd"

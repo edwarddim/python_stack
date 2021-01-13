@@ -80,3 +80,40 @@ function reverseWord(string){
 console.log(reverseWord('Hello World'));
 
 
+//-----------------------------------------------------------------------------------------------------//
+// WED
+/* 
+  String Encode
+  You are given a string that may contain sequences of consecutive characters.
+  Create a function to shorten a string by including the character,
+  then the number of times it appears. 
+  
+  
+  If final result is not shorter (such as "bb" => "b2" ),
+  return the original string.
+*/
+function encode(string){
+  dict = {}
+  var newStr = ""
+  for (i=0; i < string.length; i++) {
+    if (dict.hasOwnProperty(arr[i]) == true){
+      dict[arr[i]]++
+    } else {
+        dict[arr[[i]] = 1]
+    }
+  }
+  for (Key, value in dict){
+    newStr.join((key, value))
+  } 
+  return newStr
+}
+console.log(encode("aaabbcddd"))
+// EX. "aaaabbcddd" => "a4b2c1d3"
+// EX. "" => ""
+// EX. "bbcc" => "bbcc"
+
+function decode(string){
+
+}
+// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
+// EX. "a3b2c1d3" => "aaabbcddd"

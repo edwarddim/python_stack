@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello {{name}}</h1>
+
+    {% for x in list %}
+        <p>{{x}}</p>
+    {% endfor %}
+
+    <h1>Conditional Rendering</h1>
+
+    {% if guess < random_num %}
+        <h3>Guess is low</h3>
+    {% elif guess > random_num %}
+        <h3>Guess is high</h3>
+    {% else %}
+        <h3>You are correct!!</h3>
+    {% endif %}
+
+    {% if guess < random_num %}
+        <h1></h1>
+    {% endif %}
+
+</body>
+</html>

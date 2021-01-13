@@ -64,3 +64,51 @@ function reverseWord(string){
 // EX. "hello world" => "olleh dlrow"
 // EX. "abc def ghi" => "cba fed ihg"
 // EX. "THIS IS A TEST" => "SIHT SI A TSET"
+
+
+// WED
+/* 
+  String Encode
+  You are given a string that may contain sequences of consecutive characters.
+  Create a function to shorten a string by including the character,
+  then the number of times it appears. 
+  
+  
+  If final result is not shorter (such as "bb" => "b2" ),
+  return the original string.
+*/
+function encode(string){
+  var newString = {}
+  var finalResult = ""
+    for (var i = 0; i <string.length; i++){
+      if (newString.hasOwnProperty(string[i])){
+        newString[string[i]]++
+      }
+      else {newString[string[i]] = 1}
+    }
+    for (key in newString){
+      finalResult += key + newString[key]
+    }
+    if (finalResult.length >= string.length){
+      return string
+    } else {
+      return finalResult
+    }
+}
+console.log(encode("aaaabbbbccd"))
+// EX. "aaaabbcddd" => "a4b2c1d3"
+// EX. "" => ""
+// EX. "bbcc" => "bbcc"
+
+
+
+
+
+
+function decode(string){
+
+}
+// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
+// EX. "a3b2c1d3" => "aaabbcddd"
+
+//------

@@ -109,3 +109,65 @@ reverseString("HELLO")
 // EX. "abc def ghi" => "cba fed ihg"
 // EX. "THIS IS A TEST" => "SIHT SI A TSET"
 
+//-----------------------------------------------------------------------------------------------------//
+// WED
+/* 
+  String Encode
+  You are given a string that may contain sequences of consecutive characters.
+  Create a function to shorten a string by including the character,
+  then the number of times it appears. 
+  
+  
+  If final result is not shorter (such as "bb" => "b2" ),
+  return the original string.
+*/
+function encode(string){
+  // Object.hasOwnProperty("keyName")
+  
+
+
+  recur = {}
+  for(var i=0;i<string.length;i++){
+    if(recur.hasOwnProperty(string[i])){
+      recur[string[i]]++
+    } else {
+      recur[string[i]] = 1
+    }
+
+  }
+  
+  encoded = ""
+
+  for(var [k,v] of Object.entries(recur)){
+    encoded+=(k+v)
+  }
+
+  if(string.length<=encoded.length){
+    return string
+  } else {
+    return encoded
+  }
+
+}
+console.log(encode("aaaabbcddd"))
+// EX. "aaaabbcddd" => "a4b2c1d3"
+// EX. "" => ""
+// EX. "bbcc" => "bbcc"
+
+function decode(string){
+
+
+  var dict = {}
+  for(var i=0;i<string.length;i++){
+    
+    if (i != string.length-1 && !isNaN(parseInt(string[i+1]) ){
+      if (dict.hasOwnProperty[string[i]]){
+        dict[string-i] += parseInt(string[i+1])
+      }
+
+    }
+
+  }
+}
+// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
+// EX. "a3b2c1d3" => "aaabbcddd"
