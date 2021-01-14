@@ -1,0 +1,18 @@
+User.objects.create(name = "Ed Im", email="ed@gmail.com", password = "weerewr")
+User.objects.create(name = "John Doe", email="john@gmail.com", password = "weerewr")
+User.objects.create(name = "Jane Doe", email="jane@gmail.com", password = "weerewr")
+
+user_obj_from_db = User.objects.get(id = 1)
+Post.objects.create(title = "Hello World", body = "This is body", creator = user_obj_from_db )
+Post.objects.create(title = "Second Post", body = "Body 2", creator = user_obj_from_db)
+
+jane_variable = User.objects.get(id = 3)
+Post.objects.create(title = "Hello Everyone", body = "This is really cool", creator = jane_variable)
+
+john_variable = User.objects.get(id = 2)
+Post.objects.create(title = "Hi", body = "Hi as well", creator = john_variable)
+
+------------------------------------------------------------
+REVERSE LOOKUP
+user = User.objects.get(id = 1)
+user.posts.all()

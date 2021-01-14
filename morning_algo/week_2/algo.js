@@ -167,13 +167,24 @@ parseInt("a") // NaN
   String: Rotate String
   Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the 
   right by that given integer amount.
+  n will not be longer than the string length
 */
 
 function rotateString(string, n){
-
+  var begin = ""
+  var end = ""
+  for(var i = 0; i < string.length; i++){
+    if(i >= string.length - n){
+      end += string[i]
+    }
+    else{
+      begin += string[i]
+    }
+  }
+  return end + begin
 }
-// EX. "HELLO WORLD", 1 => "DHELLO WORL"
-// EX. "HELLO WORLD", 2 => "LDHELLO WOR"
+console.log(rotateString("Hello World", 1))
+console.log(rotateString("Hello World", 2))
 
 //-----------------------------------------------------------------------------------------------------//
 // FRI

@@ -171,3 +171,61 @@ function decode(string){
 }
 // HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
 // EX. "a3b2c1d3" => "aaabbcddd"
+
+
+//String: rotate String
+//Create a function that accepts a string and an integer, and rotate the characters in the string to the right by the given amount
+//Return a new string that is rotated by the amount n
+
+function rotateString(string, n){
+  
+  var returnString = ''
+
+  //add n to each index of the string, then compute the modulus
+  for(var i = string.length - 1; i >= 0; i--){
+    index = (i + n) % string.length
+    console.log(string[index])
+    returnString2 += string[index]
+  }
+  return returnString
+
+}
+
+var string1 = "HELLO WORLD" // --> LLO WORLDHE
+console.log(rotateString(string1,2))
+
+
+
+
+
+function rotateString(string, n) {
+  var temp = "";
+  var arr = string.split('')
+  for (i=0; i < n; i++){
+    //temp += arr[arr.length-1]
+    temp = arr[arr.length-1]
+    arr.pop()
+    arr.unshift(temp)
+  }
+  return arr.join("")
+}
+var string1 = "HELLO WORLD"
+console.log(rotateString(string1, 2))
+
+
+
+
+
+
+function unrotateString(string,n){
+  var returnString = ''
+  var returnString2 = ''
+  //add n to each indx of the string, then compute the modulus
+  for(var i = 0; i < string.length; i++){
+    index = (i + n) % string.length
+    console.log(string[index])
+    returnString += string[index]
+  } 
+  
+}
+}

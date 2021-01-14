@@ -112,3 +112,38 @@ function decode(string){
 // EX. "a3b2c1d3" => "aaabbcddd"
 
 //------
+
+
+
+
+
+
+
+
+
+
+// THUR
+/* 
+  String: Rotate String
+  Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the 
+  right by that given integer amount.
+*/
+
+function rotateString(string, n){
+  var rotatedString = ""
+  var arr = string.split("")
+  for (var i= 0; i <= n; i++){
+    temp = arr[arr.length-1]
+    arr.pop()
+    arr.unshift(temp)
+  }
+  rotatedString = arr.join("")
+  return rotatedString
+}
+
+console.log(rotateString("HELLO WORLD", 1))
+console.log(rotateString("HELLO WORLD", 2))
+
+// EX. "HELLO WORLD", 1 => "DHELLO WORL"
+// EX. "HELLO WORLD", 2 => "LDHELLO WOR"
+

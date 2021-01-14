@@ -99,3 +99,37 @@ function decode(string){
 }
 // HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
 // EX. "a3b2c1d3" => "aaabbcddd"
+
+// THUR
+/* 
+String: Rotate String
+Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the 
+right by that given integer amount.
+n will not be longer than the string length
+*/
+
+function rotateString(string, n){
+//iterate through a string
+//check the number and displace the string based on the number
+    for (var i = 0; i < string.length; i++){
+        
+    }
+//check the number and displace the string based on the number
+    for (var i = 0; i < string.length; i++){
+        
+    }
+}
+// EX. "HELLO WORLD", 1 => "DHELLO WORL"
+// EX. "HELLO WORLD", 2 => "LDHELLO WOR"
+
+var strValue = "HELLO WORLD";
+var temp;
+for(var i = 0; i < strValue.length; i++){
+    temp = "";
+    for(var j = 1; j < strValue.length; j++){
+        temp += strValue[j];
+    }
+    temp += strValue[0]
+    strValue = temp;
+    console.log(strValue)
+}

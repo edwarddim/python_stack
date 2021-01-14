@@ -236,3 +236,29 @@ var str1 = ""
 
 //given a string that may contain sequences of consecuive characters, create a function to shorten the string by including the character, then the number of times it appears
 
+//-----------------------------------------------------------------------------------------------------//
+// THUR
+/* 
+  String: Rotate String
+  Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the 
+  right by that given integer amount.
+*/
+
+function rotateString(string, n){
+  var newStr = ""
+  for (i = 0; i < string.length; i++) {
+    if (i<n){
+      newStr += string[string.length - n + i]
+    } else{
+    newStr += string[i-n]
+    }
+  }
+  return(newStr)
+}
+
+console.log(rotateString("HELLO WORLD", 1))
+console.log(rotateString("HELLO WORLD", 2))
+console.log(rotateString("HELLO WORLD", 3))
+console.log(rotateString("HELLO WORLD", 8))
+// EX. "HELLO WORLD", 1 => "DHELLO WORL"
+// EX. "HELLO WORLD", 2 => "LDHELLO WOR"

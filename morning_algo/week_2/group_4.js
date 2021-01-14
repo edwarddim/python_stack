@@ -236,3 +236,66 @@ console.log(reverseWord("hello world"))
 // EX. "hello world" => "olleh dlrow"
 // EX. "abc def ghi" => "cba fed ihg"
 // EX. "THIS IS A TEST" => "SIHT SI A TSET"
+
+
+
+//-----------------------------------------------------------------------------------------------------//
+// THUR
+/* 
+  String: Rotate String
+  Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the 
+  right by that given integer amount.
+  n will not be longer than the string length
+*/
+
+
+function rotateString(string, n){
+
+    var newStr = ""
+    var splitted = string.split('')
+    
+    if (n>0) {
+        tobeg = []
+        for (var i=0; i<n; i++){
+            tobeg.push(splitted[splitted.length-1])
+            splitted.pop()
+        }
+        for (var i=tobeg.length-1; i>=0; i--) {
+            newStr+=tobeg[i]
+        }
+
+        for (var i = 0; i<splitted.length; i++) {
+            newStr+=splitted[i]
+        }
+    } else {
+        return string
+    }
+
+    return newStr
+}
+console.log(rotateString("HELLO WORLD", 2))
+
+
+
+function rotateString(string, n){
+    var seperate = string.split("")
+    var returnString= ""
+    
+    for(var i=0; i< n; i++){
+        returnString += seperate[seperate.length -1 -i]
+    
+    }
+    for(var j=0; j < seperate.length - i; j++){
+        returnString += seperate[j]
+        }
+
+    return returnString
+}
+console.log(rotateString("HELLO WORLD", 1))
+
+
+
+// EX. "HELLO WORLD", 1 => "DHELLO WORL"
+// EX. "HELLO WORLD", 2 => "LDHELLO WOR"
+
+//-----------------------------------------------------------------------------------------------------//

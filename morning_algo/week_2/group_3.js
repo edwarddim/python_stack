@@ -165,6 +165,21 @@ console.log(decode("a3b2c1d3"))
 function rotateString(string, n){
 
 }
+
+function rotateString (string){
+  let dir = 1
+  return function (num){
+    if (num == string.length) {
+        dir *= -1
+        return string
+    }
+    return string.slice(dir * num) + string.slice(0, dir * num)
+  }
+}
+
+const rotate = rotateString('HELLOWORLD');
+console.log(rotate(1)) 
+
 // EX. "HELLO WORLD", 1 => "DHELLO WORL"
 // EX. "HELLO WORLD", 2 => "LDHELLO WOR"
 
