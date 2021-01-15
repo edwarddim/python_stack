@@ -262,3 +262,63 @@ console.log(rotateString("HELLO WORLD", 3))
 console.log(rotateString("HELLO WORLD", 8))
 // EX. "HELLO WORLD", 1 => "DHELLO WORL"
 // EX. "HELLO WORLD", 2 => "LDHELLO WOR"
+
+/*
+    Given a string, return the first non-repeating character
+    within string
+    // EX. "stress" => "t"
+    // EX. "moonmen" => "e"
+*/
+function firstNonRepeatingChar(string){
+
+}
+
+var str1 = "stress" // "t"
+var str2 = "moonmen" // "e"
+
+console.log(firstNonRepeatingChar(str1))
+/*
+    Given a string, return the first non-repeating character
+    within string
+    // EX. "stress" => "t"
+    // EX. "moonmen" => "e"
+*/
+
+// FRI
+
+/*
+    Given a string, return the first non-repeating character
+    within string
+    // EX. "stress" => "t"
+    // EX. "moonmen" => "e"
+*/
+function firstNonRepeatingChar(string){
+
+  var st_dict = {}
+  for (var i=0; i<string.length; i++){
+    if(st_dict.hasOwnProperty(string[i])){
+      st_dict[string[i]]++
+    } else {
+      st_dict[string[i]] = 1
+    }
+    
+  }
+
+  for (var [k,v] of Object.entries(st_dict)){
+    if (v > 1){
+      delete st_dict[k]
+    }
+  }
+  // console.log(st_dict)
+
+  for(i in st_dict){
+    return i
+    //i is the key
+    // m : 2, o : 2, 
+  }
+  return "None"
+}
+
+console.log(firstNonRepeatingChar("moonmen"))
+console.log(firstNonRepeatingChar("stress"))
+console.log(firstNonRepeatingChar("aabbcc"))

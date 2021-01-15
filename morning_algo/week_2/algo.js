@@ -188,34 +188,6 @@ console.log(rotateString("Hello World", 2))
 
 //-----------------------------------------------------------------------------------------------------//
 // FRI
-/* 
-  Given an array of objects / dictionaries to represent new inventory,
-  and an array of objects / dictionarys to represent current inventory,
-  update the quantities of the current inventory
-  if the item doesn't exist in current inventory, add it to the inventory
-  return the current inventory after updating it.
-*/
-
-function updateInv(newInv, currInv){
-
-}
-
-const newInv = [
-    { name: "Grain of Rice", quantity: 9000 },
-    { name: "Peanut Butter", quantity: 50 },
-    { name: "Royal Jelly", quantity: 20 },
-];
-const currInv = [
-    { name: "Peanut Butter", quantity: 20 },
-    { name: "Grain of Rice", quantity: 1 },
-];
-/* 
-    Output: [
-      { name: "Peanut Butter", quantity: 70 },
-      { name: "Grain of Rice", quantity: 90001 },
-      { name: "Royal Jelly", quantity: 20 },
-    ]
-*/
 
 /*
     Given a string, return the first non-repeating character
@@ -224,5 +196,34 @@ const currInv = [
     // EX. "moonmen" => "e"
 */
 function firstNonRepeatingChar(string){
-
+  var obj = {}
+  for(var i = 0; i < string.length; i++){
+    if(obj.hasOwnProperty(string[i])){
+      obj[string[i]]  = {
+        "repeat" : true,
+        "index" : i
+      }
+    }
+    else{
+      obj[string[i]] = {
+        "repeat" : false,
+        "index" : i
+      }
+    }
+  }
+  var lowestInd = string.length
+  var returnChar = ""
+  for(var [key,value] of Object.entries(obj)){
+    if(value.repeat){
+      continue
+    }
+    else{
+      if(value.index < lowestInd){
+        lowestInd = value.index
+        returnChar = key
+      }
+    }
+  }
+  return returnChar
 }
+console.log(firstNonRepeatingChar("stress"))

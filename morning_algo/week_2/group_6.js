@@ -133,3 +133,45 @@ for(var i = 0; i < strValue.length; i++){
     strValue = temp;
     console.log(strValue)
 }
+
+// FRI
+
+/*
+    Given a string, return the first non-repeating character
+    within string
+    // EX. "stress" => "t"
+    // EX. "moonmen" => "e"
+*/
+function firstNonRepeatingChar(string){
+    dict = {}
+    for (i=0; i < string.length; i++){
+        if (dict.hasOwnProperty(string[i]) === true) {
+            dict[string[i]]++
+        }
+        else {
+            dict[string[i]] = 1
+        }
+    }
+    for (let k in dict){
+        if (dict[k] === 1){
+            return k
+        }
+    }
+}
+
+console.log(firstNonRepeatingChar("stress"))
+console.log(firstNonRepeatingChar("moonmen"))
+
+1 == '1' //true
+
+1 === '1'  //false
+
+
+// Another way down here !
+function firstNonRepeatingChar(string){
+    for (var i = 0; i < string.length; i++) {
+        if (!string.slice(0, i).includes(string[i]) && !string.slice(i+1).includes(string[i])) {
+            return string[i]
+        }
+    }
+}

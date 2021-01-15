@@ -1,0 +1,25 @@
+User.objects.create(name = "Ed Im", email="ed@gmail.com", password = "weerewr")
+User.objects.create(name = "John Doe", email="john@gmail.com", password = "weerewr")
+User.objects.create(name = "Jane Doe", email="jane@gmail.com", password = "weerewr")
+
+Group.objects.create(name = "Python", description = "Study group for Python")
+Group.objects.create(name = "Java", description = "Study group for Java")
+Group.objects.create(name = "Fun", description = "Fun time for fun people")
+
+user1 = User.objects.get(id = 1)
+group3 = Group.objects.get(id = 3)
+group1 = Group.objects.get(id = 1)
+
+// CREATING RELATIONSHIP BETWEEN FUN GROUP AND ED
+user1.groups.add(group3)
+OR
+group3.members.add(user1)
+// CREATING RELATIONSHIP BETWEEN PYTHON GROUP AND ED
+group1.members.add(user1)
+OR
+user1.groups.add(group1)
+
+// REMOVING RELATIONSHIP BETWEEN FUN GROUP AND ED
+user1.groups.remove(group3)
+OR
+group3.members.remove(user1)

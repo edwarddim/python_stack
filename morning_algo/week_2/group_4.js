@@ -298,4 +298,48 @@ console.log(rotateString("HELLO WORLD", 1))
 // EX. "HELLO WORLD", 1 => "DHELLO WORL"
 // EX. "HELLO WORLD", 2 => "LDHELLO WOR"
 
-//-----------------------------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+// FRI
+/* 
+/*
+    Given a string, return the first non-repeating character
+    within string
+    // EX. "stress" => "t"
+    // EX. "moonmen" => "e"
+*/
+function firstNonRepeatingChar(string){
+    var obj = {}
+    for(var i=0; i < string.length; i++){
+        if(!obj.hasOwnProperty(string[i])){
+            obj[string[i]] = 1
+        }
+        else{
+            obj[string[i]] ++
+        }
+    }
+    var returnString = ""
+    for(var [key, value] in Object.entries(obj)){
+        if(value == 1){
+            returnString += key
+            return returnString
+        }
+    }
+
+}
+
+console.log(firstNonRepeatingChar("stress"))
+console.log(firstNonRepeatingChar("moonmen"))
+
+
+
+

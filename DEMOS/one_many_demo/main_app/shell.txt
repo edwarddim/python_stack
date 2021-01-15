@@ -4,6 +4,8 @@ User.objects.create(name = "Jane Doe", email="jane@gmail.com", password = "weere
 
 user_obj_from_db = User.objects.get(id = 1)
 Post.objects.create(title = "Hello World", body = "This is body", creator = user_obj_from_db )
+
+
 Post.objects.create(title = "Second Post", body = "Body 2", creator = user_obj_from_db)
 
 jane_variable = User.objects.get(id = 3)

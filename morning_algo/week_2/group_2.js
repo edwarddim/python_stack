@@ -226,6 +226,33 @@ function unrotateString(string,n){
     console.log(string[index])
     returnString += string[index]
   } 
-  
+  return returnString
 }
 }
+
+// FRI
+
+/*
+    Given a string, return the first non-repeating character
+    within string
+    // EX. "stress" => "t"
+    // EX. "moonmen" => "e"
+*/
+function firstNonRepeatingChar(string){
+
+}
+
+
+// This works 
+
+function firstNonRepeatingChar(string1){
+  var string=(string1);
+  var chars = string.split('');
+  for (var i = 0; i < string.length; i++) {
+    if (chars.filter(function(j) { 
+        return j == string.charAt(i); 
+    }).length == 1) return string.charAt(i);
+  }
+};
+
+console.log(firstNonRepeatingChar('stress'))
