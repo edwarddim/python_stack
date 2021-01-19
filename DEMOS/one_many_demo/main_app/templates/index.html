@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 40%;
+        display:inline-block;
+        vertical-align: top;
+        border: 1px solid black;
+        padding: 5px;
+    }
+    .comment{
+        margin-left: 10px;
+    }
+</style>
+<body>
+    <div class="box">
+        <form action="/user/create" method="post">
+            {% csrf_token %}
+            <p>
+                Name:
+                <input type="text" name="name" id="">
+            </p>
+            <p>
+                Email:
+                <input type="email" name="email" id="">
+            </p>
+            <p>
+                Password:
+                <input type="password" name="password" id="">
+            </p>
+            <button type="submit">Create User</button>
+        </form>
+    </div>
+    <div class="box">
+        <form action="/post/create" method="post">
+            {% csrf_token %}
+            <p>
+                Title:
+                <input type="text" name="title" id="">
+            </p>
+            <p>
+                Body:
+                <textarea name="body" id="" cols="30" rows="10"></textarea>
+            </p>
+            <select name="user_id" id="">
+                {% for user in all_users_from_db %}
+                <option value="{{user.id}}">{{user.name}}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Create Post</button>
+        </form>
+    </div>
+
+    <div>
+        {% for user in  all_users_from_db %}
+            <h1>{{user.name}} - {{user.email}}</h1>
+            {% for post in user.posts.all %}
+                <p class="comment">{{post.title}} - {{post.body}}</p>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</body>
+</html>

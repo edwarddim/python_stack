@@ -41,7 +41,653 @@ function reverseWordOrder(string){
 console.log(reverseWordOrder("THIS IS A TEST"))
   // EX. "THIS IS A TEST" => "TEST A IS THIS"
   
-
+  function balancePoint(arr){
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : false
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
+    if(arr.length < 2) return false
+    var leftInd = 0;
+    var rightInd = arr.length-1;
+    var leftSum, rightSum = 0
+    while(leftInd <= rightInd){
+        if(leftSum <= rightSum){
+            leftSum += arr[leftInd]
+            leftInd++
+        }
+        else {
+            rightSum += arr[rightInd]
+            rightInd--
+        }
+    }
+    // console.log("LEFT SUM: ", leftSum)
+    // console.log("RIGHT SUM: ", rightSum)
+    return (leftSum == rightSum) ? true : 
 
 
 
