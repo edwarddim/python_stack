@@ -6,6 +6,8 @@ Group.objects.create(name = "Python", description = "Study group for Python")
 Group.objects.create(name = "Java", description = "Study group for Java")
 Group.objects.create(name = "Fun", description = "Fun time for fun people")
 
+
+
 user1 = User.objects.get(id = 1)
 group3 = Group.objects.get(id = 3)
 group1 = Group.objects.get(id = 1)

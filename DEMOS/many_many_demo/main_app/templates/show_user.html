@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Name: {{user_from_db.name}}</h1>
+    <h2>Email: {{user_from_db.email}}</h2>
+    <h2>Password: {{user_from_db.password}}</h2>
+    <div>
+        <ul>
+            {% for group in user_from_db.groups.all %}
+                <li>{{group.name}} - {{group.description}}</li>
+                <form action="/user/remove" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="user_id" value="{{user_from_db.id}}">
+                    <input type="hidden" name="group_id" value="{{group.id}}">
+                    <button type="submit">Leave</button>
+                </form>
+            {% endfor %}
+        </ul>
+    </div>
+    <form action="/user/add" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="user_id" value="{{user_from_db.id}}">
+        <select name="group_id" id="">
+            {% for group in all_groups_from_db %}
+                <option value="{{group.id}}">{{group.name}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
