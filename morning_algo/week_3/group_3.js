@@ -85,3 +85,14 @@ function balanceIndex(arr){
         return -1
     }
 }
+
+// TUE
+/* 
+  Array: Binary Search (non recursive)
+  Given a sorted array and a value, return whether the array contains that value.
+  Do not sequentially iterate the array. Instead, ‘divide and conquer’,
+  taking advantage of the fact that the array is sorted .
+*/
+function binarySearch(arr,target){
+
+}

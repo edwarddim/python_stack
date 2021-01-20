@@ -29,7 +29,22 @@ function balancePoint(arr){
 // EX. [9,9] => TRUE
 // EX. [1, 2, 4, 2, 1] => FALSE
 function balanceIndex(arr){
-
+  if(arr.length < 3) return -1 
+  var leftInd = 0;
+  var rightInd = arr.length-1;
+  var leftSum = 0
+  var rightSum = 0
+  while(rightInd - leftInd != 0){
+      if(leftSum <= rightSum){
+          leftSum += arr[leftInd]
+          leftInd++
+      }
+      else {
+          rightSum += arr[rightInd]
+          rightInd--
+      }
+  }
+  return (leftSum == rightSum) ? leftInd : -1
 }
 // EX. [-2, 5, 7, 0, 3] => 2
 // EX. [9,0,9] => 1
@@ -46,7 +61,25 @@ function balanceIndex(arr){
   taking advantage of the fact that the array is sorted .
 */
 function binarySearch(arr,target){
-
+  // 1. SET LEFT AND RIGHT POINTERS TO BEGINNING AND END OF ARRAY
+  var leftInd = 0
+  var rightInd = arr.length - 1
+  // 2. REPEAT PROCESS UNTIL 
+  while(leftInd <= rightInd){
+    // 3. FIND THE MIDDLE INDEX OF THE CURRENT RANGE OF INDICES
+    var midInd = Math.floor((rightInd + leftInd) / 2)
+    // 4. COMPARE THE TARGET WITH THE MIDDLE VALUE
+    if(target == arr[midInd]){
+      return true
+    }
+    else if(target < arr[midInd]){
+      rightInd = midInd - 1
+    }
+    else{
+      leftInd = midInd + 1
+    }
+  }
+  return false
 }
 
 
