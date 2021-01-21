@@ -85,3 +85,21 @@ arr2 = [9,0,9] // 1
 console.log(balanceIndex(arr1))
 console.log(balanceIndex(arr2))
 
+/*Given two arrays, return an array filled with the sum of
+each combination of numbers from the arrays
+Input: 2 arrays
+Output: 
+*/
+function twoNumSum(arr1, arr2) {
+    var newArr = []
+    var sum = 0
+    for (i = 0; i < arr2.length; i++) {
+      for (j = 0; j < arr1.length; j++) {
+        sum = arr2[i] + arr1[j]
+        newArr.push(sum)
+      }
+    }
+    return newArr
+  }
+  console.log(twoNumSum([1,2,3],[4,5,6]))
+// EX. [1,2,3] , [4,5,6] => [5,6,7,6,7,8,7,8,9]

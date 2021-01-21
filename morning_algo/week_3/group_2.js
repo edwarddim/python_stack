@@ -95,3 +95,23 @@ function almostIncreasingSequence(arr){
 
 // EX. [1, 3, 2, 1] => FALSE
 // EX. [1, 2, 3, 4, 3, 6] => TRUE
+
+
+// 1/21/21
+
+function twoNumSum(arr1, arr2){
+  var newArr = []
+  //loop through the first array
+  for(var i = 0; i < arr1.length; i++){
+    for(var j = 0; j < arr2.length; j++){
+      newArr.push(arr1[i] + arr2[j])
+    }
+  }
+  //for every value of the first array, loop through the second array and add the value
+  return newArr
+}
+// EX. [1,2,3] , [4,5,6] => [5,6,7,6,7,8,7,8,9]
+var arr1 = [1,2,3]
+var arr2 = [4,5,6]
+
+console.log(twoNumSum(arr1,arr2))

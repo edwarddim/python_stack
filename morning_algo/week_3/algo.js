@@ -89,47 +89,29 @@ function binarySearch(arr,target){
 
 // WED
 /* 
-  Array: Remove Duplicates
-  Given a SORTED array of integers, dedupe the array 
-  Because array elements are already in order, all duplicate values will be grouped together.
-  Ok to use a new array
-  Bonus: do it in O(n) time (no nested loops, new array ok)
+  Given two arrays, return an array filled with the sum of
+  each combination of numbers from the arrays
+  Input: 2 arrays
+  Output: 
 */
-function dedupeArr(arr){
+function twoNumSum(arr1, arr2){
+  var returnArr = []
+  for(var i = 0; i < arr1.length; i++){
+    for(var j = 0; j < arr2.length; j++){
+      returnArr.push(arr1[i] + arr2[j])
+    }
+  }
+  return returnArr
+}
+console.log(twoNumSum([1,2,3], [4,5,6]))
+// EX. [1,2,3] , [4,5,6] => [5,6,7,6,7,8,7,8,9]
+
+for(let i = 0; i < arr1.length;i ++){
 
 }
-// EX. [1,1,1,2,2,2,3,3,4,4,4] => [1,2,3,4]
-// DO ALGO WITH ONE FOR LOOP AND NO OBJECT TO KEEP TRACK OF FREQUENCY
-
-/* 
-  Array: Mode
-  
-  Create a function that, given an array of ints,
-  returns the int that occurs most frequently in the array.
-  What if there are multiple items that occur the same number of time?
-    - return all of them (in an array)
-    - what if all items occur the same number of times?
-      - return empty array
-*/
-function mode(arr){
+for(let j = 0; j j < arr2.length; j++){
 
 }
-// -----------------------------------------------------------------------------------------------//
-// -----------------------------------------------------------------------------------------------//
-
-// THUR
-/* 
-  Missing Value
-  You are given an array of length N that contains, in no particular order,
-  integers from 0 to N . One integer value is missing.
-  Quickly determine and return the missing value.
-  NO SORT ALLOWED
-*/
-function missingValue(arr){
-
-}
-// [3,0,1,2] => False
-// [4,0,2,1] => True
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//

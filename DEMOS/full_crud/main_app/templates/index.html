@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add A New Show</h1>
+    <form action="/shows/create" method="post">
+        {% csrf_token %}
+        <p>
+            Title:
+            <input type="text" name="title" id="">
+        </p>
+        <p>
+            Network:
+            <input type="text" name="network" id="">
+        </p>
+        <p>
+            Release Date:
+            <input type="date" name="release_date" id="">
+        </p>
+        <p>
+            Description:
+            <textarea name="description" id="" cols="30" rows="10"></textarea>
+        </p>
+        <button type="submit">Add</button>
+    </form>
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

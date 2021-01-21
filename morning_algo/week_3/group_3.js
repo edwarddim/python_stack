@@ -96,3 +96,35 @@ function balanceIndex(arr){
 function binarySearch(arr,target){
 
 }
+
+
+
+
+
+
+
+
+
+// THURS
+/* 
+  Given two arrays, return an array filled with the sum of
+  each combination of numbers from the arrays
+  Input: 2 arrays
+  Output: 
+*/
+function twoNumSum(arr1, arr2){
+    var newArr = []
+    for (i=0; i<arr1.length; i++){
+        for (j=0; j<arr2.length; j++){
+            newArr.push(arr1[i] + arr2[j])
+        }
+    }
+    return newArr
+}
+
+var arr1 = [1,2,3]
+var arr2 = [4,5,6]
+
+console.log(twoNumSum(arr1, arr2))
+
+// EX. [1,2,3] , [4,5,6] => [5,6,7,6,7,8,7,8,9]

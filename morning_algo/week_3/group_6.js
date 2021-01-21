@@ -62,3 +62,26 @@ function binarySearch(arr,target){
 }
 
 binarySearch([1,2,3,4,5,6,7,8,9], 3)
+
+
+
+
+// WED
+/* 
+  Given two arrays, return an array filled with the sum of
+  each combination of numbers from the arrays
+  Input: 2 arrays
+  Output: 
+*/
+function twoNumSum(arr1, arr2){
+  var sums = []
+  for (var i=0; i<arr1.length; i++){
+    for (var j=0; j<arr2.length; j++){
+      sums.push(arr1[i]+arr2[j])
+    }
+  }
+  return sums
+}
+console.log(twoNumSum([1,2,3] , [4,5,6]))
+
+// EX. [1,2,3] , [4,5,6] => [5,6,7,6,7,8,7,8,9]
