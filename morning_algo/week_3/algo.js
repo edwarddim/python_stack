@@ -117,14 +117,31 @@ for(let j = 0; j j < arr2.length; j++){
 // -----------------------------------------------------------------------------------------------//
 
 
-// FRI
-
-// Given a sequence of integers as an array, determine whether 
-// it is possible to obtain a strictly increasing sequence by 
-// removing no more than one element from the array.
-function almostIncreasingSequence(arr){
-
+/* 
+  Missing Value
+  You are given an array of length N that contains, in no particular order,
+  integers from 0 to N . One integer value is missing.
+  Quickly determine and return true or false.
+  NO SORT ALLOWED
+  EXTRA CHALLENGE: SOLVE ALGO WITHOUT USING A OBJECTS TO KEEP TRACK OF NUMBERS
+*/
+function missingValue(arr){
+  var max = arr[0]
+  var actualSum = 0
+  var expectedSum = 0
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] > max){
+      max = arr[i]
+    }
+    actualSum += arr[i]
+    expectedSum += i
+  }
+  if(actualSum == expectedSum){
+    return false
+  }
+  else{
+    return true
+  }
 }
-
-// EX. [1, 3, 2, 1] => FALSE
-// EX. [1, 2, 3, 4, 3, 6] => TRUE
+// [3,0,1,2] => False
+// [4,0,2,1] => True

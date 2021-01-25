@@ -1,3 +1,26 @@
+function iteratePrint(num){
+  for(var i= num ; i >=0 ; i--){
+    console.log(i)
+  }
+}
+iteratePrint(5)
+
+// FUNCTION DEFINED
+function recursivePrint(num){
+  // 1. BASE CASE
+  if(num == 1){
+    console.log(num)
+    return "hELLO"
+  }
+  console.log(num)
+  // 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
+  num--
+  // 3. RECURSIVE CALL
+  recursivePrint(num)
+}
+// FUNCTION CALLED
+recursivePrint(3)
+
 // MON
 
 // 1, BASE CASE
@@ -8,11 +31,21 @@
   Recursive Sigma
   Input: integer
   Output: sum of integers from 1 to Input integer
-*/
-function recursiveSigma(n) {
 
+  SIGMA 3 => 3 + 2 + 1 => 6
+*/
+
+function recursiveSigma(n) {
+  // 1. BASE CASE
+  if(n == 1){
+    return 1
+  }
+  // 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
+  // 3. RECURSIVE CALL
+  return n + recursiveSigma(n - 1)
 }
 // 5 => 5 + 4 + 3 + 2 + 1 => 15
+console.log(recursiveSigma(3)) // 6
 
 /* 
   Recursively sum an arr of ints

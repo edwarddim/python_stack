@@ -94,3 +94,47 @@ var arr1 = [1,2,3]
 var arr2 = [4,5,6]
 conole.log(twoNumSum(arr1, arr2))
 // EX. [1,2,3] , [4,5,6] => [5,6,7,6,7,8,7,8,9]
+
+
+
+
+
+
+
+
+//FRI 
+/* 
+  Missing Value
+  You are given an array of length N that contains, in no particular order,
+  integers from 0 to N . One integer value is missing.
+  Quickly determine and return true or false.
+  NO SORT ALLOWED
+  EXTRA CHALLENGE: SOLVE ALGO WITHOUT USING A OBJECTS TO KEEP TRACK OF NUMBERS
+*/
+function missingValue(arr){
+    // 1. Do arr.sort() wihtout using built-in functions.
+    for(var x=0; x<arr.length; x++){
+        if (arr[x] > arr[x+1]){
+            var temp = arr[x];
+            arr[x] = arr[x+1];
+            arr[x+1] = temp;
+            x = 0;
+        } 
+    }
+
+    // 2. Check to see if the array is increasing by one integer each index
+    //    *If this is not the case, return true.*
+    //    *If it is consistently increasing by one, return false.*
+    for (i=0; i<arr.length-1; i++){
+        if(arr[i] != arr[i+1]-1){
+            return true
+        }
+    }
+    return false
+}
+
+console.log(missingValue([3,0,1,2]))
+console.log(missingValue([4,0,2,1]))
+
+// [3,0,1,2] => False
+// [4,0,2,1] => True

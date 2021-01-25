@@ -128,3 +128,27 @@ var arr2 = [4,5,6]
 console.log(twoNumSum(arr1, arr2))
 
 // EX. [1,2,3] , [4,5,6] => [5,6,7,6,7,8,7,8,9]
+
+
+Missing Value
+You are given an array of length N that contains, in no particular order,
+integers from 0 to N . One integer value is missing.
+Quickly determine and return true or false.
+NO SORT ALLOWED
+EXTRA CHALLENGE: SOLVE ALGO WITHOUT USING A OBJECTS TO KEEP TRACK OF NUMBERS
+*/
+function missingValue(arr){
+    var temp1 = 0;
+    for (i=0; i < arr.length; i++) {
+        temp1 = arr[1]
+        if (arr.index(temp1+1)) {
+            temp1++
+        }
+        else {
+            return true
+        }  
+    }
+    return false
+}
+// [0,3,1,2] => False
+// [4,0,2,1] => True
