@@ -38,3 +38,16 @@ function recursiveSigma(n) {
 }
 
 console.log(recursiveSigma(5))
+
+
+
+function sumArr(arr, i = 0) {
+    if (i < arr.length-1)
+        return i+arr[i]
+    // 1. BASE CASE
+    // 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
+    // 3. RECURSIVE CALL
+  }
+  sumArr(arr, i  )
+  // [1,2,3] => 6
+  console.log(sumArr([1,2,3]))

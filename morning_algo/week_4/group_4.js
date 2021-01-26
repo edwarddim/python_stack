@@ -81,3 +81,17 @@ function sumArr(arr, i=0) {
   // -----------------------------------------------------------------------------------------------//
   // -----------------------------------------------------------------------------------------------//
   
+
+  function sumArr(arr, i = 0) {
+    // 1. BASE CASE
+    if(i == arr.length - 1){
+      return arr[i]
+    }
+    // 2. FORWARD PROGRESS (INCREMENT OR DECREMENT
+    // i + 1
+    // 3. RECURSIVE CALL
+    return arr[i] + sumArr(arr, i+1)
+  }
+  // [1,2,3] => 6
+  console.log(sumArr([1,2,3]))
+  console.log(sumArr([1,2,1,2,1,2]))
