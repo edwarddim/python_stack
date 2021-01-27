@@ -33,3 +33,26 @@ function sumArr(arr, i = 0) {
 sumArr(arr, i+1  )
 // [1,2,3] => 6
 console.log(sumArr([1,2,3]))
+
+
+
+
+// var arr1 = [1,2,3]
+// var arr2 = [4,5,6]
+// var arr3 = arr1.concat(arr2)
+// console.log(arr3) => [1,2,3,4,5,6]
+// */
+
+function recFlatten(arr){
+  // can use Array.isArray() in the base case to see if arr is actually an array
+  if(Array.isArray(arr)){
+    return true
+    console.log(arr)
+  }
+    else{
+      return false
+    }
+var arr3 =arr1.concat(arr2)
+}
+
+// EX. [1,[2,3,[4]],5] => [1,2,3,4,5]

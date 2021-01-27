@@ -71,23 +71,43 @@ console.log(sumArr([1,2,3]))
 // [1,2,3] => 6
 
 
-
-// -----------------------------------------------------------------------------------------------//
-// -----------------------------------------------------------------------------------------------//
+// EX. [1,[2,3,[4]],5] => [1,2,3,4,5]// -----------------------------------------------------------------------------------------------//
 
 // TUE
 /* 
-    Given an array nested with unknown amount of arrays,
+    G iven an array nested with unknown amount of arrays,
     return the integers all under ONE array
     Array.isArray() will come in useful
     Array.isArray([1,2,3]) returns true
     Array.isArray({'a':1}) returns false
     Array.isArray(1) returns false
+
+    for(var i=0; i < arr.length; i++){
+      if(Array.isArray(arr[i])){
+        arr[i] is an array
+      }
+    }
+
+    var arr1 = [1,2,3]
+    var arr2 = [4,5,6]
+    var arr3 = arr1.concat(arr2)
+    console.log(arr3) => [1,2,3,4,5,6]
 */
 
 function recFlatten(arr){
-  
+  // 1. BASE CASE
+  if(!Array.isArray(arr)){
+    return arr
+  }
+  // 2. FORWARD PROGRESS
+  var array = []
+  for(var i =0; i < arr.length; i ++){
+    // 3. RECURSIVE CALL
+    array = array.concat(recFlatten(arr[i]))
+  }
+  return array
 }
+console.log(recFlatten([1,[2,3,[4]],5]))
 
 // EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
 

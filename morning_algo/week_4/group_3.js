@@ -49,5 +49,72 @@ function sumArr(arr, i = 0) {
     // 3. RECURSIVE CALL
   }
   sumArr(arr, i  )
+
   // [1,2,3] => 6
   console.log(sumArr([1,2,3]))
+
+// TUE
+/* 
+    Given an array nested with unknown amount of arrays,
+    return the integers all under ONE array
+    Array.isArray() will come in useful
+    Array.isArray([1,2,3]) returns true
+    Array.isArray({'a':1}) returns false
+    Array.isArray(1) returns false
+
+    for(var i=0; i < arr.length; i++){
+      if(Array.isArray(arr[i])){
+        arr[i] is an array
+      }
+    }
+
+    var arr1 = [1,2,3]
+    var arr2 = [4,5,6]
+    var arr3 = arr1.concat(arr2)
+    console.log(arr3) => [1,2,3,4,5,6]
+*/
+// ITERATE THROUGH THE ARR AND CHECK TO SEE IF ELEMENT IS AN ARRAY
+// 
+
+function recFlatten(arr){
+    // Base Case
+    // if i = arr.length 
+    // Forward Progress
+
+    // Recursive Call
+    for (var i = 0; i <arr.length; i++){
+        if(Array.isArray(arr[i])){
+            return recFlatten[arr[i]]
+        }
+        else{
+            console.log(arr[i])
+        }
+    }
+}
+
+var test1 = [1,[2,3,[4]],5] // false, true, false 
+recFlatten(test1)
+
+
+const arr1 = [0, 1, 2, [3, 4]];
+
+console.log(arr1.flat());
+
+
+// EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+// TUE
+/* 
+    Given an array nested with unknown amount of arrays,
+    return the integers all under ONE array
+    Array.isArray() will come in useful
+    Array.isArray([1,2,3]) returns true
+    Array.isArray({'a':1}) returns false
+
+    Array.isArray(1) returns false
+*/

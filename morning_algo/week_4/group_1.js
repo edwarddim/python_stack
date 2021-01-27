@@ -36,15 +36,15 @@ function iteratePrint(num){
 
 function recursiveSigma(num) {
     // 1. BASE CASE
-    if(num == 1){
-        return 1
-    }
-    // 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
+if(num == 1){
+    return 1
+}
+// 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
      // 3. RECURSIVE CALL
     return num + recursiveSigma(num - 1)
 }
-  // 5 => 5 + 4 + 3 + 2 + 1 => 15
-  console.log(recursiveSigma(3)) // 6
+// 5 => 5 + 4 + 3 + 2 + 1 => 15
+console.log(recursiveSigma(3)) // 6
 
 
 
@@ -73,3 +73,32 @@ function sumArr(arr, i=0) {
 console.log(sumArr([1,2,3])) // 6
 
 
+// TUE
+/* 
+    Given an array nested with unknown amount of arrays,
+    return the integers all under ONE array
+    Array.isArray() will come in useful
+    Array.isArray([1,2,3]) returns true
+    Array.isArray({'a':1}) returns false
+    Array.isArray(1) returns false
+*/
+
+function recFlatten(arr){
+  
+}
+
+// EX. [1,[2,3,[4]],5] => [1,2,3,4,5]// TUE
+/* 
+    Given an array nested with unknown amount of arrays,
+    return the integers all under ONE array
+    Array.isArray() will come in useful
+    Array.isArray([1,2,3]) returns true
+    Array.isArray({'a':1}) returns false
+    Array.isArray(1) returns false
+*/
+
+function recFlatten(arr){
+  
+}
+
+// EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
