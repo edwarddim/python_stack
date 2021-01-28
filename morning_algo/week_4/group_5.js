@@ -43,3 +43,21 @@ function recFlatten(arr){
 recFlatten([1,[2,3,[4]],5])
 
 // EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
+
+
+
+// Recursive Binary Search
+// Input: SORTED array of ints, int value
+// Output: bool representing if value is found
+// Recursively search to find if the value exists, do not loop over every element.
+// Approach:
+// Take the middle item and compare it to the given value.
+// Based on that comparison, narrow your search to a particular section of the array
+// */
+
+function recursiveBinary(arr, target){
+
+}
+
+// --------------------------------------
+

@@ -58,6 +58,8 @@ console.log(recursiveSigma(3)) // 6
 
 
 
+
+
 // TUES
 
 
@@ -102,3 +104,78 @@ function recFlatten(arr){
 }
 
 // EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
+
+
+
+
+
+
+
+
+
+
+
+// THURS
+
+
+/*
+  Recursive Binary Search
+  Input: SORTED array of ints, int value
+  Output: bool representing if value is found
+  Recursively search to find if the value exists, do not loop over every element.
+  Approach:
+  Take the middle item and compare it to the given value.
+  Based on that comparison, narrow your search to a particular section of the array
+*/
+
+function recursiveBinary(arr, target){
+  // 1, BASE CASE - stops the algorithm from infinite loop
+  
+  // 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
+  
+  // 3. RECURSIVE CALL
+  }
+  
+  
+  
+  
+  
+  
+  
+  //Last weeks binarySearch:
+
+  function binarySearch(arr,target){
+    //1. SET LEFT AND RIGHT POINTERS TO BEGINNING AND END OF ARRAY//
+    var leftInd = 0
+    var rightInd = arr.length - 1
+    //2. REPEAT PROCESS UNTIL//
+    while (leftInd <= rightInd){
+      //3. FIND THE MIDDLE INDEX OF THE CURRENT RANGE OF INDICES//
+      //Use Math.floor if the outcome is an odd number to round down//
+      var midInd = Math.floor((rightInd + leftInd) / 2)
+      //4. COMPARE THE TARGET WITH THE MIDDLE VALUE
+      if(target == arr[midInd]){
+        return true
+      }
+      else if(target < arr[midInd]){
+        rightInd = midInd - 1
+      }
+      else{
+        leftInd = midInd + 1
+      }
+    }
+    return false
+  }
+  
+  console.log(binarySearch([1,2,3,4,5,6,7,8,9], 7))
+  console.log(binarySearch([1,2,3,4,5,6,7,8,9], 20))
+  console.log(binarySearch([1,2,3,4,5,6,7,8,9], 1))
+
+
+
+
+
+
+
+
+

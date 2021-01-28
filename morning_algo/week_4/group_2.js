@@ -56,3 +56,46 @@ var arr3 =arr1.concat(arr2)
 }
 
 // EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
+
+/*
+  Recursive Binary Search
+  Input: SORTED array of ints, int value
+  Output: bool representing if value is found
+  Recursively search to find if the value exists, do not loop over every element.
+  Approach:
+  Take the middle item and compare it to the given value.
+  Based on that comparison, narrow your search to a particular section of the array
+*/
+
+function recursiveBinary(arr, target){
+  // Base Case
+  if(arr.length == 1){
+    if(arr[0] == target){
+      return true
+    }
+    return false
+  }
+  // Forward Progress
+  var middle = Math.floor(arr.length / 2)
+  if(arr[middle] == target){
+    return true
+  }else if(arr[middle] > target){
+    //pass the first half of the array
+    n
+    return recursiveBinary()
+  }
+  else{
+    //pass the second half of the array
+    return recursiveBinary()
+  }
+  // Recursive Call
+  
+  
+  return false
+}
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+var arr = [1,2,3,4,5,6,7,8]
+console.log(recursiveBinary(arr,5))
+// THUR

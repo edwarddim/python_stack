@@ -43,6 +43,7 @@ function recursiveSigma(n) {
   // 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
   // 3. REC URSIVE CALL
   return n + recursiveSigma(n - 1)
+
 }
 // 5 => 5 + 4 + 3 + 2 + 1 => 15
 console.log(recursiveSigma(3)) // 6
@@ -101,7 +102,8 @@ function recFlatten(arr){
   }
   // 2. FORWARD PROGRESS
   var array = []
-  for(var i =0; i < arr.length; i ++){
+  for(var i =0; i < arr.length; i ++)
+{
     // 3. RECURSIVE CALL
     array = array.concat(recFlatten(arr[i]))
   }
@@ -111,32 +113,11 @@ console.log(recFlatten([1,[2,3,[4]],5]))
 
 // EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
 
-// -----------------------------------------------------------------------------------------------//
-// -----------------------------------------------------------------------------------------------//
-// -----------------------------------------------------------------------------------------------//
-// -----------------------------------------------------------------------------------------------//
-
-// TUE
-/* 
-    Given an array nested with unknown amount of arrays,
-    return the integers all under ONE array
-    Array.isArray() will come in useful
-    Array.isArray([1,2,3]) returns true
-    Array.isArray({'a':1}) returns false
-    Array.isArray(1) returns false
-*/
-
-function recFlatten(arr){
-  
-}
-
-// EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
 
 // WED
-
 
 /*
   Recursive Binary Search
@@ -149,8 +130,29 @@ function recFlatten(arr){
 */
 
 function recursiveBinary(arr, target){
-
+  // 1. Base Case
+  if(arr.length == 1){
+    if(arr[0] == target){
+      return true
+    }
+    return false
+  }
+  // 2. Forward Progress
+  var midInd = Math.floor((arr.length - 1) / 2)
+  // 3. Recursive Call
+  if(target == arr[midInd]){
+    return true
+  }
+  else if(target < arr[midInd]){
+    // TAKE THE LEFT HALF OF THE ARR AND DO A RECURSIVE CALL
+    return recursiveBinary(arr.slice(0, midInd), target )
+  }
+  else{
+    // TAKE THE RIGHT HALF OF THE ARR AND DO A RECURSIVE CALL
+    return recursiveBinary(arr.slice(midInd + 1, arr.length ), target )
+  }
 }
+console.log(recursiveBinary([1,2,3,4,5,6,7,8,9], 7 ))
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//

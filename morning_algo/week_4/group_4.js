@@ -57,7 +57,24 @@ f(num == 1){
 
 
 
+/*
+  Recursive Binary Search
+  Input: SORTED array of ints, int value
+  Output: bool representing if value is found
+  Recursively search to find if the value exists, do not loop over every element.
+  Approach:
+  Take the middle item and compare it to the given value.
+  Based on that comparison, narrow your search to a particular section of the array
+*/
 
+function recursiveBinary(arr, target){
+
+}
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+// THUR
 
 
   /* 
@@ -85,6 +102,7 @@ function sumArr(arr, i=0) {
 
   function sumArr(arr, i = 0) {
     // 1. BASE CASE
+
     if(i == arr.length - 1){
       return arr[i]
     }
@@ -133,3 +151,35 @@ function recFlatten(arr){
 }
 // EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
 console.log(recFlatten([1,[2,3,[4]],5]))
+
+
+// Recursive Binary Search
+//  Input: SORTED array of ints, int value
+//   Output: bool representing if value is found
+//   Recursively search to find if the value exists, do not loop over every element.
+//   Approach:
+//   Take the middle item and compare it to the given value.
+//   Based on that comparison, narrow your search to a particular section of the array   
+
+var leftInd = 0
+var rightInd = arr.length-1
+function recursiveBinary(arr, target){
+// 1, BASE CASE
+    while(leftInd <= rightInd){
+// 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
+        var midInd = Math.floor((rightInd + leftInd) / 2)
+        if(target == arr[midInd]){
+            return true
+        }
+        else if(target < arr[midInd]){
+            arr = arr.slice(0,midInd)
+            return recursiveBinary(arr, target)
+        }
+        else{
+            arr = arr.slice(midInd, arr.length-1)
+            return recursiveBinary(arr, target)
+        }
+    }
+// 3. RECURSIVE CALL
+}
+console.log(recursiveBinary([1,2,3,4,5,6,7,8,9], 2))

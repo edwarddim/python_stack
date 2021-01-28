@@ -118,3 +118,35 @@ console.log(arr1.flat());
 
     Array.isArray(1) returns false
 */
+
+
+/*
+  Recursive Binary Search
+  Input: SORTED array of ints, int value
+  Output: bool representing if value is found
+  Recursively search to find if the value exists, do not loop over every element.
+  Approach:
+  Take the middle item and compare it to the given value.
+  Based on that comparison, narrow your search to a particular section of the array
+*/
+
+function recursiveBinary(arr, target){
+    var mid = Math.floor(arr.length/2)
+
+    if (arr[mid] == target){
+        return true
+    } else if (arr.length <= 1 && arr[mid] != target) {
+        return false
+    }
+
+    if (target < arr[mid]) {
+        arr = arr.slice(0,mid)
+    } else {
+        arr = arr.slice(mid,arr.length)
+    }
+
+    return recursiveBinary(arr, target)   
+}
+
+var RA = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+console.log(recursiveBinary(RA,10))

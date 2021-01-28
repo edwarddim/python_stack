@@ -73,7 +73,7 @@ console.log(sumArr([1,2,3,4]))
 
 function recFlatten(arr, arr2=[]){
     for (j=0; j < arr.length; j++){
-        if (arr.isArray(arr[j]) == true){
+        if (ar,r.isArray(arr[j]) == true){
             arr2 = arr2.concat(recFlatten(arr[j]))
         }
         else {
@@ -85,3 +85,60 @@ function recFlatten(arr, arr2=[]){
 
 
 // EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
+
+
+// TUE
+/* 
+  Array: Binary Search (non recursive)
+  Given a sorted array and a value, return whether the array contains that value.
+  Do not sequentially iterate the array. Instead, ‘divide and conquer’,
+  taking advantage of the fact that the array is sorted .
+*/
+function binarySearch(arr,target){
+    // 1. SET LEFT AND RIGHT POINTERS TO BEGINNING AND END OF ARRAY
+    var leftInd = 0
+    var rightInd = arr.length - 1
+    // 2. REPEAT PROCESS UNTIL 
+    while(leftInd <= rightInd){
+      // 3. FIND THE MIDDLE INDEX OF THE CURRENT RANGE OF INDICES
+      var midInd = Math.floor((rightInd + leftInd) / 2)
+      // 4. COMPARE THE TARGET WITH THE MIDDLE VALUE
+      if(target == arr[midInd]){
+        return true
+      }
+      else if(target < arr[midInd]){
+        rightInd = midInd - 1
+      }
+      else{
+        leftInd = midInd + 1
+      }
+    }
+    return false
+  }
+
+/*
+Recursive Binary Search
+Input: SORTED array of ints, int value
+Output: bool representing if value is found
+Recursively search to find if the value exists, do not loop over every element.
+Approach:
+Take the middle item and compare it to the given value.
+Based on that comparison, narrow your search to a particular section of the array
+*/
+function recursiveBinary(arr, target){
+    var middle = Math.floor(arr.length / 2);
+    if (arr[0] != target && arr.length === 1){
+        return false;
+    }
+    if (target === arr[middle]){
+        return true;
+    }
+    else if (target < arr[middle]){
+        return recursiveBinary(arr.slice(0, middle), target);
+    }
+    else if (target > arr[middle]){
+        return recursiveBinary(arr.slice(middle), target);
+    }
+}
+
+console.log(recursiveBinary([1,2,3,4,5,6,7,8,9,11,12,13], 10))
