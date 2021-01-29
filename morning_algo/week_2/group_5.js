@@ -173,3 +173,14 @@ function firstNonRepeatingChar(string) {
 
 console.log(firstNonRepeatingChar("stress"))
 console.log(firstNonRepeatingChar("moonmen"))
+
+
+
+
+
+
+
+
+
+
+

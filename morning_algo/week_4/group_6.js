@@ -142,3 +142,61 @@ function recursiveBinary(arr, target){
 }
 
 console.log(recursiveBinary([1,2,3,4,5,6,7,8,9,11,12,13], 10))
+
+
+// THUR
+
+/* 
+    Rising Square
+    Given a number return an array filled with the
+    squares of integers up to given number
+*/
+function risingSqaures(num, arr=[]){
+
+  if (arr[arr.length-1] == num*num){
+    return arr
+  } 
+
+  arr.push(Math.pow(arr.length+1, 2)) 
+
+  return risingSqaures(num, arr)
+  
+
+}
+// EX. risingSquares(3) => [1,4,9]
+// EX. risingSquares(5) => [1,4,9,16,25]
+
+
+
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+
+// FRI
+
+/*
+    String Subset
+    Given a string, return an array filled
+    with IN-ORDER substrings
+*/
+
+
+function stringSubset(string, arr){
+
+
+  var lets = string.split('')
+
+
+  if(lets.length == 0){
+    return arr
+  }
+  
+  for (var i=0; i<lets.length; i++){
+    var st = ""
+
+  }
+
+}
+
+// EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]

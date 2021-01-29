@@ -59,5 +59,53 @@ function recursiveBinary(arr, target){
 
 }
 
-// --------------------------------------
+
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------
+
+// FRI
+
+/* 
+    Rising Square
+    Given a number return an array filled with the
+    squares of integers up to given number
+*/
+function risingSquares(num, arr){
+    
+}
+// EX. risingSquares(3) => [1,4,9]
+// EX. risingSquares(5) => [1,4,9,16,25]
+
+
+
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
+
+
+
+
+/*
+    String Subset
+    Given a string, return an array filled
+    with IN-ORDER substrings
+*/
+
+
+function stringSubset(string, arr=[]){
+    tempArr = []
+    // 1, BASE CASE - stops the algorithm from infinite loop
+    if(string){
+        return arr
+    }
+    // 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
+    // 3. RECURSIVE CALL
+    return string + stringSubset(arr.push(string), arr)
+}
+console.log(stringSubset("ABC"))
+
+// EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
+
+
 

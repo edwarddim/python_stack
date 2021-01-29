@@ -182,3 +182,24 @@ function recursiveBinary(arr, target){
   // 3. RECURSIVE CALL
   }
   console.log(recursiveBinary([1,2,3,4,5,6,7,8,9], 2))
+
+  // THUR
+
+/* 
+    Rising Square
+    Given a number return an array filled with the
+    squares of integers up to given number
+*/
+function risingSqaures(num, arr=[]){
+  // base case
+  if (arr[arr.length-1] == num*num) {
+    return arr
+  }
+  arr.push((arr.length+1)*(arr.length+1))
+
+  return risingSqaures(num, arr);
+}
+console.log(risingSqaures(3))
+
+// EX. risingSquares(3) => [1,4,9]
+// EX. risingSquares(5) => [1,4,9,16,25]

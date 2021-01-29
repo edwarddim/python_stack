@@ -3,7 +3,7 @@ function iteratePrint(num){
     console.log(i)
   }
 }
-iteratePrint(5)
+// iteratePrint(5)
 
 // FUNCTION DEFINED
 function recursivePrint(num){
@@ -19,7 +19,7 @@ function recursivePrint(num){
   recursivePrint(num)
 }
 // FUNCTION CALLED
-recursivePrint(3)
+// recursivePrint(3)
 
 // MON
 
@@ -46,7 +46,7 @@ function recursiveSigma(n) {
 
 }
 // 5 => 5 + 4 + 3 + 2 + 1 => 15
-console.log(recursiveSigma(3)) // 6
+// console.log(recursiveSigma(3)) // 6
 
 /* 
   Recursively sum an arr of ints
@@ -65,7 +65,7 @@ function sumArr(arr, i = 0) {
   // return arr[i] + sumArr(arr, i + 1)
 }
 // [1,2,3] => 6
-console.log(sumArr([1,2,3]))
+// console.log(sumArr([1,2,3]))
 
 
 
@@ -109,7 +109,7 @@ function recFlatten(arr){
   }
   return array
 }
-console.log(recFlatten([1,[2,3,[4]],5]))
+// console.log(recFlatten([1,[2,3,[4]],5]))
 
 // EX. [1,[2,3,[4]],5] => [1,2,3,4,5]
 
@@ -152,7 +152,7 @@ function recursiveBinary(arr, target){
     return recursiveBinary(arr.slice(midInd + 1, arr.length ), target )
   }
 }
-console.log(recursiveBinary([1,2,3,4,5,6,7,8,9], 7 ))
+// console.log(recursiveBinary([1,2,3,4,5,6,7,8,9], 7 ))
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
@@ -164,33 +164,19 @@ console.log(recursiveBinary([1,2,3,4,5,6,7,8,9], 7 ))
     Given a number return an array filled with the
     squares of integers up to given number
 */
-function risingSqaures(num, arr){
-
+function risingSquares(num){
+  if(num == 1){
+    return [1]
+  }
+  var arr = risingSquares(num - 1)
+  arr.push(num * num)
+  return arr
 }
-// EX. 3 => [1,4,9]
-// EX. 5 => [1,4,9,16,25]
+console.log(risingSquares(3))
+// EX. risingSquares(3) => [1,4,9]
+// EX. risingSquares(5) => [1,4,9,16,25]
 
-/* 
-  recursively find the lowest common multiple between two numbers
-  "A common multiple is a number that is a multiple of two or more integers. 
-  The common multiples of 3 and 4 are 0, 12, 24, .... 
-  The least common multiple (LCM) of two numbers is the smallest number (not zero) 
-  that is a multiple of both."
-  
-  Try writing two columns of multiples as a starting point:
-  starting with 15 and 25 and keep writing their multiples until you find the lowest common one
-  then turn this in to a step by step instruction
-  15 25
-  30 50
-  45 75
-  60
-  75
-  75 is the first common
-*/
 
-function LCM(a,b, aMult=a, bMult=b){
-
-}
 
 
 // -----------------------------------------------------------------------------------------------//
@@ -205,9 +191,15 @@ function LCM(a,b, aMult=a, bMult=b){
     with IN-ORDER substrings
 */
 
-
 function stringSubset(string, arr){
-
+  if(string.length == 0){
+      arr.push("")
+      return arr
+  }
+  for(let i = 0; i < string.length ; i++){
+      arr.push(string.slice(i , string.length))
+  }
+  return stringSubset(string.slice(0, string.length - 1) , arr)
 }
 
 // EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
