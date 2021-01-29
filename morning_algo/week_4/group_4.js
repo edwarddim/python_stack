@@ -161,25 +161,24 @@ console.log(recFlatten([1,[2,3,[4]],5]))
 //   Take the middle item and compare it to the given value.
 //   Based on that comparison, narrow your search to a particular section of the array   
 
-var leftInd = 0
-var rightInd = arr.length-1
 function recursiveBinary(arr, target){
-// 1, BASE CASE
-    while(leftInd <= rightInd){
-// 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
-        var midInd = Math.floor((rightInd + leftInd) / 2)
-        if(target == arr[midInd]){
-            return true
-        }
-        else if(target < arr[midInd]){
-            arr = arr.slice(0,midInd)
-            return recursiveBinary(arr, target)
-        }
-        else{
-            arr = arr.slice(midInd, arr.length-1)
-            return recursiveBinary(arr, target)
-        }
-    }
-// 3. RECURSIVE CALL
-}
-console.log(recursiveBinary([1,2,3,4,5,6,7,8,9], 2))
+  // 1, BASE CASE
+      while(arr[0] != target){
+  // 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
+          var midInd = Math.floor(arr.length / 2)
+          if(target == arr[midInd]){
+              return true
+          }
+          else if(target < arr[midInd]){
+              arr = arr.slice(0,midInd)
+              return recursiveBinary(arr, target)
+          }
+          else{
+              arr = arr.slice(midInd, arr.length-1)
+              return recursiveBinary(arr, target)
+          }
+      }
+      return false
+  // 3. RECURSIVE CALL
+  }
+  console.log(recursiveBinary([1,2,3,4,5,6,7,8,9], 2))
