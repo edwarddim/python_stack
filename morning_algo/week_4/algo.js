@@ -1,23 +1,7 @@
 // MON
 // ITERATIVELY VS RECURSIVELY
-function iteraatePrint(number){
-  //    START         END       INCREMENT/DECREMENT
-  for(var i = number; i > 0        ; i--){
-    console.log(i)
-  }
-}
-
 function recursivePrint(number){
-  // 1, BASE CASE (END OF THE RECURSION)
-  console.log(number)
-  if(number == 0){
-    return
-  }
-  // 2. FORWARD PROGRESS (INCREMENT OR DECREMENT)
-  number -=1
-  // 3. RECURSIVE CALL
-  recursivePrint(number)
-  console.log("BOTTOM OF FUNCTION")
+
 }
 // recursivePrint(5)
 
@@ -27,13 +11,7 @@ function recursivePrint(number){
   Output: sum of integers from 1 to Input integer
 */
 function recursiveSigma(n) {
-  // 1, BASE CASE
-  if(n == 1){
-    return 1
-  }
-  // 2. FORWARD PROGRESS (DECREMENT)
-  // 3. RECURSIVE CALL
-  return n + recursiveSigma(n-1)
+
 }
 // console.log(recursiveSigma(3))
 // 5 => 5 + 4 + 3 + 2 + 1 => 15
@@ -42,20 +20,11 @@ function recursiveSigma(n) {
 // 3 => 3 * 2 * 1 => 6
 // 4 => 4 * 3 * 2 * 1 => 24
 function iterativeFactorial(num){
-  var temp = 1
-  for(var i = num; i > 0; i--){
-    temp = temp * i
-  }
-  return temp
+
 }
 
 function recFactorial(num){
-  // BASE CASE
-  if(num == 1){
-    return 1
-  }
-  // FORWARD PROGRESS (DECREMENT) AND RECURSIVE CALL
-  return num * recFactorial(num-1)
+
 }
 // recFactorial(3)
 
@@ -69,20 +38,11 @@ function recFactorial(num){
 */
 
 function iterateSumArr(array){
-  sum = 0
-  for(var i = 0; i < array.length; i++){
-    sum += arr[i]
-  }
-  return sum
+
 }
 
 function recSumArr(arr, i = 0) {
-  // BASE CASE
-  if(arr.length-1 == i){
-    return arr[i]
-  }
-  // FORWARD PROGRESS (INCREMENT) AND RECURSIVE CALL
-  return arr[i] + recSumArr(arr, i + 1)
+
 }
 // console.log(recSumArr([1,2,3,4]))
 // [1,2,3] => 6
@@ -99,18 +59,7 @@ function recSumArr(arr, i = 0) {
 */
 // HINT: YOU'RE GOING TO NEED A FOR LOOP
 function stringSubset(string, arr = []){
-  // BASE CASE
-  if(string.length == 0){
-    arr.push("")
-    return arr
-  }
-  for(var i = string.length; i > 0; i--){
-    arr.push(string.slice(0,i))
-  }
-  // FORWARD PROGRESS (INCCREMENT / DECREMENT)
-  // RECURSIVE CALL
-  console.log("ARR BEFORE RECURSION: " , arr)
-  return stringSubset( string.slice(1, string.length) , arr)
+
 }
 // console.log(stringSubset("abcd"))
 // console.log("HELLO WORLD")
@@ -135,18 +84,7 @@ function stringSubset(string, arr = []){
     console.log(array3) => [1,2,3,4,5,6]
 */
 function recFlatten(arr){
-    // BASE CALL
-    if(!Array.isArray(arr)){
-      console.log("THIS IS A NUMBER:", arr)
-      return arr
-    }
-    var array = []
-    // FORWARD PROGRESS
-    // RECURSIVE CALL
-    for(var i = 0; i < arr.length; i++){
-        array = array.concat(recFlatten(arr[i]))
-    }
-    return array
+
 }
 // console.log(recFlatten([ 1, [2,3,[4]] , 5 ]))
 //            0     1        2
@@ -176,30 +114,7 @@ function recFlatten(arr){
 // LEVEL 3 [8,9] , 8
 
 function recursiveBinary(arr, target){
-  // BASE CASE
-  if(arr.length == 1){
-    if(arr[0] == target){
-      return true
-    }
-    else{
-      return false
-    }
-  }
-  // FIND THE MIDDLE NUMBER OF THE ARRAY
-  var midIndex = Math.floor(arr.length/2)
-  var midValue = arr[midIndex]
-  // CHECK TO SEE IF TARGET IS THE MIDDLE NUMBER
-  if(target == midValue){
-    return true
-  }
-  // IF TARGET IS LESS THAN, CUT LEFT HALF OF ARRAY AND RECURSIVE CALL
-  if(target < midValue){
-    return recursiveBinary( arr.slice(0, midIndex), target )
-  }
-  // IF TARGET IS GREATER THAN, CUT RIGHT HALF OF ARRAY AND RECRUSIVE CALL
-  else{
-    return recursiveBinary( arr.slice( midIndex + 1, arr.length), target )
-  }
+
 }
 console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  8))
 console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  11))

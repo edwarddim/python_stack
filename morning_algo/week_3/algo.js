@@ -6,23 +6,7 @@
   where one side’s sum is equal to the other’s. 
 */
 function balancePoint(arr){
-  if(arr.length < 2) return false
-  var leftInd = 0;
-  var rightInd = arr.length-1;
-  var leftSum, rightSum = 0
-  while(leftInd <= rightInd){
-      if(leftSum <= rightSum){
-          leftSum += arr[leftInd]
-          leftInd++
-      }
-      else {
-          rightSum += arr[rightInd]
-          rightInd--
-      }
-  }
-  // console.log("LEFT SUM: ", leftSum)
-  // console.log("RIGHT SUM: ", rightSum)
-  return (leftSum == rightSum) ? true : false
+
 }
 // EX. [1, 2, 3, 4, 10] => TRUE
 // EX. [1, 2, 4, 2, 1] => FALSE
@@ -62,12 +46,7 @@ function binarySearch(arr,target){
   arr.splice(index, num)
 */
 function dedupeArr(arr){
-    for(var i = arr.length -1; i > 0; i--) {
-      if(arr[i] == arr[i-1]){
-        arr.splice(i, 1);
-      }
-    }
-    return arr;
+
 }
 // console.log(dedupeArr([1,1,1,2,2,2,3,3,4,4,4,4]))
 // EX. [1,1,1,2,2,2,3,3,4,4,4] => [1,2,3,4]
@@ -85,31 +64,7 @@ function dedupeArr(arr){
 // EX. [1,1,2,2,2,3,3,3] => [2,3]
 // EX. [1,1,1,2,2,2,3,3,3] => []
 function mode(arr){
-  result = [];
-  freqObj = {};
-  var maxFreq = 0;
-  for(var i = 0; i < arr.length; i++) {
-    if(freqObj.hasOwnProperty(arr[i])) {
-      freqObj[arr[i]] += 1;
-    } else {
-      freqObj[arr[i]] = 1;
-    }
-    if(freqObj[arr[i]] > maxFreq){
-      maxFreq = freqObj[arr[i]];
-    }
-  }
-  var allSameFreq = true
-  for(var key in freqObj){
-    if(freqObj[key] == maxFreq) {
-      result.push(parseInt(key));
-    } else {
-      allSameFreq = false
-    }
-  }
-  if(allSameFreq == true){
-    return [];
-  }
-  return result;
+
 }
 console.log(mode([1,2,2,3,3]))
 console.log(mode([1,1,1,3,3,3,2,2,2]))
