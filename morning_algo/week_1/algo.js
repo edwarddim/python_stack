@@ -4,11 +4,18 @@
 // EX. "Happy New Years" => "HNY"
 // NOTE. YOU CAN USE .SPLIT() METHOD
 
-function acronyms(string) {
+var string = "HAPPY NEW YEAR"
+var stringArr = string.split(" ") // ["Happy", "New", "Year"]
 
+function acronyms(string) {
+    var wordArr = string.split(" ")
+    var returnString = ""
+    for(var i = 0;i < wordArr.length; i+=2){
+        returnString += wordArr[i][0]
+    }
+    return returnString
 }
 // console.log(acronyms("Live From Saturday Night Live"))
-
 
 
 // RETURN THE REVERSED STRING OF INPUT
