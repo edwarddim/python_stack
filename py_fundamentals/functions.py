@@ -8,10 +8,10 @@ def addTwoThings(a, b):
     return c
 
 # CALL
-# print(addTwoThings(42, 56)) # Arguments - 42, 56
-# print(addTwoThings(1,2))
-# print(addTwoThings(4,8))
-# print(addTwoThings("Hello ", "World"))
+print(addTwoThings(42, 56)) # Arguments - 42, 56
+print(addTwoThings(1,2))
+print(addTwoThings(4,8))
+print(addTwoThings("Hello ", "World"))
 
 # return VS print()
 def a():
