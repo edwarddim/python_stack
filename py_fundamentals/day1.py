@@ -28,4 +28,5 @@ print(f"Hello my name is {first_name} {last_name} I'm {age} years old")
 
 # "Hello my name is Edward Im I'm at 30"
 
+# ------------------------------------------------------------------------------------#
 # FUNCTIONS
