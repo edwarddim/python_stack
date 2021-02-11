@@ -14,9 +14,7 @@ class ClassName:
         self.something = "something"
     # ALL OTHER METHODS
     def doSomething(self):
-        print("do something")
-
-
+        print("do")
 # DEFINE
 class Dog: # SINGULAR AND UPPER CAMEL CASE
     def __init__(self, nameParam, legsParam, eyesParam, furParam): # CONSTRUCTOR METHOD

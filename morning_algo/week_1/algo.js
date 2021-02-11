@@ -33,43 +33,125 @@ function stringReverse(string) {
     // RETURN THE ANSWER
     return returnString
 }
-console.log(stringReverse("HELLO"))
+// console.log(stringReverse("HELLO"))
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
 
 // TUE
 // HINT. WE NEED A WAY TO KEEP TRACK OF OPENING AND CLOSING PARENS
 function parensValid(string) {
-
+    // EARLY EXIT
+    if(string.length % 2 == 1){
+        return false
+    }
+    // ITERATE THROUGH THE STRING
+    var counter = 0
+    for(var i = 0; i < string.length; i++){
+        // CHECK IF THE CHARACTER IS OPEN OR CLOSED PARENS
+        // KEEP TRACK OF OPENING AND CLOSING PARENS
+        if(string[i] == "("){
+            counter++
+        }
+        else if(string[i] == ")"){
+            counter--
+        }
+        if(counter < 0){
+            return false
+        }
+    }
+    if(counter == 0){
+        return true
+    }
+    else{
+        return false
+    }
 }
+// 1. IS THERE A CORRESPONDING CLOSING PAREN FOR EACH OPENING PAREN
+// 2. ARE THE PAREN BEING OPENED BEFORE BEING CLOSED
 // RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
 // EX. "()(())" => TRUE
 // EX. "(()()" => FALSE
 // EX. "()()()" => TRUE
 // EX. "())(()" => FALSE
-// EX. ")))(((" => 
+// EX. ")))(((" => FALSE
 
 function bracesValid(string) {
-
+    var braceStack = []
+    var checker = {
+        "(": ")",
+        "{": "}",
+        "[": "]"
+    }
+    for (var char of string) {
+        if (char == "(" || char == "{" || char == "[") {
+            braceStack.push(char)
+        }
+        else {
+            if (checker[braceStack[braceStack.length - 1]] == char) {
+                braceStack.pop()
+            }
+            else {
+                return false
+            }
+        }
+    }
+    if(braceStack.length != 0){
+        return false
+    }
+    return true
 }
+console.log(bracesValid("({})[]"))
+console.log(bracesValid("({])[]"))
+console.log(bracesValid("((()))"))
+console.log(bracesValid("([{}])"))
+console.log(bracesValid("]["))
 // (),[],{}
-// EX. "({})[]" => TRUE
+// EX. "( { ] ) [ ] " => TRUE
 // TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS
 // WILL REQUIRE A STACK IMPLEMENTATION
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
 
-// WED
-function isPalindrome(string) {
 
+function isPalindrome(string) {
+    for(var i = 0; i < Math.floor(string.length/2); i++){
+        if(string[i] != string[string.length - 1 - i] ){
+            return false
+        }
+    }
+    return true
 }
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE WORD IS A PALINDROME
 // "HELLO" => FALSE
 // "KAYAK" => TRUE
 // "TACOCAT" => TRUE
+// "DAD" => TRUE
 
 function isAnagram(string1, string2) {
-
+    if(string1.length != string2.length){
+        return false
+    }
+    var obj  = {}
+    for(var i = 0; i < string1.length; i++){
+        if(string1[i] in obj ){
+            obj[string1[i]] += 1
+        }
+        else{
+            obj[string[i]] = 1
+        }
+    }
+    for(var i = 0; i < string2.length;i++){
+        if(string2[i] in obj){
+            obj[string2[i]] -= 1
+            if(obj[string2[i]] < 0){
+                return false
+            }
+        }
+        else{
+            return false
+        }
+    }
+    return true
 }
 // HINT: YOU WANT TO USE A OBJECT(DICTIONARY) TO KEEP TRACK OF CHARACTERS AND THEIR FREQUENCY
 // RETURN TRUE OR FALSE DEPENDING ON WHETHER THE TWO WORDS ARE ANAGRAMS
@@ -91,12 +173,15 @@ function bookIndex(arr) {
 // -----------------------------------------------------------------------------------------------//
 
 
+
+
+
 // FRI
 function minCoinChange(num) {
 
 }
-console.log(minCoinChange(321))
-console.log(minCoinChange(79))
+// console.log(minCoinChange(321))
+// console.log(minCoinChange(79))
 // GIVEN A NUMBER FIND THE LEAST AMOUNT OF COINS YOU CAN USE TO HAVE THE SAME AMOUNT
 // EX. 321 => "12 QUARTERS, 2 DIMES, 1 PENNY"
 // EX. 79 => "3 quarteres, 4 pennies"
