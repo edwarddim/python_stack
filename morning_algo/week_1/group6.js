@@ -2,20 +2,20 @@
 function stringReverse(string) {
     newString = ""
     for (var i = string.length -1; 1 >= 0; i--) {
-        newString += string[i]
+      nwString += string[i]
     }
-    return newString
+    return new String
 }
 console.log(stringReverse("HELLO"))
-
-// TUE
-// HINT. WE NEED A WAY TO KEEP TRACK OF OPENING AND CLOSING PARENS
+  
+// T  
+ WE NEED A WAY TO KEEP TRACK OF OPENING AND CLOSING PARENS
 function parensValid(string) { 
-    if (string.length %2 != 0) {
-        return false
-    }
-    counter = 0
-    for (var char of string) {
+    ifring.length %2 != 0) {
+      return false
+     
+    coter = 0
+    r (var char of string) {
         if (char == "(") {
             counter ++
         }
@@ -36,13 +36,13 @@ function parensValid(string) {
 console.log(parensValid("()(())"))
 // ITERATE THROUGH THE STRING
     // CHECK IF THE CHARACTER IS OPEN OR CLOSED PARENS
-    // KEEP TRACK OF OPENING AND CLOSING PARENS
+    / / KEEP TRACK OF OPENING  AND CLOSING  PARENS
 // 1. IS THERE A CORRESPONDING CLOSING PAREN FOR EACH OPENING PAREN
 // 2. ARE THE PAREN BEING OPENED BEFORE BEING CLOSED
-// RETURN TRUE OR FALSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
+// R ETURN TRUE OR FA LSE ON WHETHER THE STRING HAS APPROPRIATE CLOSING AND OPENING BRACES
 // EX. "()(())" => TRUE
 // EX. "(()()" => FALSE
-// EX. "()()()" => TRUE
+// EX.  "()()()" => TRUE
 // EX. "())(()" => FALSE    
 // EX. ")))(((" => FALSE    
 
@@ -50,12 +50,12 @@ console.log(parensValid("()(())"))
 function bracesValid(string) {
     var stack = []
     var check = {
-        "(" : ")",
-        "[" : "]",
-        "{" : "}"
-    }
-    for (var char of string) {
-        if (char == "(" || char == "[" || char == "{") {
+      "(" : ")",
+      " : "]",
+      "{" : "}"
+    
+    foar char of string) {
+      if (char == "(" || char == "[" || char == "{") {
             stack.push(char)
         }
         else {
@@ -69,4 +69,4 @@ function bracesValid(string) {
 // (),[],{}
 // EX. "({})[]" => TRUE
 // TAKE PARENS VALID AND MAKE IT ACCOUNT FOR PARENS, SQUARE BRACKETS, AND SQUIGGLY BRACKETS
-// WILL REQUIRE A STACK IMPLEMENTATION
+// WILL REQUIRE A STACK IMPLEMENTATION             

@@ -138,3 +138,38 @@ console.log(isAnagram("ATTAETE","TEA"))
 // EX. "LISTEN", "SILENT" => TRUE
 // EX. "LISTEN", "SILENZ" => FALSE
 // EX. "DEER", "REDD" => FALSE
+
+function bookIndex(arr) {
+  // create return array
+  let newArr = [];
+  // loop through array
+  for (let i = 0; i < arr.length; i++){
+    // check if consecutive numbers are found
+    if ((arr[i+1] - arr[i]) == 1){
+      // create new variable to hold indexed string
+      let idxString = " ";
+      idxString += arr[i];
+      // loop as long as numbers are consecutive to add to idxString
+      while ((arr[i+1] - arr[i]) == 1){
+        i++;
+      }
+      // create consecutive string in idxString (num - -num)
+      idxString = idxString + "-" + arr[i];
+      newArr.push (idxString);
+    }
+    else {
+      newArr.push(arr[i].toString());
+    }
+  }
+
+
+}
+// var num = 70
+// num.toString()
+// var string = ""
+// string += 40 => "40"
+// GIVEN AN ARRAY OF BOOK PAGE NUMBERS RETURN A NEW ARRAY WITH INDEXED VERSION STRING OF BOOK PAGES
+// EX. [1,13,14,15,16,17,36,37,38,70] => ["1", "13-17", "36-38", "70"]
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//
