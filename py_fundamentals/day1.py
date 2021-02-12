@@ -30,3 +30,11 @@ print(f"Hello my name is {first_name} {last_name} I'm {age} years old")
 
 # ------------------------------------------------------------------------------------#
 # FUNCTIONS
+
+def countdown(num):
+    numList = []
+    for i in range(num,-1,-1):
+        numList.append(i)
+    return numList
+
+print(countdown(5))
