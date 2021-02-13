@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect,HttpResponse
-
+from django.http import JsonResponse
 # Create your views here.
 def index(request):
     return redirect("/register")
 
 def register(request):
-    return redirect(request, "index.html")
+    return render(request, "index.html")
 
 def edit(request, user_id):
     return HttpResponse(f"User edit page for {user_id}")
