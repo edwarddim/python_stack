@@ -6,8 +6,19 @@
     Object.hasOwnProperty("keyName")
       - returns true or false if the object has the key or not
 */
+// obj = {}
+// obj.hasOwnProperty("key_name") => if("key_name" in obj)
 function frequencyTable(arr){
-
+  var letterObj = {}
+  for(var i = 0; i < arr.length; i++){
+    if(letterObj.hasOwnProperty(arr[i])){
+      letterObj[arr[i]] += 1
+    }
+    else{
+      letterObj[arr[i]] = 1
+    }
+  }
+  return letterObj
 }
 // EX. ['A','A','B','C','C','C','D','D'] => {"A":2, "B":1, "C":3, "D":2}
 // EX. ['A','C','C','C','D','D','A','B',] => {"A":2, "B":1, "C":3, "D":2}
@@ -17,10 +28,16 @@ function frequencyTable(arr){
   .split()
 */
 function reverseWordOrder(string){
-
+  var wordArr = string.split(" ") // ["THIS", "IS", "A", "TEST"]
+  var returnString = ""
+  // ITERATE TRHOUGH WORDARR IN REVERSE
+  for(var i = wordArr.length - 1; i >= 0; i--){
+    returnString += wordArr[i]
+    returnString += " "
+  }
+  return returnString
 }
 // EX. "THIS IS A TEST" => "TEST A IS THIS"
-
 
 
 //-----------------------------------------------------------------------------------------------------//

@@ -12,3 +12,5 @@ urlpatterns = [
     path("user/<int:user_id>/edit", views.edit),
     path("user/<int:user_id>/delete", views.delete)
 ]
+
+# http://localhost:8000/user/1/delete
