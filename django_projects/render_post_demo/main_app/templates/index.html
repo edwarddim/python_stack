@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello {{first_name}} {{last_name}}</h1>
+    <h3>You live on {{address.street}} {{address.city}}, {{address.state}}</h3>
+    <h3>Likes: </h3>
+    <ul>
+        {% for something in likes reversed %}
+            <li>{{something}}</li>
+        {% endfor %}
+
+        <h1>Conditional Rendering</h1>
+        {% if age > 16 %}
+            <h1>You are older than 16</h1>
+        {% elif age == 16 %}
+            <h1>You are 16</h1>
+        {% else %}
+            <h1>You are younger than 16</h1>
+        {% endif %}
+    </ul>
+</body>
+</html>

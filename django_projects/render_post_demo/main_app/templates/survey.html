@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dailey Survey - How are you feeling?</h1>
+    <form action="/process_survey" method="post">
+        {% csrf_token %}
+        <p>
+            Name:
+            <input type="text" name="full_name" id="">
+        </p>
+        <p>
+            Age:
+            <input type="number" name="age" id="">
+        </p>
+        <textarea name="survey_comments" id="" cols="30" rows="10"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
