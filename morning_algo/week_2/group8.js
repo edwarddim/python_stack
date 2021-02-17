@@ -1,59 +1,56 @@
-// MON
+// TUE
 /* 
-  Given an array of strings
-  return a object to represent how many times each array item is found (a frequency table)
-  Useful methods:
-    Object.hasOwnProperty("keyName")
-      - returns true or false if the object has the key or not
+  String: Dedupe
+  Remove duplicate characters 
+    - (case-sensitive)
+  Bonus: Keep only the last instance of each character.
+  1. USE A OBJECT(DICTIONARY) TO KEEP TRACK OF SEEN CHARS
+  2. EXTRA CHALLENGE: USE A BUILT IN FUNCITON TO RETURN THE SAME STRING
 */
-// obj = {}
-// obj.hasOwnProperty("key_name") => if("key_name" in obj)
+function dedupeString(string){
 
-function frequencyTable(arr){
-  var tempObj = {};
-  for (var i=0; i<arr.length; i++){
-      if (tempObj.hasOwnProperty(arr[i])){
-          tempObj[arr[i]] += 1;
+var newObj = {};
+
+  for(var i = 0; i < string.length; i++){
+      // checks to see if char is in newObj
+      if(!(string[i] in newObj)){
+
+        newObj.push(string[i]);
+        
       }
-      else {
-          var temp = arr[i];
-          tempObj[arr[i]] = 1;
+      else{
+        return false;
       }
   }
-  return tempObj;
+  return newObj;
 }
+console.log(dedupeString("aabacecbedd"))
 
-var array1 = ['A','A','B','C','C','C','D','D'];
-var array2 = ['A','C','C','C','D','D','A','B',];
 
-console.log(frequencyTable(array1));
-console.log(frequencyTable(array2));
 
-// EX. ['A','A','B','C','C','C','D','D'] => {"A":2, "B":1, "C":3, "D":2}
-// EX. ['A','C','C','C','D','D','A','B',] => {"A":2, "B":1, "C":3, "D":2}
+// EX. "aabacecbedd" => "abced"
+// EX. "bbbbaaaaffff" => "baf"
 /* 
-  Reverse Word Order
-  Create a function that, given a string of words (with spaces), returns new string with words in reverse sequence.
-  .split()
+  Given a string containing space separated words
+  Reverse each word in the string.
+  If you need to, use .split to start, then try to do it without.
 */
+function reverseWord(string){
 
-function reverseWordOrder(string){
-  tempArr = [];
-  tempStr = ""
-  tempArr = string.split(" ");
-  for (var i=tempArr.length - 1; i>=0; i--){
-      if (tempArr[i + 1] == undefined){
-          tempStr += `${tempArr[i]}`
-      }
-      else {
-          tempStr += ` ${tempArr[i]}`;
-      }
+  var old = string.split();
+  var new = " ";
+
+  for(var i = 0; i < old.length; i++){
+
+    for(var j < 0)
   }
-  return tempStr;
+
+
+
+
 }
-
-var string3 = "THIS IS A TEST";
-
-console.log(reverseWordOrder(string3));
-
-// EX. "THIS IS A TEST" => "TEST A IS THIS"
+console.log(reverseWord("THIS IS A TEST"))
+// EX. "HELLO" => "OLLEH"
+// EX. "hello world" => "olleh dlrow"
+// EX. "abc def ghi" => "cba fed ihg"
+// EX. "THIS IS A TEST" => "SIHT SI A TSET"

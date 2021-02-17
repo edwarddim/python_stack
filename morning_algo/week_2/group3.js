@@ -15,7 +15,7 @@ function frequencyTable(arr){
             obj[arr[i]]++
         }
         else {
-            obj[arr[i]] = 1
+          r  ogbj[arr[i]] = 1
         }
     }
     return obj
@@ -52,3 +52,46 @@ function reverseWordOrder(string){
 console.log(reverseWordOrder("THIS IS A TEST"))
 
 // EX. "THIS IS A TEST" => "TEST A IS THIS"
+
+// TUE
+/* 
+  String: Dedupe
+  Remove duplicate characters 
+    - (case-sensitive)
+  Bonus: Keep only the last instance of each character.
+  1. USE A OBJECT(DICTIONARY) TO KEEP TRACK OF SEEN CHARS
+  2. EXTRA CHALLENGE: USE A BUILT IN FUNCITON TO RETURN THE SAME STRING
+*/
+function dedupeString(string) 
+{
+    var result = "";
+    var freq = {};
+    for (i = 0; i < string.length; i++) 
+    {
+        let char = string[i];
+        if (freq[char]) 
+        {
+            freq[char]++;
+        } else {
+            freq[char] = 1
+            result = result + char;
+        }
+    }
+    return result;
+}
+
+/* 
+  Given a string containing space separated words
+  Reverse each word in the string.
+  If you need to, use .split to start, then try to do it without.
+*/
+function reverseWord(string){
+  stringArr = string.split(' ')
+
+
+}
+console.log(reverseWord("THIS IS A TEST"))
+// EX. "HELLO" => "OLLEH"
+// EX. "hello world" => "olleh dlrow"
+// EX. "abc def ghi" => "cba fed ihg"
+// EX. "THIS IS A TEST" => "SIHT SI A TSET"
