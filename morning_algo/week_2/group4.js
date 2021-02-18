@@ -91,3 +91,69 @@ console.log(reverseWord("THIS IS A TEST"))
 // EX. "hello world" => "olleh dlrow"
 // EX. "abc def ghi" => "cba fed ihg"
 // EX. "THIS IS A TEST" => "SIHT SI A TSET"
+
+
+/* 
+  String Encode
+  You are given a string that may contain sequences of consecutive characters.
+  Create a function to shorten a string by including the character,
+  then the number of times it appears. 
+  
+  
+  If final result is not shorter (such as "bb" => "b2" ),
+  return the original string.
+*/
+function encode(string){
+    var encoded = ""
+    var thisChar = string[0]
+    var charCount = 0
+    for(var i = 0; i < string.length; i++){
+        if(string[i] == thisChar){
+            charCount ++
+        }
+        if(string[i] != thisChar || i == string.length - 1){
+            encoded += thisChar + charCount
+            thisChar = string[i]
+            charCount = 1
+        }
+    }
+    if(encoded.length < string.length){
+        return encoded
+    }
+    else{
+        return string
+    }
+}
+
+// EX. "aaaabbcddd" => "a4b2c1d3"
+// EX. "" => ""
+// EX. "bbcc" => "bbcc"
+
+
+function decode(string){
+	let letters = {}
+	let returnString = ''
+
+	for (let i = 0; i < string.length; i++) {
+		const letter = string[i];
+		
+		if (isNaN(parseInt(letter))) {
+			letters[letter] = 0
+		} else {
+			letters[string[i - 1]] = letter
+		}
+	}
+	for (const [key, value] of Object.entries(letters)) {
+		returnString += `${key}${value}`
+	}
+	return returnString
+}
+
+let testString2 = "a3b2c1d3"
+
+console.log(decode(testString2));
+
+parseInt("3") // 3
+parseInt("a") // NaN
+// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
+// EX. "a3b2c1d3" => "aaabbcddd"

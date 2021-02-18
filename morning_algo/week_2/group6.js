@@ -84,3 +84,85 @@ console.log(reverseWord("THIS IS A TEST"))
 // EX. "hello world" => "olleh dlrow"
 // EX. "abc def ghi" => "cba fed ihg"
 // EX. "THIS IS A TEST" => "SIHT SI A TSET"
+//-----------------------------------------------------------------------------------------------------//
+// WED
+/* 
+  String Encode
+  You are given a string that may contain sequences of consecutive characters.
+  Create a function to shorten a string by including the character,
+  then the number of times it appears. 
+  
+  
+  If final result is not shorter (such as "bb" => "b2" ),
+  return the original string.
+*/
+function encode(string){
+
+}
+// EX. "aaaabbcddd" => "a4b2c1d3"
+// EX. "" => ""
+// EX. "bbcc" => "bbcc"
+
+function decode(string){
+
+}
+
+parseInt("3") // 3
+parseInt("a") // NaN
+// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
+// EX. "a3b2c1d3" => "aaabbcddd"
+
+// WED
+/* 
+  String Encode
+  You are given a string that may contain sequences of consecutive characters.
+  Create a function to shorten a string by including the character,
+  then the number of times it appears. 
+  
+  
+  If final result is not shorter (such as "bb" => "b2" ),
+  return the original string.
+*/
+function encode(string){
+  returnStr = ""
+  for (let i=0; i<string.length; i++) {
+    //check if character and next character are same
+    counter = 1
+    returnStr += string[i]
+    if (string[i] == string[i+1]){
+      while (string[i] == string[i+1]) {
+        i++
+        counter++
+      }
+    }
+    returnStr += counter
+  }
+  if (returnStr.length > string.length) {
+      return returnStr
+  }
+  else {
+      return string
+  }
+}
+
+// EX. "aaaabbcddd" => "a4b2c1d3"
+// EX. "" => ""
+// EX. "bbcc" => "bbcc"
+
+function decode(string){
+  returnStr = ""
+  for (let i=0; i<string.length; i++) {
+    if (parseInt(string[i]) == NaN) {
+      for (let i=0; i<parseInt(string[i+1]); i++) { 
+          returnStr += string[i]
+      }
+    }
+  }
+  return returnStr
+}
+
+
+parseInt("3") // 3
+parseInt("a") // NaN
+// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
+// EX. "a3b2c1d3" => "aaabbcddd"
