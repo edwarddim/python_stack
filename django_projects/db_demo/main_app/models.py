@@ -4,7 +4,8 @@ from django.db import models
 # Create your models here.
 class User(models.Model):
     # id = YOUR ID NUMBER
-    name = models.CharField(max_length = 45)
+    prefix = models.CharField(max_length=45, null = True)
+    full_name = models.CharField(max_length = 45)
     email = models.CharField(max_length = 255)
     password = models.CharField(max_length = 255)
     age = models.IntegerField()

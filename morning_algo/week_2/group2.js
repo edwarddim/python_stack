@@ -92,3 +92,28 @@ parseInt("3") // 3
 parseInt("a") // NaN
 // HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
 // EX. "a3b2c1d3" => "aaabbcddd"
+
+
+// THUR
+/* 
+  String: Rotate String
+  Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the 
+  right by that given integer amount.
+  n will not be longer than the string length
+*/
+
+function rotateString(string, n){
+  var emptyStr = "";
+  for (var i=string.length - n; i<string.length; i++){
+      emptyStr += string[i];
+  }
+  for (var i=0; i<string.length - n; i++){
+      emptyStr += string[i];
+  }
+  return emptyStr;
+}
+
+console.log(rotateString("Hello World", 1))
+console.log(rotateString("Hello World", 2))
+"Hello World", 1 => "dHello Worl"
+"Hello World", 3 => "rldHello Wo"

@@ -2,6 +2,8 @@
 User.objects.create(name = "Edward Im", email = "ed@gmail.com", password = "fjeiwoa;3847rj439", age = 30)
 User.objects.create(name = "Jane Doe", email = "jane@gmail.com", password = "fjeiwoa;3847rj439", age = 31)
 User.objects.create(name = "John Doe", email = "john@gmail.com", password = "fjeiwoa;3847rj439", age = 32)
+# AFTER MIGRATIONS
+User.objects.create(prefix = "Mr.", full_name = "Fred Rogers", email = "friendly@neighborhood.com", password = "fjiewoajfoiewaojf;ew", age = 50)
 # READ
 User.objects.all() # GRABS ALL USERS
 User.objects.first() # GRABS FIRST USER IN TABLE

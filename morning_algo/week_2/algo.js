@@ -173,10 +173,22 @@ parseInt("a") // NaN
 */
 
 function rotateString(string, n){
-
+  var begin = ""
+  var end = ""
+  for(var i = 0; i < string.length; i++){
+    if(i < string.length - n){
+      begin += string[i]
+    }
+    else{
+      end += string[i]
+    }
+  }
+  return end + begin
 }
 console.log(rotateString("Hello World", 1))
 console.log(rotateString("Hello World", 2))
+// "Hello World", 1 => "dHello Worl"
+// "Hello World", 3 => "rldHello Wo"
 
 //-----------------------------------------------------------------------------------------------------//
 // FRI

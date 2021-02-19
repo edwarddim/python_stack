@@ -48,3 +48,4 @@ function reverseWordOrder(string){
 }
 console.log(reverseWordOrder("THIS IS A TEST"))
 // EX. "THIS IS A TEST" => "TEST A IS THIS"
+

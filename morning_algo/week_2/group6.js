@@ -53,20 +53,20 @@
   1. USE A OBJECT(DICTIONARY) TO KEEP TRACK OF SEEN CHARS
   2. EXTRA CHALLENGE: USE A BUILT IN FUNCITON TO RETURN THE SAME STRING
 */
-function dedupeString(string){
-  var test = {}
-  for (let i = string.length - 1; i >= 0; i--){
-    if(test.hasOwnProperty(string[i])){
-      string.splice(string[i])
-    }
-    else{
-      // why are you concating a string to an object
-      test += string[i]
-    }
-  }
-  return string
-}
-console.log(dedupeString("aabacecbedd"))
+// function dedupeString(string){
+//   var test = {}
+//   for (let i = string.length - 1; i >= 0; i--){
+//     if(test.hasOwnProperty(string[i])){
+//       string.splice(string[i])
+//     }
+//     else{
+//       // why are you concating a string to an object
+//       test += string[i]
+//     }
+//   }
+//   return string
+// }
+// console.log(dedupeString("aabacecbedd"))
 
 
 // EX. "aabacecbedd" => "abced"
@@ -76,10 +76,10 @@ console.log(dedupeString("aabacecbedd"))
   Reverse each word in the string.
   If you need to, use .split to start, then try to do it without.
 */
-function reverseWord(string){
+// function reverseWord(string){
 
-}
-console.log(reverseWord("THIS IS A TEST"))
+// }
+// console.log(reverseWord("THIS IS A TEST"))
 // EX. "HELLO" => "OLLEH"
 // EX. "hello world" => "olleh dlrow"
 // EX. "abc def ghi" => "cba fed ihg"
@@ -96,19 +96,19 @@ console.log(reverseWord("THIS IS A TEST"))
   If final result is not shorter (such as "bb" => "b2" ),
   return the original string.
 */
-function encode(string){
+// function encode(string){
 
-}
-// EX. "aaaabbcddd" => "a4b2c1d3"
-// EX. "" => ""
-// EX. "bbcc" => "bbcc"
+// }
+// // EX. "aaaabbcddd" => "a4b2c1d3"
+// // EX. "" => ""
+// // EX. "bbcc" => "bbcc"
 
-function decode(string){
+// function decode(string){
 
-}
+// }
 
-parseInt("3") // 3
-parseInt("a") // NaN
+// parseInt("3") // 3
+// parseInt("a") // NaN
 // HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
 // EX. "a3b2c1d3" => "aaabbcddd"
 
@@ -123,46 +123,62 @@ parseInt("a") // NaN
   If final result is not shorter (such as "bb" => "b2" ),
   return the original string.
 */
-function encode(string){
-  returnStr = ""
-  for (let i=0; i<string.length; i++) {
-    //check if character and next character are same
-    counter = 1
-    returnStr += string[i]
-    if (string[i] == string[i+1]){
-      while (string[i] == string[i+1]) {
-        i++
-        counter++
-      }
-    }
-    returnStr += counter
-  }
-  if (returnStr.length > string.length) {
-      return returnStr
-  }
-  else {
-      return string
-  }
+// function encode(string){
+//   returnStr = ""
+//   for (let i=0; i<string.length; i++) {
+//     //check if character and next character are same
+//     counter = 1
+//     returnStr += string[i]
+//     if (string[i] == string[i+1]){
+//       while (string[i] == string[i+1]) {
+//         i++
+//         counter++
+//       }
+//     }
+//     returnStr += counter
+//   }
+//   if (returnStr.length > string.length) {
+//       return returnStr
+//   }
+//   else {
+//       return string
+//   }
+// }
+
+// // EX. "aaaabbcddd" => "a4b2c1d3"
+// // EX. "" => ""
+// // EX. "bbcc" => "bbcc"
+
+// function decode(string){
+//   returnStr = ""
+//   for (let i=0; i<string.length; i++) {
+//     if (parseInt(string[i]) == NaN) {
+//       for (let i=0; i<parseInt(string[i+1]); i++) { 
+//           returnStr += string[i]
+//       }
+//     }
+//   }
+//   return returnStr
+// }
+
+
+// parseInt("3") // 3
+// parseInt("a") // NaN
+// // HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
+// // EX. "a3b2c1d3" => "aaabbcddd"
+
+/* 
+  String: Rotate String
+  Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the 
+  right by that given integer amount.
+  n will not be longer than the string length
+*/
+
+function rotateString(string, n){
+  temp = string.splice(n) + string.splice(0, n)
+  return temp
 }
-
-// EX. "aaaabbcddd" => "a4b2c1d3"
-// EX. "" => ""
-// EX. "bbcc" => "bbcc"
-
-function decode(string){
-  returnStr = ""
-  for (let i=0; i<string.length; i++) {
-    if (parseInt(string[i]) == NaN) {
-      for (let i=0; i<parseInt(string[i+1]); i++) { 
-          returnStr += string[i]
-      }
-    }
-  }
-  return returnStr
-}
-
-
-parseInt("3") // 3
-parseInt("a") // NaN
-// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
-// EX. "a3b2c1d3" => "aaabbcddd"
+console.log(rotateString("Hello World", 1))
+console.log(rotateString("Hello World", 2))
+// "Hello World", 1 => "dHello Worl"
+// "Hello World", 3 => "rldHello Wo"
