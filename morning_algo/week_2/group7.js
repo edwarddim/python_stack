@@ -1,46 +1,36 @@
-// String Encode
-// You are given a string that may contain sequences of consecutive characters.
-// Create a function to shorten a string by including the character,
-// then the number of times it appears. 
+/* 
+  String: Rotate String
+  Create a standalone function that accepts a string and an integer, and rotates the characters in the string to the 
+  right by that given integer amount.
+  n will not be longer than the string length
+*/
 
-
-// If final result is not shorter (such as "bb" => "b2" ),
-// return the original string.
-// */
-function encode(string){
-    var newString = ""
-    var char =''
-    var count =0
-    for(var i = 0; i < string.length; i++){
-        if (count==0){
-            char=string[i]
-            count++
-        } else if (string[i] != char) {
-            newString+=(char+count.toString())
-            count=0
-        } else {
-            count++
-        }
-        
+function rotateString(string, n){
+    var s2 ='';
+    for (let i = string.length-n; i < string.length; i++) {
+        s2+=string[i]
     }
-    return newString
-}
-// EX. "aaaabbcddd" => "a4b2c1d3"
-// EX. "" => ""
-// EX. "bbcc" => "bbcc"
-
-function decode(string){
-    var newString=''
-    for (let i = 0; i < string.length; i+=2) {
-        for ( let j=0; j<string[i+1]; j++){
-            newString+=string[i]
-        }
+    for (let i = 0; i < string.length-n; i++) {
+        s2+=string[i]
     }
-    return newString
+    return s2
 }
-console.log(decode('a4b2c1d3'))
 
-parseInt("3") // 3
-parseInt("a") // NaN
-// HINT. YOU'RE GOING TO USE parseInt() function OR isNaN()
-// EX. "a3b2c1d3" => "aaabbcddd"
+function rotateString2(string, n){
+    var s2 ='';
+    s2+=string.slice(string.length-n,string.length) // grabbing latter half
+    s2+=string.slice(0,string.length-n) // grabbing first half
+    return s2
+}
+
+function rotateString3(string, n){
+    var s2=''
+    for(i=string.length-n; i<(2*string.length)-n; i++){
+        s2+=string[i%string.length]
+    }
+    return s2
+}
+console.log(rotateString("Hello World", 1))
+console.log(rotateString("Hello World", 2))
+// "Hello World", 1 => "dHello Worl"
+// "Hello World", 3 => "rldHello Wo"

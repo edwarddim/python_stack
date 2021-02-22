@@ -6,7 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    table, tr, td{
+        border: 1px solid black;
+    }
+</style>
 <body>
-    <h1>Hello</h1>
+    <h1>All the Users</h1>
+    <h3>Most Recent User: {{most_recent_user.full_name}},Created on: {{most_recent_user.created_at}}</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Prefix</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in all_users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.prefix}}</td>
+                    <td>{{user.full_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.password}}</td>
+                    <td>{{user.age}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form action="/create_user" method="post">
+        {% csrf_token %}
+        <p>
+            Prefix:
+            <input type="text" name="prefix" id="">
+        </p>
+        <p>
+            Full Name:
+            <input type="text" name="full_name" id="">
+        </p>
+        <p>
+            Email:
+            <input type="email" name="email" id="">
+        </p>
+        <p>
+            Password:
+            <input type="password" name="password" id="">
+        </p>
+        <p>
+            Age:
+            <input type="number" name="age" id="">
+        </p>
+        <button type="submit">Create User</button>
+    </form>
 </body>
 </html>
