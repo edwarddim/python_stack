@@ -6,7 +6,26 @@
   where one side’s sum is equal to the other’s. 
 */
 function balancePoint(arr){
-
+  var leftInd = 0;
+  var rightInd = arr.length - 1;
+  var leftSum = 0;
+  var rightSum = 0;
+  while(leftInd <= rightInd){
+    if(leftSum <= rightSum){
+      leftSum += arr[leftInd]
+      leftInd++
+    }
+    else{
+      rightSum += arr[rightInd]
+      rightInd--
+    }
+  }
+  if(leftSum == rightSum){
+    return true
+  }
+  else{
+    return false
+  }
 }
 // EX. [1, 2, 3, 4, 10] => TRUE
 // EX. [1, 2, 4, 2, 1] => FALSE
