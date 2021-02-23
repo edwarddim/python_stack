@@ -1,4 +1,16 @@
-// MON
+/* 
+  Array: Binary Search (non recursive)
+  Given a sorted array and a value, return whether the array contains that value.
+  Do not sequentially iterate the array. Instead, ‘divide and conquer’,
+  taking advantage of the fact that the array is sorted .
+*/
+function binarySearch(arr,target){
+  // 1. FIND THE MIDDLE INDEX OF L AND R POINTER
+  // 2. WITH THE MIDDLE INDEX, COMPARE THE MIDDLE VALUE WITH THE TARGET
+  // THE TARGET IS EQUAL TO MIDDLE VALUE => return true
+  // THE TARGET IS LESS THAN THE MIDDLE VALUE => MOVE THE RIGHT POINTER ONE LEFT OF MIDDLE INDEX
+  // THE TARGET IS GREATER THAN MIDDLE VALUE => MOVE THE LEFT POINTER ONE RIGHT OF THE MIDDLE INDEX
+}// MON
 /* 
   Balance Point
   Write a function that returns whether the given
@@ -47,8 +59,29 @@ function balanceIndex(arr){
   taking advantage of the fact that the array is sorted .
 */
 function binarySearch(arr,target){
+  // 1. FIND THE MIDDLE INDEX OF L AND R POINTER
+  var leftInd = 0
+  var rightInd = arr.length - 1
 
+  while(leftInd <= rightInd){
+    var midInd = Math.floor( (rightInd + leftInd) / 2 )
+    // 2. WITH THE MIDDLE INDEX, COMPARE THE MIDDLE VALUE WITH THE TARGET
+    // THE TARGET IS EQUAL TO MIDDLE VALUE => return true
+    if(target == arr[midInd]){
+      return true
+    }
+    // THE TARGET IS LESS THAN THE MIDDLE VALUE => MOVE THE RIGHT POINTER ONE LEFT OF MIDDLE INDEX
+    else if(target < arr[midInd]){
+      rightInd = midInd - 1
+    }
+    // THE TARGET IS GREATER THAN MIDDLE VALUE => MOVE THE LEFT POINTER ONE RIGHT OF THE MIDDLE INDEX
+    else if(target > arr[midInd]){
+      leftInd = midInd + 1
+    }
+  }
+  return false
 }
+console.log(binarySearch([1,2,3,4,5,6,7,8,9] , 4))
 
 
 
