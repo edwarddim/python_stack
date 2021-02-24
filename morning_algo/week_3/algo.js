@@ -94,32 +94,24 @@ console.log(binarySearch([1,2,3,4,5,6,7,8,9] , 4))
   Given a SORTED array of integers, dedupe the array 
   Because array elements are already in order, all duplicate values will be grouped together.
   Ok to use a new array
+
+  DO ALGO WITH ONE FOR LOOP AND NO OBJECT TO KEEP TRACK OF FREQUENCY
   Bonus: do it in O(n) time (no nested loops, new array ok)
   arr.splice(index, num)
 */
 function dedupeArr(arr){
-
+  var output = []
+  for( var i =0; i < arr.length; i++){
+    if(output.indexOf(arr[i]) == -1){
+      output.push(arr[i])
+    }
+  }
+  return output
 }
 // console.log(dedupeArr([1,1,1,2,2,2,3,3,4,4,4,4]))
 // EX. [1,1,1,2,2,2,3,3,4,4,4] => [1,2,3,4]
-// DO ALGO WITH ONE FOR LOOP AND NO OBJECT TO KEEP TRACK OF FREQUENCY
 
-/* 
-  Array: Mode
-  Create a function that, given an array of ints,
-  returns the int that occurs most frequently in the array.
-  What if there are multiple items that occur the same number of time?
-    - return all of them (in an array)
-    - what if all items occur the same number of times?
-      - return empty array
-*/
-// EX. [1,1,2,2,2,3,3,3] => [2,3]
-// EX. [1,1,1,2,2,2,3,3,3] => []
-function mode(arr){
 
-}
-console.log(mode([1,2,2,3,3]))
-console.log(mode([1,1,1,3,3,3,2,2,2]))
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
 

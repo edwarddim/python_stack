@@ -79,3 +79,41 @@ function binarySearch(arr,target){
     // THE TARGET IS LESS THAN THE MIDDLE VALUE => MOVE THE RIGHT POINTER ONE LEFT OF MIDDLE INDEX
     // THE TARGET IS GREATER THAN MIDDLE VALUE => MOVE THE LEFT POINTER ONE RIGHT OF THE MIDDLE INDEX
   }
+
+
+// -----------------------------------------------------------------------------------------------//
+
+// WED
+/* 
+  Array: Remove Duplicates
+  Given a SORTED array of integers, dedupe the array 
+  Because array elements are already in order, all duplicate values will be grouped together.
+  Ok to use a new array
+  Bonus: do it in O(n) time (no nested loops, new array ok)
+  arr.splice(index, num)
+*/
+
+function dedupeArr(arr){
+    returnArr = []
+    for (let i=0; i < arr.length; i++) {
+        if (arr[i] != returnArr[returnArr.length-1]) {
+            returnArr += arr[i]
+        }
+    }
+    return returnArr
+}
+
+function dedupeArr2(arr){
+    // ITERATE THROUGH THE ARRAY
+    for (let i=1; i < arr.length; i++) {
+        // 
+        if (arr[i] == arr[i-1]){
+            arr.splice(i, 1)
+            i-=1
+        }
+    }
+    return arr
+}
+
+// console.log(dedupeArr([1,1,1,2,2,2,3,3,4,4,4,4]))
+// EX. [1,1,1,2,2,2,3,3,4,4,4] => [1,2,3,4]

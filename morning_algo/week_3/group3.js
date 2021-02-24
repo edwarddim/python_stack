@@ -1,32 +1,43 @@
-                      
-function binary_search(arr, target) {
+/* 
+  Array: Remove Duplicates
+  Given a SORTED array of integers, dedupe the array 
+  Because array elements are already in order, all duplicate values will be grouped together.
+  Ok to use a new array
 
-	// getting high, low points, and defining mid value
-	let high = arr.length-1
-	let low = 0;
-	let mid = 0;
+  DO ALGO WITH ONE FOR LOOP AND NO OBJECT TO KEEP TRACK OF FREQUENCY
+  Bonus: do it in O(n) time (no nested loops, new array ok)
+  arr.splice(index, num)
+*/
 
-	//  running while low is less than high value
-	while (low <= high) {
-		//  setting the new middle point with each loop
-		mid = Math.floor((low + high) / 2)
-
-		// checking if the target is either one of the three known values (high, low, mid)
-		if (arr[mid] == target || arr[low] == target || arr[high] == target) {
-			return true
-		} else if (target > arr[mid]) { // if target is larger than the middle value, move the middle to the right one idx
-			low = mid + 1
-		} else { 						// if target is smaller than the middle value, move the middle to the left one idx
-			high = mid - 1
-		}
-	}
-	// return false if target value is not found
-	return false
-
+function dedupeArr(arr){
+	for (let i = 0; i < arr.length-1; i++) {
+		if (arr[i] == arr[i+1]){
+      arr.splice(i,1)
+      i--
+    }
+  }
+  return arr
 }
 
-let testarr = [1, 2, 3, 4, 5, 6, 7, 8, 10, 11]
 
-console.log(binary_search(testarr, 4))  	// true
-console.log(binary_search(testarr, 9))  	// false
-console.log(binary_search(testarr, 11)) 	// true
+console.log(dedupeArr([1,1,1,2,2,2,3,3,4,4,4,4]))
+//EX. [1,1,1,2,2,2,3,3,4,4,4] => [1,2,3,4]
+
+
+
+//FUNCTION USING NEW ARRAY
+// function dedupeArr(arr) {
+//     newArr = [];
+//     for (var i=0; i<arr.length; i++) {
+//         if (arr[i] == arr[i+1]) {
+//             console.log('pass');
+//         }
+//         else {
+//             newArr.push(arr[i]);
+//         }
+//     }
+//     return newArr;
+// }
+// var array1 = [1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,7,7,7,7];
+// console.log(dedupeArr(array1));
+

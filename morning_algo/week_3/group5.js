@@ -1,31 +1,44 @@
-// TUE
+
+
 /* 
-  Array: Binary Search (non recursive)
-  Given a sorted array and a value, return whether the array contains that value.
-  Do not sequentially iterate the array. Instead, ‘divide and conquer’,
-  taking advantage of the fact that the array is sorted .
+  Array: Remove Duplicates
+  Given a SORTED array of integers, dedupe the array 
+  Because array elements are already in order, all duplicate values will be grouped together.
+  Ok to use a new array
+
+  DO ALGO WITH ONE FOR LOOP AND NO OBJECT TO KEEP TRACK OF FREQUENCY
+  Bonus: do it in O(n) time (no nested loops, new array ok)
+  arr.splice(index, num)
 */
-function binarySearch(arr,target){
-    // 1. FIND THE MIDDLE INDEX OF L AND R POINTER
-    var leftInd = 0
-    var rightInd = arr.length-1
-    while (leftInd <= rightInd) {
-        var midInd = Math.floor((rightInd + leftInd) / 2)
-        // 2. WITH THE MIDDLE INDEX, COMPARE THE MIDDLE VALUE WITH THE TARGET
-        if (target == arr[midInd]) {
-            // THE TARGET IS EQUAL TO MIDDLE VALUE => return true
-            return true
-        }
-        else if (target < arr[midInd]) {
-            // THE TARGET IS LESS THAN THE MIDDLE VALUE => MOVE THE RIGHT POINTER ONE LEFT OF MIDDLE INDEX
-            rightInd = midInd - 1
-        }
-        else {
-            // THE TARGET IS GREATER THAN MIDDLE VALUE => MOVE THE LEFT POINTER ONE RIGHT OF THE MIDDLE INDEX
-            leftInd = midInd + 1
+function dedupeArr(arr){
+    let output = []
+
+    for (let i = 0; i < arr.length; i++) {
+        if (output.indexOf(arr[i]) == -1) { // if arr[i] not in output arr
+            output.push(arr[i])             
         }
     }
-    return false
+    return output
 }
-console.log(binarySearch([1,2,3,4,5,10], 4))
+// console.log(dedupeArr([1,1,1,2,2,2,3,3,4,4,4,4]))
+// EX. [1,1,1,2,2,2,3,3,4,4,4] => [1,2,3,4]
+
+let testarr = [1,1,1,2,2,2,3,3,4,4,4,5,5,5]
+
+console.log(dedupeArr(testarr))
+
+
+function dedupeArr(arr){
+    for(var i = arr.length -1; i > 0; i--) {
+      if(arr[i] == arr[i-1]){
+        arr.splice(i, 1);
+      }
+    }
+    return arr;
+  }
+
+let testarr1 = [1,1,1,2,2,2,4,4,4,5,5,5]
+
+console.log(dedupeArr(testarr1))
+  
   

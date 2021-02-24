@@ -8,7 +8,8 @@
 function balancePoint(arr){
     let left = 0
     let right = 0
-    for(let i = 0; i < arr.length; i++) {
+    for(l
+et i = 0; i < arr.length; i++) {
         left += arr[i]
         for (let j = i+1; j<arr.length; j++) {
             right += arr[j]
@@ -45,3 +46,18 @@ function balanceIndex(arr){
 
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
+/* 
+  Array: Remove Duplicates
+  Given a SORTED array of integers, dedupe the array 
+  Because array elements are already in order, all duplicate values will be grouped together.
+  Ok to use a new array
+
+  DO ALGO WITH ONE FOR LOOP AND NO OBJECT TO KEEP TRACK OF FREQUENCY
+  Bonus: do it in O(n) time (no nested loops, new array ok)
+  arr.splice(index, num)
+*/
+function dedupeArr(arr){
+
+}
+// console.log(dedupeArr([1,1,1,2,2,2,3,3,4,4,4,4]))
+// EX. [1,1,1,2,2,2,3,3,4,4,4] => [1,2,3,4]
