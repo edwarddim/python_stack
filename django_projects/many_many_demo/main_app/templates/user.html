@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Name: {{one_user.name}}</h1>
+    <h1>Email: {{one_user.email}}</h1>
+    <h3>Created On: {{one_user.created_at}}</h3>
+
+    <h2>Belongs to these groups:</h2>
+    <ul>
+        {% for group in one_user.groups.all %}
+            <li>{{group.name}} - {{group.max_size}} Created On: {{group.created_at}}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <form action="/users/add_group" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="user_id" value="{{one_user.id}}">
+        <p>
+            Join Group:
+            <select name="group_id" id="">
+                {% for group in all_groups %}
+                    <option value="{{group.id}}">{{group.name}}</option>
+                {% endfor %}
+            </select>
+        </p>
+        <button type="submit">Join</button>
+    </form>
+</body>
+</html>
