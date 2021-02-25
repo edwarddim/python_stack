@@ -41,4 +41,30 @@ let testarr1 = [1,1,1,2,2,2,4,4,4,5,5,5]
 
 console.log(dedupeArr(testarr1))
   
-  
+// THUR
+/* 
+  Missing Value
+  You are given an array of length N that contains, in no particular order,
+  integers from 0 to N . One integer value is missing.
+  Quickly determine and return the missing value.
+  NO SORT ALLOWED
+  EXTRA CHALLENGE: SOLVE ALGO WITHOUT USING A OBJECTS TO KEEP TRACK OF NUMBERS
+*/
+function missingValue(arr){
+  var Sum = 0
+  var indexSum = 0
+  for (var i = 0; i < arr.length; i++) {
+    Sum += arr[i]
+    indexSum += i
+  }
+  if (Sum == indexSum) {
+    return false
+  }
+  else {
+    return true
+  }
+}
+console.log(missingValue([3,0,1,2]))
+console.log(missingValue([4,0,2,1]))
+// [3,0,1,2] => False
+// [4,0,2,1] => True

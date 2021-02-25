@@ -1,33 +1,52 @@
 
-// TUE
+// THUR
 /* 
-  Array: Binary Search (non recursive)
-  Given a sorted array and a value, return whether the array contains that value.
-  Do not sequentially iterate the array. Instead, ‘divide and conquer’,
-  taking advantage of the fact that the array is sorted .
+  Missing Value
+  You are given an array of length N that contains, in no particular order,
+  integers from 0 to N . One integer value is missing.
+  Quickly determine and return the missing value.
+  NO SORT ALLOWED
+  EXTRA CHALLENGE: SOLVE ALGO WITHOUT USING A OBJECTS TO KEEP TRACK OF NUMBERS
 */
-function binarySearch(arr,target){
-    let leftIdx = 0
-    let rightIdx = arr.length - 1
-    // 1. FIND THE MIDDLE INDEX OF L AND R POINTER
-    while(leftIdx <= rightIdx){
-        let middleIdx = Math.floor(((leftIdx+rightIdx)/2))
-        if (arr[middleIdx] == target){
+function missingValue(arr){
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i]==arr.length){
             return true
-        }
-        else if (arr[middleIdx] < target) {
-            leftIdx = middleIdx + 1
-        }
-        else {
-            rightIdx = middleIdx - 1
         }
     }
     return false
-    // 2. WITH THE MIDDLE INDEX, COMPARE THE MIDDLE VALUE WITH THE TARGET
-    // THE TARGET IS EQUAL TO MIDDLE VALUE => return true
-    // THE TARGET IS LESS THAN THE MIDDLE VALUE => MOVE THE RIGHT POINTER ONE LEFT OF MIDDLE INDEX
-    // THE TARGET AS GREATER THAN MIDDLE VALUE => MOVE THE LEFT POINTER ONE RIGHT OF THE MIDDLE INDEX
-  }
-  
-  
-  
+}
+
+function missingValue2(arr){
+    var max=0
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i]>max){
+            max=arr[i]
+        }
+    }
+    if(max==arr.length+1){
+        return true
+    }
+    else{
+        return false
+    }
+}
+
+function missingValue3(arr){
+    var avg=0
+    for (let i = 0; i < arr.length; i++) {
+        avg+=arr[i]
+        }
+    avg /= arr.length
+    if (avg == (arr.length-1)/2){
+        return true
+    } else{
+        return false
+    }
+}
+// [0,0,3]
+// [3,0,1,2] => False
+// [4,0,2,1] => True
+
+// -----------------------------------------------------------------------------------------------//
+// -----------------------------------------------------------------------------------------------//

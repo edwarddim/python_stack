@@ -125,7 +125,21 @@ function dedupeArr(arr){
   EXTRA CHALLENGE: SOLVE ALGO WITHOUT USING A OBJECTS TO KEEP TRACK OF NUMBERS
 */
 function missingValue(arr){
-
+  var total = 0
+  var indTotal = 0
+  for(var i = 0; i < arr.length; i++){
+    // GET TOTAL OF VALUES INSIDE THE ARR
+    total += arr[i]
+    // GET TOTAL OF INDEX FOR THE ARRAY
+    indTotal += i
+  }
+  // COMPARE THE TOTAL OF VALUE VS THE INDEXES
+  if(indTotal == total){
+    return false
+  }
+  else{
+    return true
+  }
 }
 // [3,0,1,2] => False
 // [4,0,2,1] => True

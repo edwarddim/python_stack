@@ -46,3 +46,39 @@ function dedupeArr(arr){
 return arr2
 }
 console.log(dedupeArr([1,1,1,2,2,2,3,3,4,4,4,4]))
+
+// THUR
+/* 
+  Missing Value
+  You are given an array of length N that contains, in no particular order,
+  integers from 0 to N . One integer value is missing.
+  Quickly determine and return the missing value.
+  NO SORT ALLOWED
+  EXTRA CHALLENGE: SOLVE ALGO WITHOUT USING A OBJECTS TO KEEP TRACK OF NUMBERS
+*/
+/* function missingValue(arr){
+    //iterate through arr
+    //check values against a variable
+    var check_this = 0;
+    
+    for (var i= 0; i<arr.length; i++){
+        
+        if (check_this in arr){
+            //if variable is in arr, iterate variable and search again
+            check_this+=1;
+        }
+        else {
+            return true;
+        }
+    }
+    return false;
+} */
+function missingValue(arr){
+    //check arr.length against largest value in the array
+    if (arr.length-1 == arr[arr.length-1]){
+
+    }
+}
+// [3,0,1,2] => False
+// [4,0,2,1] => True
+console.log(missingValue([0,1,2,3,5,6]));

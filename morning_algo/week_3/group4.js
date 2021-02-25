@@ -61,5 +61,6 @@ function binarySearch(arr,target){
             right_index --
     }
     return target
+
     }
 console.log(arr)
