@@ -7,26 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Create A Movie</h1>
-    <form action="/movies/process" method="post">
+    <h1>Edit a Movie</h1>
+    <form action="/movies/{{edit_movie.id}}/update" method="post">
         {% csrf_token %}
         <p>
             Title:
-            <input type="text" name="title" id="">
+            <input type="text" name="title" id="" value="{{edit_movie.title}}" >
         </p>
         <p>
             Description:
-            <textarea name="description" id="" cols="30" rows="10"></textarea>
+            <textarea name="description" id="" cols="30" rows="10" >{{edit_movie.description}}</textarea>
         </p>
         <p>
             Release Date:
-            <input type="date" name="release_date" id="">
+            <input type="date" name="release_date" id="" value="{{edit_movie.release_date | safe}}">
         </p>
         <p>
             Duration:
-            <input type="number" name="duration" id="">
+            <input type="number" name="duration" id="" value="{{edit_movie.duration}}">
         </p>
-        <button type="submit">Create</button>
+        <button type="submit">Update</button>
     </form>
     {% if messages %}
     <ul class="messages">    

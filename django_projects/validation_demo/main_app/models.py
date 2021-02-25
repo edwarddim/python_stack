@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 class MovieManager(models.Manager):
     def validate_movie(self, postData):
-        print(postData)
         errors = {}
         # CHECK TO SEE IF TITLE IS LONGER THAN 0 CHARS
         if len(postData['title']) < 2:
