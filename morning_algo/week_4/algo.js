@@ -1,8 +1,27 @@
 // MON
 // ITERATIVELY VS RECURSIVELY
-function recursivePrint(number){
 
+function iteratePrint(num){
+  for( var i = num; i >= 0; i--){
+    console.log(i)
+  }
 }
+iteratePrint(5)
+
+function recursivePrint(num){
+  // 1. BASE CASE (THE CONDITION THAT STOPS THE INFINITE LOOP)
+  if(num == 0){
+    return
+  }
+  // 2. FORWARD PROGRESS (INCREMENT/DECREMENT)
+  console.log(num)
+  num--
+  // 3. THE RECURSIVE CALL
+  recursivePrint(num)
+  console.log("END OF FUNCTION")
+}
+
+recursivePrint(3)
 // recursivePrint(5)
 
 /* 
@@ -11,9 +30,15 @@ function recursivePrint(number){
   Output: sum of integers from 1 to Input integer
 */
 function recursiveSigma(n) {
-
+  // BASE CASE
+  if(n == 1){
+    return 1
+  }
+  // FORWARD PROGRESS (INCREMENT / DECRMENT)
+  // RECURSIVE CALL
+  return n + recursiveSigma(n-1)
 }
-// console.log(recursiveSigma(3))
+console.log(recursiveSigma(3))
 // 5 => 5 + 4 + 3 + 2 + 1 => 15
 
 
@@ -24,7 +49,10 @@ function iterativeFactorial(num){
 }
 
 function recFactorial(num){
-
+  if(n == 1){
+    return 1
+  }
+  return n * recursiveSigma(n-1)
 }
 // recFactorial(3)
 

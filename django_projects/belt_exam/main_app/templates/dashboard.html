@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table, tr, td{
+        border: solid black 1px;
+    }
+</style>
+<body>
+    <h1>Welcome {{logged_user.first_name}} {{logged_user.last_name}}</h1>
+    <a href="/shows/new">Create a Show</a>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Title</td>
+                <td>Network</td>
+                <td>Release Date</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for show in all_shows %}
+                <tr>
+                    <td>{{show.id}}</td>
+                    <td>{{show.title}}</td>
+                    <td>{{show.network}}</td>
+                    <td>{{show.release_date}}</td>
+                    <td>
+                        <a href="">Show</a>
+                        {% if show.user.id == request.session.user_id %}
+                            <a href="">Edit</a>
+                            <a href="">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
