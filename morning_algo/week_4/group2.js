@@ -69,3 +69,29 @@ function recFactorial(num){
 }
 // console.log(recFactorial(4))
 console.log(recFactorial(3))
+
+function recSumArr(arr, i = 0) {
+  // 1. BASE CASE
+  function recSumArr(arr, i = 0) {
+    if (arr.length === 1) {
+        return arr[0];
+    }
+    else {
+        return arr.pop() + recSumArr(arr)
+    }
+}
+console.log(recSumArr([1,2,3,4]))
+// [1,2,3] => 6
+
+
+function recSumArr(arr, i = 0) {
+
+  if (arr.length === 1) {
+      return arr[0];
+  }
+  else {
+    // you don't want to .pop(), that removes numbers from the array
+      return arr.pop() + recSumArr(arr)
+  }
+}
+console.log(recSumArr([1,2,3,4]))

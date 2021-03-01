@@ -1,48 +1,13 @@
-/* 
-  Recursive Sigma
-  Input: integer
-  Output: sum of integers from 1 to Input integer
-*/
-function recursiveSigma(n) {
-    // BASE CASE
-    if (n == 1) {
-        return n
-    }
-    // FORWARD PROGRESS (INCREMENT / DECRMENT)
-    return n + recursiveSigma(n-1)
-    console.log(n)
 
-    // RECURSIVE CALL
+function recSumArr(arr, i = 0) {
+  // 1. BASE CASE
+  if(i == arr.length - 1){
+    return arr[arr.length-1]
   }
-  console.log(recursiveSigma(5))
-  // console.log(recursiveSigma(3))
-  // 5 => 5 + 4 + 3 + 2 + 1 => 15
-  
-  
-  // 3 => 3 * 2 * 1 => 6
-  // 4 => 4 * 3 * 2 * 1 => 24
-function iterativeFactorial(num){
-    if (n == 1) {
-        return n
-    }
-    return n * recursiveFactorial(n - 1)
-  }
-return recursiveFactorial(3)
-  
-
-function recursiveFactorial(num){
-    // BASE CASE
-    if (num == 1) {
-        return num
-    }
-    // FORWARD MOTION + RECURSIVE CALL
-    return num * recursiveFactorial(num - 1)
+  // 2. FORWARD PROGRESS (INCREMENT / DECRMENT)
+  return arr[i] + recSumArr(arr,i=i+1)
+  // 3. RECURSIVE CALL
 }
-console.log(recursiveFactorial(3))
-
-
-
-function recFactorial(num){
-
-}
-recFactorial(3)
+console.log(recSumArr([1,2,3]))
+// [1,2,3] => 6
+// --------------
