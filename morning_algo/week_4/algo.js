@@ -165,7 +165,21 @@ function recFlatten(arr){
 // LEVEL 3 [8,9] , 8
 
 function recursiveBinary(arr, target){
-
+  // BASE CASE - RETURN FALSE IF ARR.LENGTH == 0
+  if (sortedNums.length <= 0) return null;
+  // CHOOSE OUR MIDDLE INDEX
+  let mid = Math.floor(sortedNums.length / 2)
+  // BASE CASE #2 - IF WE FIND THE TARGET RETURN TRUE
+  if (sortedNums[mid] === searchNum) return true;
+  // FORWARD PROGRESS / RECURSIVE CALL - CHECK IF GREATER THAN OR LESS THAN
+  // MAKE OUR RECURSIVE CALL ON THE SLICE OF THE ARRAY IN THE DIRECTION
+  // dont forget we can use arr.slice() - look up the documentation
+  if (sortedNums[mid] > searchNum) {
+    return binarySearch(sortedNums.slice(0, mid), searchNum);
+  }
+  if (sortedNums[mid] < searchNum) {
+    return binarySearch(sortedNums.slice(mid + 1, sortedNums.length), searchNum);
+  }
 }
 console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  8))
 console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  11))
