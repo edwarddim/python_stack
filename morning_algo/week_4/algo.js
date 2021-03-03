@@ -96,6 +96,20 @@ function recSumArr(arr, i = 0) {
 */
 // HINT: YOU'RE GOING TO NEED A FOR LOOP
 function stringSubset(string, arr = []){
+  // BASE CASE - CHECK TO SEE IF STRING LENGTH IS 1
+  if(string.length == 1){
+    arr.push(string)
+    return arr
+  }
+  // FOR LOOP
+  for(var i = 0; i < string.length; i++){
+    arr.push(string.slice(i, string.length))
+  }
+  return stringSubset(string.slice(0, string.length - 1), arr)
+}
+console.log(stringSubset("abcd"))
+
+function stringSubsetNoArr(string){
 
 }
 // console.log(stringSubset("abcd"))

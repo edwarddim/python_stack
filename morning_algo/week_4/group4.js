@@ -21,3 +21,38 @@ function iterateSumArr(array){
   }
   console.log(recSumArr([1,2,3,4], 0))
   // [1,2,3] => 6
+
+
+/*
+    String Subset
+    Given a string, return an array filled
+    with IN-ORDER substrings
+    .slice(start(inclusive), end(exclusive))
+    var name = "edward"
+    var part = name.slice(2,7)
+*/
+// HINT: YOU'RE GOING TO NEED A FOR LOOP
+
+
+
+  // BASE CASE - CHECK TO SEE IF STRING LENGTH IS 1
+  function stringSubset(string, arr) {
+    if (string.length == 1) {
+      arr.push(string)
+      return arr
+    }
+    for (let i = 0; i < string.length; i++) {
+      arr.push(string.slice(i, string.length))
+    }
+    return stringSubset(string.slice(0, string.length-1), arr)
+  }
+  console.log(stringSubset("abcd", []))
+  // FOR LOOP
+
+
+
+
+// console.log(stringSubset("abcd"))
+// console.log("HELLO WORLD")
+
+// EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
