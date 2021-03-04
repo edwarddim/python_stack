@@ -1,20 +1,21 @@
-function recursiveBinary(arr, target){
-  console.log(arr)
-  if (arr.length==0){
-    return false
-  }
-  var i = Math.floor(arr.length/2)
-  if (arr[i]==target){
-    return true
-  }
-  if (arr[i]>target){
-    return recursiveBinary(arr.slice(0,i),target)
-  }
-  if (arr[i]<target){
-    return recursiveBinary(arr.slice(i+1,arr.length),target)
-  }
+
+/* 
+    Rising Square
+    Given a number return an array filled with the
+    squares of integers up to given number
+*/
+function risingSqaures(num, arr = []){
+
 }
-//console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  8))
-console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  11))
+// EX. 3 => [1,4,9]
+// EX. 5 => [1,4,9,16,25]
+function risingSqauresNoArr(num){
+  if (num==1){
+    return [1]
+  }
+  var arr=risingSqauresNoArr(num-1)
+  arr.push(num**2)
+  return arr
+}
 
-
+console.log(risingSqaures(5)) // [1,4,9,16,25]

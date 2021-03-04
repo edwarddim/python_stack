@@ -57,6 +57,7 @@ function recFactorial(num){
 // recFactorial(3)
 
 
+
 // -----------------------------------------------------------------------------------------------//
 // -----------------------------------------------------------------------------------------------//
 
@@ -204,6 +205,19 @@ function risingSqaures(num, arr = []){
 }
 // EX. 3 => [1,4,9]
 // EX. 5 => [1,4,9,16,25]
+function risingSqauresNoArr(num){
+  // BASE CASE
+  if(num == 1){
+    return [1]
+  }
+  // FORWARD PROGRESS
+  // RECURSIVE CALL
+  var arr = risingSqauresNoArr(num - 1)
+  arr.push(num * num)
+  return arr
+}
+
+console.log(risingSqaures(5)) // [1,4,9,16,25]
 
 /* 
   recursively find the lowest common multiple between two numbers

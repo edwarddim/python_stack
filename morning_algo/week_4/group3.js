@@ -61,3 +61,14 @@ function recursiveBinary(arr, target){
 }
 console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  8))
 console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  11))
+
+function risingSqauresNoArr(num){
+    if (num == 1){
+        return [1]
+    }
+    var arr = risingSqauresNoArr(num-1)
+    arr.push(num*num)
+    return arr
+}
+console.log(risingSqauresNoArr(3))
+console.log(risingSqauresNoArr(5)) // [1,4,9,16,25]
