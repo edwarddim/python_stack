@@ -1,41 +1,4 @@
-// /* 
-//   Recursive Sigma
-//   Input: integer
-//   Output: sum of integers from 1 to Input integer
-// */
-// function recursiveSigma(n) {
-//   var sum = 0;
-//     // BASE CASE
-//     // FOR THIS ALGO, IN THE BASE CASE YOU WANT TO RETURN A nBER
-//     if(n == 0){
-//       return n;
-//     }
-//     // FORWARD PROGRESS (INCREMENT / DECRMENT)
-//     console.log(i)
-//     // sum += n;
-//     n --;
-//     // RECURSIVE CALL
-//     return n +recursiveSigma(n-1); // YOU ALSO WANT ADD THE nBERS BEING RETURNED
-//     console.log(n)
 
-//   }
-// recursiveSigma(3)
-
-  
-
-
-//   // 5 => 5 + 4 + 3 + 2 + 1 => 15
-  
-  
-//   // 3 => 3 * 2 * 1 => 6
-//   // 4 => 4 * 3 * 2 * 1 => 24
-//   function iterativeFactorial(n){
-  
-//   }
-  
-//   function recFactorial(n){
-  
-//   }
 //   // recFactorial(3)
 
 // var sum = 0;
@@ -61,6 +24,7 @@
 //         return
 //     }
 //     // FORWARD PROGRESS (INCREMENT / DECRMENT)
+
 //     sum *= num
 //     num--
 //     // RECURSIVE CALL
@@ -88,6 +52,7 @@
 
 //   if (arr.length === 1) {
 //       return arr[0];
+
 //   }
 //   else {
 //     // you don't want to .pop(), that removes numbers from the array
@@ -127,3 +92,19 @@ function recursiveBinary(arr, target){
 console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  8))
 console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  11))
 
+
+/* 
+    Rising Square
+    Given a number return an array filled with the
+    squares of integers up to given number
+*/
+function risingSqaures(num, arr = []){
+
+}
+// EX. 3 => [1,4,9]
+// EX. 5 => [1,4,9,16,25]
+function risingSqauresNoArr(num){
+
+}
+
+console.log(risingSqaures(5)) // [1,4,9,16,25]
