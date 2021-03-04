@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 /*
     String Subset
@@ -36,7 +35,6 @@ function stringSubsetNoArr(string){
   // console.log("HELLO WORLD")
   
   // EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
-=======
 /*
 Recursive Binary Search
 Input: SORTED array of ints, int value
@@ -63,4 +61,3 @@ function recursiveBinary(arr, target){
 }
 console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  8))
 console.log(recursiveBinary([1,2,3,4,5,6,7,8,9] ,  11))
->>>>>>> 644f5bd165a57090ba039994df0a23ff480607fc
