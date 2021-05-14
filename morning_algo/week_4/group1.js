@@ -1,67 +1,41 @@
-/*
-  Recursive Sigma
-  Input: integer
-  Output: sum of integers from 1 to Input integer
+/* 
+    Given an array nested with unknown amount of arrays,
+    return the integers all under ONE array
+    Array.isArray() will come in useful
+    Array.isArray([1,2,3]) returns true
+    Array.isArray({'a':1}) returns false
+    Array.isArray(1) returns false
+
+    Array.concat() will also come in handy
+    var array1 = [1,2,3]
+    var array2 = [4,5,6]
+    var array3 = array1.concat(array2)
+    console.log(array3) => [1,2,3,4,5,6]
 */
-// function recursiveSigma(n) {
-//   // BASE CASE
-//   if (n==0){
-//       return
-//   }
-//   // FORWARD PROGRESS (INCREMENT / DECRMENT)
-
-//   // RECURSIVE CALL
-//   recursiveSigma(n-1)
-// }
-
-// function recursiveSigma2(n){
-//     if (n==1){
-//         return 1
-//     }
-//     //return (n + (n-1) + (n-2)...)
-//     return n +recursiveSigma2(n-1)
-// }
-// // console.log(recursiveSigma(5))
-// // 5 => 5 + 4 + 3 + 2 + 1 => 15
-
-
-// // 3 => 3 * 2 * 1 => 6
-// // 4 => 4 * 3 * 2 * 1 => 24
-// function iterativeFactorial(num){
-//     var prod = 1
-//     for (let i = num; i > 0; i--) {
-//        prod*=i
-//     }
-//     return prod
-// }
-
-// function recFactorial(num){
-//     if (num==1){
-//         return 1
-//     }
-//     //return (n * (n-1) * (n-2)...)
-//     return num * recursiveSigma2(num-1)
-// }
-// // recFactorial(3)
-
-/*
-    String Subset
-    Given a string, return an array filled
-    with IN-ORDER substrings
-    .slice(start(inclusive), end(exclusive))
-    var name = "edward"
-    var part = name.slice(2,7)
-*/
-// HINT: YOU'RE GOING TO NEED A FOR LOOP
-function stringSubset(string, arr = []){
-    // BASE CASE - CHECK TO SEE IF STRING LENGTH IS 1
-    // FOR LOOP
-}
-  
-  function stringSubsetNoArr(string){
-  
+function recFlatten(arr){
+  // BASE CASE
+  if(!Array.isArray(arr)) {
+    return [arr];
   }
-  // console.log(stringSubset("abcd"))
-  // console.log("HELLO WORLD")
-  
-  // EX. "ABC" => ["ABC", "AB", "A", "BC", "B", "C", ""]
+
+  // Flattened arr
+  let flattendArr = []
+  for( let i = 0; i < arr.length; i++) {
+    flattendArr = flattendArr.concat(recFlatten(arr[i]));
+  }
+
+  return flattendArr;
+
+}
+
+
+// [1,2,3,4,5,6] => [1,2,3,4,5,6]
+// [1,2,[4,5],6] => [1,2,4,5,6]
+// [2,2,[2,2,[2]], 2] => [2,2,2,2,2,2]
+
+console.log(recFlatten([ 1, [2,3,[4]] , 5 ]))
+//            0     1        2
+// LEVEL 1. [ 1, [2,3,[4]] , 5 ] => [1,2,3,4,5]
+
+//           0   1   2
+

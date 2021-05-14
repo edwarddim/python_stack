@@ -2,7 +2,7 @@
 /*
     String Subset
     Given a string, return an array filled
-    with IN-ORDER substrings
+    with IN-rORDER substrings
     .slice(start(inclusive), end(exclusive))
     var name = "edward"
     var part = name.slice(2,7)

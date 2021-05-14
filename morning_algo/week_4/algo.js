@@ -129,15 +129,43 @@ function stringSubsetNoArr(string){
     Array.isArray({'a':1}) returns false
     Array.isArray(1) returns false
 
-    Array.concat() will also come in handy
+    Array.concat() will also come in handy]
     var array1 = [1,2,3]
     var array2 = [4,5,6]
     var array3 = array1.concat(array2)
     console.log(array3) => [1,2,3,4,5,6]
 */
 function recFlatten(arr){
-
+  var newarr=[]
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])){
+      newarr = newarr.concat(recFlatten(arr[i]))
+    } else {
+      newarr.push(arr[i])
+    }
+  }
+  return newarr
 }
+
+function recFlatten2(arr){
+  // 1. BASE CASE
+  if(!Array.isArray(arr)){
+    return arr
+  }
+  // 2. FORWARD PROGRESS
+  var array = []
+  for(var i =0; i < arr.length; i ++){
+    // 3. RECURSIVE CALL
+    array = array.concat(recFlatten(arr[i]))
+  }
+  return array
+}
+
+
+// [1,2,3,4,5,6] => [1,2,3,4,5,6]
+// [1,2,[4,5],6] => [1,2,4,5,6]
+// [2,2,[2,2,[2]], 2] => [2,2,2,2,2,2]
+
 // console.log(recFlatten([ 1, [2,3,[4]] , 5 ]))
 //            0     1        2
 // LEVEL 1. [ 1, [2,3,[4]] , 5 ] => [1,2,3,4,5]

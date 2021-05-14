@@ -1,21 +1,29 @@
 
-/* 
-    Rising Square
-    Given a number return an array filled with the
-    squares of integers up to given number
-*/
-function risingSqaures(num, arr = []){
-
-}
-// EX. 3 => [1,4,9]
-// EX. 5 => [1,4,9,16,25]
-function risingSqauresNoArr(num){
-  if (num==1){
-    return [1]
+function recFlatten(arr){
+  // 1. Base Case
+  if (!Array.isArray(arr)){
+    return arr
   }
-  var arr=risingSqauresNoArr(num-1)
-  arr.push(num**2)
-  return arr
+
+  // 2. Forward Progress
+  let newArr = []
+  for (let i = 0; i < arr.length; i++){
+    // 3. Recursive Call
+    newArr = newArr.concat(recFlatten(arr[i]))
+  }
+  return newArr
 }
 
-console.log(risingSqaures(5)) // [1,4,9,16,25]
+// [1,2,3,4,5,6] => [1,2,3,4,5,6]
+// [1,2,[4,5],6] => [1,2,4,5,6]
+// [2,2,[2,2,[2]], 2] => [2,2,2,2,2,2]
+
+// console.log(recFlatten([ 1, [2,3,[4]] , 5 ]))
+//            0     1        2
+// LEVEL 1. [ 1, [2,3,[4]] , 5 ] => [1,2,3,4,5]
+
+//           0   1   2
+// LEVEL 2. [ 2 ,3, [4] ]
+
+
+g
